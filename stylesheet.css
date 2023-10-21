@@ -1,0 +1,36 @@
+body {
+    background-color: black;
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: chartreuse;
+    text-align: center;
+}
+
+/* unvisited link */
+a:link {
+    color: green;
+}
+
+/* visited link */
+a:visited {
+    color: darkred;
+}
+
+/* mouse over link */
+a:hover {
+    color: greenyellow;
+}
+
+/* selected link */
+a:active {
+    color: red;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: chartreuse;
+    border: none;
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
