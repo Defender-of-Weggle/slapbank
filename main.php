@@ -39,15 +39,14 @@ if(!isset($_SESSION["login"]))
     <p><input name="Comment"> Reason?(Optional, sometimes you just have to)</p>
     <p><input name="Slaps"> Amount of Slaps</p>
     <p><select name="Operator">
-            <option name="Einzahlen"> Deposit</option>
-            <option name="Auszahlen"> Execute that Fucker</option>
+            <option value="Deposit"> Deposit</option>
+            <option value="Payout"> Execute that Fucker</option>
         </select></p>
     <input type="submit" value="Slap it!"> <input type="reset">
 </form>
 
 <br><br>
-<form action="logout.php">
-    <input type="submit" value="Logout">
+
 </form>
 </body>
 </html>

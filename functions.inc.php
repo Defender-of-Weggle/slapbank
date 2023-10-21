@@ -114,7 +114,7 @@ function UserWahl()
 
 function transaction(string $operator, int $slaps, string $comment, string $userSlapGive, string $userSlapTake)
 {
-    if ($operator === "Auszahlen")
+    if ($operator === "Payout")
     {
         $slaps = $slaps * -1;
     }

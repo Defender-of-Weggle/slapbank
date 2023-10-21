@@ -13,10 +13,10 @@ session_start ();
 $UserName = getSessionUserName();
 
 //print_R($_SESSION);
-//print_R($_POST);
+print_R($_POST);
 $UserSlapTake = $_POST["UserSlapTake"] ?? 'Unbekannter Nutzer';
 $Slaps = $_POST["Slaps"] ?? 0;
-$Operator = $_POST["Operator"] ?? "Einzahlen";
+$Operator = $_POST["Operator"] ?? "Deposit";
 if(!isset($_SESSION["login"]))
 {
     echo "Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
@@ -25,7 +25,7 @@ if(!isset($_SESSION["login"]))
 if (isset($_POST["DB"]))
 {
     transaction($_POST["Operator"], $_POST["Slaps"], $_POST["Comment"], $UserName, $UserSlapTake);
-    if ($Operator === "Einzahlen")
+    if ($Operator === "Deposit")
     {
         echo "Thanks for the Deposit.<br>";
         echo "$UserName surprises $UserSlapTake with $Slaps Slaps, sweet.<br>";
