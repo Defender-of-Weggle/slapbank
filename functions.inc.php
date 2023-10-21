@@ -125,7 +125,7 @@ function transaction(string $operator, int $slaps, string $comment, string $user
     $ps->execute();
     if ($ps->affected_rows > 0)
     {
-        echo "Transaction done, nice.<br>";
+        echo "Transaction done, nice.<br><br>";
     }
     else
     {

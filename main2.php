@@ -28,12 +28,12 @@ if (isset($_POST["DB"]))
     if ($Operator === "Einzahlen")
     {
         echo "Thanks for the Deposit.<br>";
-        echo "$UserName surprises $UserSlapTake with $Slaps Slaps, sweet.";
+        echo "$UserName surprises $UserSlapTake with $Slaps Slaps, sweet.<br>";
     }
     else
     {
-        echo "Thanks for your Payout<br>";
-        echo "$UserName slaps $UserSlapTake $Slaps time/s, neat.";
+        echo "Thanks for your Payout<br><br>";
+        echo "$UserName slaps $UserSlapTake $Slaps time/s, neat.<br><br>";
     }
 }
 ?>
@@ -45,9 +45,9 @@ if (isset($_POST["DB"]))
 
 
 <br><br>
-<form action="logout.php">
-    <input type="submit" value="Logout">
-</form>
+<!--<form action="logout.php">-->
+<!--    <input type="submit" value="Logout">-->
+<!--</form>-->
 
 </body>
 </html>
