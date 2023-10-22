@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <Title>Slap Balance</Title>
     <link rel="stylesheet" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 <?php
@@ -28,23 +30,26 @@ if(!isset($_SESSION["login"]))
 <h2>
     Share the pain:
 </h2>
+
+
 <form action="main2.php" method="post">
 <?php echo "<input type='hidden' name='UserName' value='". getSessionUserName() ."'>";?>
             <input type="hidden" name="DB">
-    <p>
+    <p><label for="UserSlapTake">Choose your victim.</label></p>
         <select name="UserSlapTake">
         <?php UserWahl();?>
-        </select> Who you wanna slap?
-    </p>
-    <p><input name="Comment"> Reason?(Optional, sometimes you just have to)</p>
-    <p><input name="Slaps"> Amount of Slaps</p>
+        </select>
+    <br><br><p><label for="Comment">Reason?(Optional, sometimes you just have to)</label></p>
+    <textarea name="Comment" rows="5" cols="20" placeholder="This sucker ate my cookie! MINE!"></textarea><br>
+    <p><label for="Slaps">Amount of Slaps</label></p>
+    <input name="Slaps" size="1"><br>
+    <p><label for="Operator">Hitting or saving up?</label> </p>
     <p><select name="Operator">
             <option value="Deposit"> Deposit</option>
             <option value="Payout"> Execute that Fucker</option>
-        </select></p>
+        </select></p><br>
     <input type="submit" value="Slap it!"> <input type="reset">
 </form>
-
 <br><br>
 
 </form>

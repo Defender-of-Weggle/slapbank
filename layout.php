@@ -7,8 +7,9 @@
     a.logout
     {
         position: fixed;
+        padding-right: 5px;
         right: 0;
-        color: white;
+        color: red;
     }
     ul.navbar {
     list-style-type: none;

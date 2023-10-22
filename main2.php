@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <Title>Schellenkontostand</Title>
     <link rel="stylesheet" href="stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <?php
@@ -13,7 +14,7 @@ session_start ();
 $UserName = getSessionUserName();
 
 //print_R($_SESSION);
-print_R($_POST);
+//print_R($_POST);
 $UserSlapTake = $_POST["UserSlapTake"] ?? 'Unbekannter Nutzer';
 $Slaps = $_POST["Slaps"] ?? 0;
 $Operator = $_POST["Operator"] ?? "Deposit";
@@ -28,12 +29,12 @@ if (isset($_POST["DB"]))
     if ($Operator === "Deposit")
     {
         echo "Thanks for the Deposit.<br>";
-        echo "$UserName surprises $UserSlapTake with $Slaps Slaps, sweet.<br>";
+        echo "$UserName surprises $UserSlapTake with a deposit of $Slaps Slaps.<br>";
     }
     else
     {
         echo "Thanks for your Payout<br><br>";
-        echo "$UserName slaps $UserSlapTake $Slaps time/s, neat.<br><br>";
+        echo "$UserName slaps $UserSlapTake $Slaps time/s in the face.<br><br>";
     }
 }
 ?>
