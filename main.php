@@ -14,6 +14,7 @@ include "layout.php";
 
 initSession();
 $userID = getSessionUserID();
+$userName = getSessionUserName();
 
 if(!isset($_SESSION["login"]))
 {
@@ -23,7 +24,7 @@ if(!isset($_SESSION["login"]))
 
 ?>
 <h1>Slap Balance:
-<?php EigenerKontostand(getSessionUserName());
+<?php EigenerKontostand(getSessionUserID());
 ?>
 </h1>
 
@@ -36,7 +37,7 @@ if(!isset($_SESSION["login"]))
 <?php echo "<input type='hidden' name='UserName' value='". getSessionUserName() ."'>";?>
             <input type="hidden" name="DB">
     <p><label for="userSlapTake">Choose your victim.</label></p>
-        <select name="userSlapTake">
+        <select name="userIDSlapTake">
         <?php UserWahl();?>
         </select>
     <br><br><p><label for="comment">Reason?(Optional, sometimes you just have to)</label></p>

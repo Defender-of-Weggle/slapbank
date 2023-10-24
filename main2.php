@@ -15,7 +15,7 @@ $userName = getSessionUserName();
 
 //print_R($_SESSION);
 //print_R($_POST);
-$userSlapTake = $_POST["userSlapTake"] ?? 'Unbekannter Nutzer';
+$userIDSlapTake = $_POST["userIDSlapTake"] ?? 'Unbekannter Nutzer';
 $slaps = $_POST["slaps"] ?? 0;
 $operator = $_POST["operator"] ?? "Deposit";
 if(!isset($_SESSION["login"]))
@@ -25,7 +25,13 @@ if(!isset($_SESSION["login"]))
 }
 if (isset($_POST["DB"]))
 {
-    transaction($_POST["operator"], $_POST["slaps"], $_POST["comment"], $userName, $userSlapTake);
+    $operator = ($_POST["operator"]);
+    $slaps = ($_POST["slaps"]);
+    $comment = ($_POST["comment"]);
+    $userID = getSessionUserID();
+    $userIDSlapTake = ($_POST["userIDSlapTake"]);
+    $userSlapTake = userSlapTakeDefinition($userIDSlapTake);
+    transaction($_POST["operator"], $_POST["slaps"], $_POST["comment"], $userID, $userIDSlapTake);
     if ($operator === "Deposit")
     {
         echo "Thanks for the Deposit.<br><br>";

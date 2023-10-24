@@ -82,10 +82,10 @@ function Register($userName, $password)
 }
 
 
-function EigenerKontostand($userName)
+function EigenerKontostand($userID)
 {
     global $con;
-    $sql = "SELECT SUM(slaps) AS Kontostand FROM transaction WHERE userSlapTake = '$userName'";
+    $sql = "SELECT SUM(slaps) AS Kontostand FROM transaction WHERE userIDSlapTake = '$userID'";
     $res = $con->query($sql);
     $dsatz = $res->fetch_assoc();
     echo $dsatz["Kontostand"];
@@ -96,14 +96,15 @@ function EigenerKontostand($userName)
 function UserWahl()
 {
     global $con;
-    $sql = "SELECT userName FROM user";
+    $sql = "SELECT userName, userID FROM user";
     $res = $con->query($sql);
     while ($dsatz = $res->fetch_assoc())
     {
-?><option name="userSlapTake" value="<?php echo $dsatz["userName"]?>"><?php echo $dsatz["userName"];
+?><option name="userIDSlapTake" value="<?php echo $dsatz["userID"]?>"><?php echo $dsatz["userName"];
         echo " (";
-        $username = $dsatz["userName"];
-        EigenerKontostand($username);
+//        $username = $dsatz["userName"];
+        $userID = $dsatz["userID"];
+        EigenerKontostand($userID);
         echo ")";
         ?></option><?php
     }
@@ -112,16 +113,16 @@ function UserWahl()
     $con->close();
 }
 
-function transaction(string $operator, int $slaps, string $comment, string $userSlapGive, string $userSlapTake)
+function transaction(string $operator, int $slaps, string $comment, int $userIDSlapGive, int $userIDSlapTake)
 {
     if ($operator === "Payout")
     {
         $slaps = $slaps * -1;
     }
     global $con;
-        $ps = $con->prepare("INSERT INTO transaction (operator, slaps, comment, userSlapGive, userSlapTake) VALUES(?, ?, ?, ?, ?)");
+        $ps = $con->prepare("INSERT INTO transaction (operator, slaps, comment, userIDSlapGive, userIDSlapTake) VALUES(?, ?, ?, ?, ?)");
 //    $ps = $con->prepare("INSERT INTO transaction (Operator, Slaps, Comment, UserSlapGive, UserSlapTake) VALUES ?, ?, ?, ?, ?");
-    $ps->bind_param("sisss", $operator, $slaps, $comment, $userSlapGive, $userSlapTake);
+    $ps->bind_param("sisii", $operator, $slaps, $comment, $userIDSlapGive, $userIDSlapTake);
     $ps->execute();
     if ($ps->affected_rows > 0)
     {
@@ -135,6 +136,14 @@ function transaction(string $operator, int $slaps, string $comment, string $user
     $con->close();
 
 
+}
+
+function userSlapTakeDefinition($userIDSlapTake)
+{
+    global $con;
+    $res = $con->query("SELECT userName FROM user WHERE userID = '$userIDSlapTake'");
+    $userSlapTake = $res->fetch_array();
+    return $userSlapTake[0];
 }
 
 function initSession() {
