@@ -3,7 +3,7 @@
 include "db_connect.inc.php";
 
 
-function Login($UserName, $Password)
+function Login($userName, $password)
 {
 //    $UserName = $_POST["UserName"];
 //    $Password = $_POST["Password"];
@@ -14,18 +14,18 @@ function Login($UserName, $Password)
     {
         exit("Connection error occured");
     }
-        $ps = $con->prepare("SELECT UserName, Password FROM user WHERE UserName = ? AND Password = ?");
-        $ps->bind_param("ss", $_POST["UserName"], $_POST["Password"]);
+        $ps = $con->prepare("SELECT userName, password FROM user WHERE userName = ? AND password = ?");
+        $ps->bind_param("ss", $_POST["userName"], $_POST["password"]);
         $ps->execute();
-        $ps->bind_result($UserName, $Password);
+        $ps->bind_result($userName, $password);
         $ps->store_result();
         if ($ps->num_rows == 1)
         {
             $_SESSION["login"]="1";
-            echo "Good day, $UserName!<br>";
+            echo "Good day, $userName!<br>";
             echo "<br>";
             echo "<form action='main.php' method='post'>";
-            echo "<input type='hidden' hidden='hidden' name='UserName' value='$UserName'>";
+            echo "<input type='hidden' hidden='hidden' name='UserName' value='$userName'>";
             echo "<input type='submit' value='Check your Slap balance'>";
         }
         else
@@ -65,15 +65,15 @@ function Login($UserName, $Password)
 
 
 
-function Register($UserName, $Password)
+function Register($userName, $password)
 {
     global $con;
-    $ps = $con->prepare("INSERT INTO user(UserName, Password)VALUES (?, ?)");
-    $ps->bind_param("ss", $_POST["NewUserName"], $_POST["NewPassword"]);
+    $ps = $con->prepare("INSERT INTO user(userName, password)VALUES (?, ?)");
+    $ps->bind_param("ss", $_POST["newUserName"], $_POST["newPassword"]);
     $ps->execute();
     if ($ps->affected_rows > 0)
     {
-        echo "Hello there, $UserName!";
+        echo "Hello there, $userName!";
     }
     else
     {
@@ -82,10 +82,10 @@ function Register($UserName, $Password)
 }
 
 
-function EigenerKontostand($UserName)
+function EigenerKontostand($userName)
 {
     global $con;
-    $sql = "SELECT SUM(Slaps) AS Kontostand FROM transaction WHERE UserSlapTake = '$UserName'";
+    $sql = "SELECT SUM(slaps) AS Kontostand FROM transaction WHERE userSlapTake = '$userName'";
     $res = $con->query($sql);
     $dsatz = $res->fetch_assoc();
     echo $dsatz["Kontostand"];
@@ -96,14 +96,14 @@ function EigenerKontostand($UserName)
 function UserWahl()
 {
     global $con;
-    $sql = "SELECT UserName FROM user";
+    $sql = "SELECT userName FROM user";
     $res = $con->query($sql);
     while ($dsatz = $res->fetch_assoc())
     {
-?><option name="UserSlapTake" value="<?php echo $dsatz["UserName"]?>"><?php echo $dsatz["UserName"];
+?><option name="userSlapTake" value="<?php echo $dsatz["userName"]?>"><?php echo $dsatz["userName"];
         echo " (";
-        $Username = $dsatz["UserName"];
-        EigenerKontostand($Username);
+        $username = $dsatz["userName"];
+        EigenerKontostand($username);
         echo ")";
         ?></option><?php
     }
@@ -119,7 +119,7 @@ function transaction(string $operator, int $slaps, string $comment, string $user
         $slaps = $slaps * -1;
     }
     global $con;
-        $ps = $con->prepare("INSERT INTO transaction (Operator, Slaps, Comment, UserSlapGive, UserSlapTake) VALUES(?, ?, ?, ?, ?)");
+        $ps = $con->prepare("INSERT INTO transaction (operator, slaps, comment, userSlapGive, userSlapTake) VALUES(?, ?, ?, ?, ?)");
 //    $ps = $con->prepare("INSERT INTO transaction (Operator, Slaps, Comment, UserSlapGive, UserSlapTake) VALUES ?, ?, ?, ?, ?");
     $ps->bind_param("sisss", $operator, $slaps, $comment, $userSlapGive, $userSlapTake);
     $ps->execute();
@@ -169,10 +169,10 @@ function getSessionUserID() : int|null {
     return null;
 }
 
-function getUserID($UserName)
+function getUserID($userName)
 {
     global $con;
-    $res = $con->query("SELECT UserID FROM user WHERE UserName = '$UserName'");
+    $res = $con->query("SELECT userID FROM user WHERE userName = '$userName'");
     $userID = $res->fetch_array();
     return $userID[0];
 }

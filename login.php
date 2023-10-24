@@ -14,20 +14,20 @@
 <body>
 <h2>Login:</h2>
 <form action="login.php" method="post">
-    <input name="Login" value="2" hidden="hidden">
-    <p><input name="UserName"> Username</p>
-    <p><input name="Password" type="password"> Password</p>
+    <input name="login" value="2" hidden="hidden">
+    <p><input name="userName"> Username</p>
+    <p><input name="password" type="password"> Password</p>
     <p><input type="submit" value="Login"> <input type="reset"></p>
 </form>
 
 
 <br>
 <?php
-if (isset($_POST["Login"]) && $_POST["UserName"] && $_POST["Password"])
+if (isset($_POST["login"]) && $_POST["userName"] && $_POST["password"])
 {
-    Login($_POST["UserName"], $_POST["Password"]);
-    setSessionUserName($_POST["UserName"]);
-    setSessionUserID(getUserID($_POST["UserName"]));
+    Login($_POST["userName"], $_POST["password"]);
+    setSessionUserName($_POST["userName"]);
+    setSessionUserID(getUserID($_POST["userName"]));
 } else {
     echo "Login to proceed<br><br>";
 }
@@ -39,8 +39,8 @@ if (isset($_POST["Login"]) && $_POST["UserName"] && $_POST["Password"])
 <h2>Registrierung</h2>
 <form action="login.php" method="post">
     <input name="register" value="1" hidden="hidden">
-    <p><input name="NewUserName"> Username</p>
-    <p><input name="NewPassword" type="password"> Password</p>
+    <p><input name="newUserName"> Username</p>
+    <p><input name="newPassword" type="password"> Password</p>
     <p><input type="submit" value="Register"> <input type="reset"></p>
 </form>
 <br>
@@ -49,7 +49,7 @@ if (isset($_POST["Login"]) && $_POST["UserName"] && $_POST["Password"])
 
 
 if (isset($_POST["register"]))
-    Register($_POST["NewUserName"], $_POST["NewPassword"]);
+    Register($_POST["newUserName"], $_POST["newPassword"]);
 
 ?>
 </body>

@@ -35,16 +35,16 @@ if(!isset($_SESSION["login"]))
 <form action="main2.php" method="post">
 <?php echo "<input type='hidden' name='UserName' value='". getSessionUserName() ."'>";?>
             <input type="hidden" name="DB">
-    <p><label for="UserSlapTake">Choose your victim.</label></p>
-        <select name="UserSlapTake">
+    <p><label for="userSlapTake">Choose your victim.</label></p>
+        <select name="userSlapTake">
         <?php UserWahl();?>
         </select>
-    <br><br><p><label for="Comment">Reason?(Optional, sometimes you just have to)</label></p>
-    <textarea name="Comment" rows="5" cols="20" placeholder="This sucker ate my cookie! MINE!"></textarea><br>
-    <p><label for="Slaps">Amount of Slaps</label></p>
-    <input name="Slaps" size="1"><br>
-    <p><label for="Operator">Hitting or saving up?</label> </p>
-    <p><select name="Operator">
+    <br><br><p><label for="comment">Reason?(Optional, sometimes you just have to)</label></p>
+    <textarea name="comment" rows="5" cols="20" placeholder="This sucker ate my cookie! MINE!"></textarea><br>
+    <p><label for="slaps">Amount of Slaps</label></p>
+    <input name="slaps" size="1"><br>
+    <p><label for="operator">Hitting or saving up?</label> </p>
+    <p><select name="operator">
             <option value="Deposit"> Deposit</option>
             <option value="Payout"> Execute that Fucker</option>
         </select></p><br>

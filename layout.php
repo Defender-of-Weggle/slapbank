@@ -4,6 +4,15 @@
 <meta charset="utf-8">
 <title>Ze Slapbank</title>
 <style>
+    /* visited link */
+    .navbar a:visited {
+        color: red;
+    }
+
+    .navbar a:hover {
+        color: greenyellow;
+    }
+
     a.logout
     {
         position: fixed;
@@ -11,6 +20,7 @@
         right: 0;
         color: red;
     }
+
     ul.navbar {
     list-style-type: none;
     margin: 0;
@@ -19,6 +29,7 @@
     background-color: black;
         color: red;
         font-size: 120%;
+
     }
 
     .navbar li {
