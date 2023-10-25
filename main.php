@@ -15,6 +15,9 @@ include "layout.php";
 initSession();
 $userID = getSessionUserID();
 $userName = getSessionUserName();
+$contingent = getContingent($userID);
+$userRole = getUserRole($userID);
+$adding = formularOperatorAdding($userRole) ?? "";
 
 if(!isset($_SESSION["login"]))
 {
@@ -41,18 +44,17 @@ if(!isset($_SESSION["login"]))
         <?php UserWahl();?>
         </select>
     <br><br><p><label for="comment">Reason?(Optional, sometimes you just have to)</label></p>
-    <textarea name="comment" rows="5" cols="20" placeholder="This sucker ate my cookie! MINE!"></textarea><br>
+    <textarea name="comment" rows="5" cols="20" placeholder="This sucker ate my cookie! MINE!"></textarea><br><br>
     <p><label for="slaps">Amount of Slaps</label></p>
-    <input name="slaps" size="1"><br>
-    <p><label for="operator">Hitting or saving up?</label> </p>
+    <input name="slaps" size="1"><?php echo " $contingent left today"; ?><br><br>
+    <p><label for="operator">Type of transaction</label> </p>
     <p><select name="operator">
             <option value="Deposit"> Deposit</option>
-            <option value="Payout"> Execute that Fucker</option>
+            <?php echo $adding; ?>
         </select></p><br>
+
     <input type="submit" value="Slap it!"> <input type="reset">
 </form>
 <br><br>
-
-</form>
 </body>
 </html>

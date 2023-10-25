@@ -115,8 +115,19 @@ function UserWahl()
 
 function transaction(string $operator, int $slaps, string $comment, int $userIDSlapGive, int $userIDSlapTake)
 {
+    $victimBalance = EigenerKontostand($userIDSlapTake);
+    $contingent = getContingent($userIDSlapGive);
+    $slapsLeft = $contingent - $slaps;
+    if ($slaps > $contingent)
+    {
+        exit("Fuck you, your deposit limit for today is $contingent");
+    }
     if ($operator === "Payout")
     {
+        if ($slaps > $victimBalance)
+        {
+            exit("You cant slap someone into negative Balance!");
+        }
         $slaps = $slaps * -1;
     }
     global $con;
@@ -132,8 +143,13 @@ function transaction(string $operator, int $slaps, string $comment, int $userIDS
     {
         echo "An error occured, blyad!";
     }
-    $ps->close();
-    $con->close();
+
+    updateContingent($slapsLeft, $userIDSlapGive);
+
+//    $ps->close();
+//    $con->close();
+
+
 
 
 }
@@ -178,11 +194,51 @@ function getSessionUserID() : int|null {
     return null;
 }
 
-function getUserID($userName)
+function getUserID($userName): int
 {
     global $con;
     $res = $con->query("SELECT userID FROM user WHERE userName = '$userName'");
     $userID = $res->fetch_array();
     return $userID[0];
 }
+
+function getContingent($userID): int
+{
+    global $con;
+    $res = $con->query("SELECT contingent FROM user WHERE userID = '$userID'");
+    $contingent = $res->fetch_array();
+    return $contingent[0];
+}
+
+function getUserRole($userID): int
+{
+    global $con;
+    $res = $con->query("SELECT userRole FROM user WHERE userID = '$userID'");
+    $userRole = $res->fetch_array();
+    return $userRole[0];
+}
+
+function formularOperatorAdding(int $userRole): string
+{
+
+    if ($userRole === 1)
+    {
+        $adding = "";
+    }
+    elseif ($userRole === 2 || 3)
+    {
+        $adding = "<option value='Payout'> Execute that Fucker</option>";
+    }
+
+return $adding;
+}
+
+function updateContingent(int $slapsLeft,int $userIDSlapGive)
+{
+    global $con;
+    $con->query("UPDATE user SET contingent = '$slapsLeft' WHERE userID = '$userIDSlapGive'");
+    $con->close();
+}
+
+
 ?>
