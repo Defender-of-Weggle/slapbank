@@ -240,5 +240,37 @@ function updateContingent(int $slapsLeft,int $userIDSlapGive)
     $con->close();
 }
 
+function fetchNewsPosts()
+{
+    global $con;
+    $sql = "SELECT * FROM news";
+    $result = $con->query($sql);
+    while ($dsatz = $result->fetch_assoc())
+    {
+        $newsID = $dsatz["newsID"];
+        $userID = $dsatz["userID"];
+        $title = $dsatz["title"];
+        $content = $dsatz["content"];
+        $postDate = $dsatz["date"];
+        $postDate = new DateTime($postDate);
+
+        echo $newsID . $userID . $postDate->format("dD, d M Y H:i:s") . $title . $content;
+
+    }
+}
+
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -9,6 +9,18 @@
 include "db_connect.inc.php";
 date_default_timezone_set('Europe/Berlin');
 $timeStamp = date('d M Y H:i:s');
+
+
+$counterFilePath = "counter.txt";
+$counter = (file_exists($counterFilePath) ? file_get_contents($counterFilePath) : 0) + 1;
+file_put_contents($counterFilePath, $counter);
+
+$logDayPhrase = "__________________________________________ Day: " . $counter . " __________________________________________\n";
+$logFile = fopen("incomelog.txt", "a") or die("Unable to open File, blyad!");
+fwrite($logFile, $logDayPhrase);
+fclose($logFile);
+
+
 global $con;
 $sql = "SELECT contingent, userName, userID FROM user";
 $res = $con->query($sql);

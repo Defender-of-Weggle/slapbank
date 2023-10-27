@@ -44,7 +44,7 @@
 
 <ul class="navbar">
     <li><a href="main.php"> Main </a></li>
-    <li><a href="main.php"> News(coming soon) </a></li>
+    <li><a href="news.php"> News </a></li>
     <li><a class="logout" href="logout.php">Logout</a></li>
 </ul>
 
