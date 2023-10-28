@@ -240,22 +240,63 @@ function updateContingent(int $slapsLeft,int $userIDSlapGive)
     $con->close();
 }
 
+function getUserName($userID)
+{
+    global $con;
+    $result = $con->query("SELECT userName FROM user WHERE userID = '$userID'");
+    $userName = $result->fetch_array();
+    return $userName[0];
+}
+
 function fetchNewsPosts()
 {
     global $con;
-    $sql = "SELECT * FROM news";
+    $sql = "SELECT * FROM news ORDER BY date DESC ";
     $result = $con->query($sql);
     while ($dsatz = $result->fetch_assoc())
     {
+
         $newsID = $dsatz["newsID"];
         $userID = $dsatz["userID"];
         $title = $dsatz["title"];
         $content = $dsatz["content"];
         $postDate = $dsatz["date"];
         $postDate = new DateTime($postDate);
+        $userName = getUserName($userID);
 
-        echo $newsID . $userID . $postDate->format("dD, d M Y H:i:s") . $title . $content;
 
+        echo "<table class='newstable'>";
+
+        echo "<tr>";
+                echo "<td style='width: 10%'>Post Nr.: $newsID </td>";
+                echo "<td style='margin-left: 20px' 'width: 10%'>Autor: $userName </td>";
+                echo "<td style='font-size: 22px' 'text-align: center' 'width: 50%'>$title</td>";
+                echo "<td style='width: 30%'>" . $postDate->format("D, d M Y H:i:s") . "</td>";
+        echo "</tr>";
+        echo "<tr style='min-height: 100px'><td style=text-align: 'center' 'width: 80%' colspan='4'>$content</td></tr>";
+
+
+
+
+        echo "</table><br><br><br>";
+
+
+
+
+
+    }
+}
+
+
+function newPostSend($userID, $title, $content)
+{
+    global $con;
+    $ps = $con->prepare("INSERT INTO news (userID, title, content) VALUES(?, ?, ?)");
+    $ps->bind_param("iss", $userID, $title, $content);
+    $ps->execute();
+    if ($ps->affected_rows == 1)
+    {
+        echo "Upload was a fucking success";
     }
 }
 
