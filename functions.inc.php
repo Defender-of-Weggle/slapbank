@@ -88,7 +88,9 @@ function EigenerKontostand($userID)
     $sql = "SELECT SUM(slaps) AS Kontostand FROM transaction WHERE userIDSlapTake = '$userID'";
     $res = $con->query($sql);
     $dsatz = $res->fetch_assoc();
-    echo $dsatz["Kontostand"];
+//    echo $dsatz["Kontostand"];
+    $kontostand = $dsatz["Kontostand"];
+    return $kontostand;
 }
 
 
@@ -102,9 +104,10 @@ function UserWahl()
     {
 ?><option name="userIDSlapTake" value="<?php echo $dsatz["userID"]?>"><?php echo $dsatz["userName"];
         echo " (";
-//        $username = $dsatz["userName"];
+
         $userID = $dsatz["userID"];
-        EigenerKontostand($userID);
+        $kontostand = EigenerKontostand($userID);
+        echo $kontostand;
         echo ")";
         ?></option><?php
     }
@@ -126,9 +129,12 @@ function transaction(string $operator, int $slaps, string $comment, int $userIDS
     {
         if ($slaps > $victimBalance)
         {
-            exit("You cant slap someone into negative Balance!");
+            exit("You cant slap someone into negative Balance!$victimBalance ");
         }
-        $slaps = $slaps * -1;
+        else
+        {
+            $slaps = $slaps * -1;
+        }
     }
     global $con;
         $ps = $con->prepare("INSERT INTO transaction (operator, slaps, comment, userIDSlapGive, userIDSlapTake) VALUES(?, ?, ?, ?, ?)");
@@ -137,7 +143,7 @@ function transaction(string $operator, int $slaps, string $comment, int $userIDS
     $ps->execute();
     if ($ps->affected_rows > 0)
     {
-        echo "Transaction done, nice.<br><br>";
+        echo "Transaction done.<br><br>";
     }
     else
     {
@@ -300,7 +306,86 @@ function newPostSend($userID, $title, $content)
     }
 }
 
+function fetchLatestDeposit()
+{
+    global $con;
+    $sql = "SELECT * FROM transaction WHERE operator = 'Deposit' ORDER BY date DESC";
+    $result = $con->query($sql);
+    $latestDeposit = $result->fetch_array();
+    $dateOfDeposit = $latestDeposit[6];
+    $dateOfDeposit = new DateTime($dateOfDeposit);
+    $slapGiveName = getUserName($latestDeposit[4]);
+    $slapTakeName = getUserName($latestDeposit[5]);
 
+
+    echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
+    echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . $slapGiveName . " deposits " . $latestDeposit[2] . " Slaps to " . $slapTakeName;
+}
+
+function fetchLatestWithdrawal()
+{
+    global $con;
+    $sql = "SELECT * FROM transaction WHERE operator = 'Payout' ORDER BY date DESC";
+    $result = $con->query($sql);
+    $latestDeposit = $result->fetch_array();
+    $dateOfDeposit = $latestDeposit[6];
+    $dateOfDeposit = new DateTime($dateOfDeposit);
+    $slapGiveName = getUserName($latestDeposit[4]);
+    $slapTakeName = getUserName($latestDeposit[5]);
+    $slaps = $latestDeposit[2] * -1;
+
+
+    echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
+    echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . $slapGiveName . " slapped " . $slapTakeName . " " . $slaps . " times";
+}
+
+function fetchLatestPersonalDeposit($userID)
+{
+    global $con;
+    $sql = "SELECT * FROM transaction WHERE operator = 'Deposit' AND userIDSlapGive = '$userID' ORDER BY date DESC";
+    $result = $con->query($sql);
+    $latestDeposit = $result->fetch_array();
+    $dateOfDeposit = $latestDeposit[6];
+    $dateOfDeposit = new DateTime($dateOfDeposit);
+    $slapGiveName = getUserName($latestDeposit[4]);
+    $slapTakeName = getUserName($latestDeposit[5]);
+
+    if (empty($dateOfDeposit))
+    {
+        echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
+        echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "You" . " depositted " . $latestDeposit[2] . " Slaps to " . $slapTakeName;
+    }
+    else
+    {
+        echo "No deposit of you yet, change it!";
+    }
+}
+
+function fetchLatestPersonalWithdrawal($userID)
+{
+    global $con;
+    $sql = "SELECT * FROM transaction WHERE operator = 'Payout' AND userIDSlapGive = '$userID' ORDER BY date DESC";
+    $result = $con->query($sql);
+    $latestDeposit = $result->fetch_array();
+    $dateOfDeposit = $latestDeposit[6];
+    $dateOfDeposit = new DateTime($dateOfDeposit);
+    $slapGiveName = getUserName($latestDeposit[4]);
+    $slapTakeName = getUserName($latestDeposit[5]);
+    $slaps = $latestDeposit[2] * -1;
+
+    if (!empty($latestDeposit))
+    {
+
+        echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
+        echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "You" . " slapped " . $slapTakeName . " " . $slaps . " times";
+    }
+    else
+    {
+        echo "You didnt slap anyone yet :/";
+    }
+
+
+}
 ?>
 
 

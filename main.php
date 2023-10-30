@@ -19,7 +19,7 @@ $contingent = getContingent($userID);
 $userRole = getUserRole($userID);
 $adding = formularOperatorAdding($userRole) ?? "";
 
-if(!isset($_SESSION["login"]))
+if(!isset($userID))
 {
     echo "Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Zum Login'>";
     exit();
