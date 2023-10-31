@@ -13,17 +13,21 @@ include "functions.inc.php";
 include "layout.php";
 
 initSession();
+
+if(!isset($_SESSION["login"]))
+{
+    echo "<br><br>Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
+    exit();
+}
+
 $userID = getSessionUserID();
+
 $userName = getSessionUserName();
 $contingent = getContingent($userID);
 $userRole = getUserRole($userID);
 $adding = formularOperatorAdding($userRole) ?? "";
 
-if(!isset($userID))
-{
-    echo "Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Zum Login'>";
-    exit();
-}
+
 
 ?>
 <h1>Slap Balance:

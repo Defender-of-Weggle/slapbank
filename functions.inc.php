@@ -24,7 +24,7 @@ function Login($userName, $password)
             $_SESSION["login"]="1";
             echo "Good day, $userName!<br>";
             echo "<br>";
-            echo "<form action='main.php' method='post'>";
+            echo "<form action='index.php' method='post'>";
             echo "<input type='hidden' hidden='hidden' name='UserName' value='$userName'>";
             echo "<input type='submit' value='Check your Slap balance'>";
         }

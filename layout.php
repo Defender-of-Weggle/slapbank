@@ -27,25 +27,11 @@
         color: red;
     }
 
-    ul.navbar {
-        float: left;
-        position: fixed;
-        top: 0;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: black;
-        color: red;
-        font-size: 120%;
-
-    }
-
-    .navbar li {
-        float: left;
+    ul.navbar
+    {
         display: inline-block;
-        font-size: 20px;
-        padding: 20px;
+        width: 100%;
+        list-style-type: none;
     }
 
 
@@ -54,9 +40,9 @@
 </head>
 
 <ul class="navbar">
-    <li><a href="index.php"> Overview</a></li>
-    <li><a href="main.php"> Transaction </a></li>
-    <li><a href="news.php"> News </a></li>
+    <li><a class="navbar" href="index.php"> Overview </a></li>
+    <li><a class="navbar" href="main.php"> Transaction </a></li>
+    <li><a class="navbar" href="news.php"> News </a></li>
     <li><a class="logout" href="logout.php">Logout</a></li>
 </ul>
 

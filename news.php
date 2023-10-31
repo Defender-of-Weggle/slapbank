@@ -11,6 +11,13 @@
 include "functions.inc.php";
 include "layout.php";
 initSession();
+
+if(!isset($_SESSION["login"]))
+{
+    echo "<br><br>Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
+    exit();
+}
+
 $userID = getSessionUserID();
 $userName = getSessionUserName();
 $userRole = getUserRole($userID);
@@ -18,11 +25,6 @@ $title = $_POST["title"] ?? "";
 $content = $_POST["content"] ?? "";
 
 
-if(!isset($_SESSION["login"]))
-{
-    echo "Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Zum Login'>";
-    exit();
-}
 
 if (!empty($title))
 {

@@ -11,18 +11,24 @@
 include "functions.inc.php";
 include "layout.php";
 session_start ();
+
+if(!isset($_SESSION["login"]))
+{
+    echo "<br><br>Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
+    exit();
+}
+
+
 $userName = getSessionUserName();
+
+
 
 //print_R($_SESSION);
 //print_R($_POST);
 $userIDSlapTake = $_POST["userIDSlapTake"] ?? 'Unbekannter Nutzer';
 $slaps = $_POST["slaps"] ?? 0;
 $operator = $_POST["operator"] ?? "Deposit";
-if(!isset($_SESSION["login"]))
-{
-    echo "Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
-    exit();
-}
+
 if (isset($_POST["DB"]))
 {
     $operator = ($_POST["operator"]);

@@ -11,11 +11,23 @@
 include "functions.inc.php";
 include "layout.php";
 initSession();
-$userID = getSessionUserID();
-$userName = getSessionUserName();
-$contingent = getContingent($userID);
-$balance = EigenerKontostand($userID);
+$userID = getSessionUserID() ?? "";
+
+if(!isset($_SESSION["login"]))
+{
+    echo "<br><br>Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
+    exit();
+}
+
+$userName = getSessionUserName() ?? "";
+$contingent = getContingent($userID) ?? "n.a.";
+$balance = EigenerKontostand($userID) ?? "n.a.";
+
+
+
 ?>
+
+
 
 <div class="lastTransactions">
     Latest Transactions:<br><br>
