@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="utf-8">
-    <title>News</title>
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
 <?php
 include "functions.inc.php";
-include "layout.php";
+html_header('News');
+
 initSession();
 
 if(!isset($_SESSION["login"]))
@@ -32,7 +24,7 @@ newPostSend($userID, $title, $content);
 }
 
 
-if ($userRole === 3)
+if ($userRole === 1)
 {
     ?>
             <form action="news.php" method="post">
@@ -58,7 +50,5 @@ if ($userRole === 3)
 fetchNewsPosts();
 
 
-
+html_footer();
 ?>
-</body>
-</html>

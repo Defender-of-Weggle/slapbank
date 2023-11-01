@@ -99,24 +99,23 @@ h2
     color: chartreuse;
 }
 
-.lastTransactions
-{
+/* Create three equal columns that floats next to each other */
+.column {
     float: left;
-    width: 20%;
-    height: 100%;
-    text-align: left;
-    font-size: 15px;
-    margin-top: 50px;
-    margin-left: 10px;
-    position: absolute;
+    width: 33.33%;
+    padding: 15px;
 }
 
-.ownOverview
-{
-    width: 60%;
-    text-align: center;
-    margin-top: 50px;
-    position: relative;
+/* Clear floats after the columns */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
-
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+    .column {
+        width: 100%;
+    }
+}

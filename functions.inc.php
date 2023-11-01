@@ -227,11 +227,11 @@ function getUserRole($userID): int
 function formularOperatorAdding(int $userRole): string
 {
 
-    if ($userRole === 1)
+    if ($userRole === 3)
     {
         $adding = "";
     }
-    elseif ($userRole === 2 || 3)
+    elseif ($userRole === 1 || 2)
     {
         $adding = "<option value='Payout'> Execute that Fucker</option>";
     }
@@ -386,8 +386,85 @@ function fetchLatestPersonalWithdrawal($userID)
 
 
 }
-?>
 
+function getBirthdaysForIndex()
+{
+    global $con;
+    $sql = "SELECT userID, userName, birthday FROM user WHERE DAY(birthday) = DAY(CURRENT_DATE()) AND MONTH(birthday) = MONTH(CURRENT_DATE())";
+    $result = $con->query($sql);
+
+    // by michl
+    //return $result->fetch_all(MYSQLI_ASSOC);
+
+    if ($result->num_rows === 0) {
+        echo "No birthdays today, sucker";
+    }
+    ?>
+    <ul>
+        <?php
+    while ($dsatz = $result->fetch_assoc())
+    {
+        $userID = $dsatz["userID"];
+        $userName = $dsatz["userName"];
+        $age = getUserAge($userID);
+
+        echo "<li>";
+        echo "$userName turns $age today! Happy birthday!<br>";
+        echo "</li>";
+    }
+    ?>
+    </ul>
+    <?php
+}
+
+
+function getUserAge($userID)
+{
+    global $con;
+    $sql = "SELECT birthday FROM user WHERE userID = '$userID'";
+    $result = $con->query($sql);
+    $birthday = $result->fetch_array();
+    $birthday = $birthday[0];
+
+
+    date_default_timezone_set("Europe/Berlin");
+    $dateOfBirth = new DateTime($birthday);
+    $currentDate = new DateTime(date("Y") . "-" . date("m") . "-" . date("d"));
+    $interval = $currentDate->diff($dateOfBirth);
+
+    $age = $interval->format("%Y");
+    return $age;
+
+
+
+}
+
+
+function getSetting(string $key)
+{
+    global $con;
+
+    $sql = "SELECT `value` FROM settings WHERE `key` = 'incomeLimitationThreshold'";
+    $result = $con->query($sql);
+
+    if ($result->num_rows) {
+        return $result->fetch_column(0);
+    }
+
+    return null;
+}
+
+function html_header($title = 'Ze Slapbank'): void
+{
+    include __DIR__ . '/layout/header.php';
+}
+
+function html_footer(): void
+{
+    include __DIR__ . '/layout/footer.php';
+}
+
+?>
 
 
 

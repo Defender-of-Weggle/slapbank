@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="utf-8">
-    <Title>Schellenkontostand</Title>
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
 <?php
 include "functions.inc.php";
-include "layout.php";
+html_header('Schellenkontostand');
 session_start ();
 
 if(!isset($_SESSION["login"]))
@@ -62,5 +53,5 @@ if (isset($_POST["DB"]))
 <!--    <input type="submit" value="Logout">-->
 <!--</form>-->
 
-</body>
-</html>
+<?php
+html_footer();

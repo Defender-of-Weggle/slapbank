@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="de" xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="utf-8">
-    <Title>Slap Balance</Title>
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head>
-<body>
 <?php
 include "functions.inc.php";
-include "layout.php";
+html_header('Slap Balance');
 
 initSession();
 
@@ -59,6 +49,6 @@ $adding = formularOperatorAdding($userRole) ?? "";
 
     <input type="submit" value="Slap it!"> <input type="reset">
 </form>
-<br><br>
-</body>
-</html>
+
+<?php
+html_footer();

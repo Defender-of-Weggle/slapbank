@@ -1,23 +1,26 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="utf-8">
-    <title>Overview</title>
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
 <?php
 include "functions.inc.php";
-include "layout.php";
+
+html_header('Overview');
+?>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+<?php
+
 initSession();
-$userID = getSessionUserID() ?? "";
 
 if(!isset($_SESSION["login"]))
 {
     echo "<br><br>Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
     exit();
 }
+
+$userID = getSessionUserID() ?? "";
+
+
 
 $userName = getSessionUserName() ?? "";
 $contingent = getContingent($userID) ?? "n.a.";
@@ -29,17 +32,18 @@ $balance = EigenerKontostand($userID) ?? "n.a.";
 
 
 
-<div class="lastTransactions">
-    Latest Transactions:<br><br>
-    Deposit: <br>
+<div class="row">
+    <div class="column">
+    <p>Latest Transactions:</p>
+    <p>Deposit: </p>
 <?php fetchLatestDeposit() ?>
     <br><br>
-    Withdrawal: <br>
+    <p>Withdrawal: </p>>
     <?php fetchLatestWithdrawal() ?>
 
 </div>
-
-<h1> Your own Stats:</h1><br>
+<div class="column">
+<h1> Your own Stats:</h1>
 <p>Your limit for today is <?php echo $contingent; ?></p>
 <p>Your Slap balance is: <?php echo $balance; ?></p>
 
@@ -48,12 +52,16 @@ latest deposit:<br>
 Latest Withdrawal:<br>
 <?php @fetchLatestPersonalWithdrawal($userID) ?>
 <br><br>
+</div>
+
+<div class="column">
+    <p>Birthdays:</p>
+    <?php getBirthdaysForIndex(); ?>
 
 
+
+    </div>
+</div>
 
 <?php
-?>
-</body>
-
-
-</html>
+html_footer();

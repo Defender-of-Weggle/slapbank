@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="utf-8">
-    <title>Income Blyad</title>
-</head>
-<body>
 <?php
+include 'functions.inc.php';
 include "db_connect.inc.php";
+
+html_header('Income Blyad');
+
 date_default_timezone_set('Europe/Berlin');
 $timeStamp = date('d M Y H:i:s');
 
@@ -24,18 +21,24 @@ fclose($logFile);
 global $con;
 $sql = "SELECT contingent, userName, userID FROM user";
 $res = $con->query($sql);
+
+$incomeLimitationThreshold = getSetting('incomeLimitationThreshold');
+$incomeStandard = getSetting('incomeStandard');
+$incomeAfterLimitation = getSetting('incomeAfterLimitation');
+
 while ($dsatz = $res->fetch_assoc())
 {
     $logParagraph = $timeStamp . " ID: " . $dsatz["userID"] . " Username: " . $dsatz["userName"] . " Contingent old to new: " . $dsatz["contingent"] . " => ";
 
     $userID = $dsatz["userID"];
+
+
+
     $update = match (true)
     {
-        $dsatz["contingent"]>30 => $update = $dsatz["contingent"] + 3,
+        $dsatz["contingent"]> $incomeLimitationThreshold => $update = $incomeAfterLimitation,
 
-        $dsatz["contingent"]<=30 => $update = $dsatz["contingent"] + 10,
-
-        default => $update = $dsatz["contingent"] + 5
+        default => $update = $incomeStandard
 
     };
     $logParagraph .= $update . "\n";
@@ -48,9 +51,6 @@ while ($dsatz = $res->fetch_assoc())
 }
 
 
-
-
+html_footer();
 
 ?>
-</body>
-</html>

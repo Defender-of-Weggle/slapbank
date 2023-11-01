@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <link rel="stylesheet" href="stylesheet.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php
-    session_start();
-    include "functions.inc.php";
+<?php
+include "functions.inc.php";
+html_header('Login or Register');
+session_start();
+?>
 
-    ?>
-    <meta charset="utf-8">
-    <title>Login or Register</title>
-</head>
-<body>
 <h2>Login:</h2>
 <form action="login.php" method="post">
     <input name="login" value="2" hidden="hidden">
@@ -51,6 +43,5 @@ if (isset($_POST["login"]) && $_POST["userName"] && $_POST["password"])
 if (isset($_POST["register"]))
     Register($_POST["newUserName"], $_POST["newPassword"]);
 
+html_footer();
 ?>
-</body>
-</html>
