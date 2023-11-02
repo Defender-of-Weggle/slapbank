@@ -15,7 +15,8 @@ $userID = getSessionUserID();
 $userName = getSessionUserName();
 $contingent = getContingent($userID);
 $userRole = getUserRole($userID);
-$adding = formularOperatorAdding($userRole) ?? "";
+$tempUserRole = getTempUserRole($userID);
+$adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
 
 
 
@@ -30,7 +31,7 @@ $adding = formularOperatorAdding($userRole) ?? "";
 </h2>
 
 
-<form action="main2.php" method="post">
+<form action="transaction_result.php" method="post">
 <?php echo "<input type='hidden' name='UserName' value='". getSessionUserName() ."'>";?>
             <input type="hidden" name="DB">
     <p><label for="userSlapTake">Choose your victim.</label></p>

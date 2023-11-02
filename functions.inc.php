@@ -54,7 +54,7 @@ function Login($userName, $password)
 //    {
 //        echo "Willkommen $UserName!<br>";
 //            echo "<br>";
-//            echo "<form action='main.php' method='post'>";
+//            echo "<form action='transaction.php' method='post'>";
 //            echo "<input type='hidden' hidden='hidden' value='$UserName'";
 //            echo "<input type='submit' value='Zum Schellenkonto'>";
 //    }
@@ -219,24 +219,37 @@ function getContingent($userID): int
 function getUserRole($userID): int
 {
     global $con;
-    $res = $con->query("SELECT userRole FROM user WHERE userID = '$userID'");
+    $res = $con->query("SELECT userRole, tempUserRole FROM user WHERE userID = '$userID'");
     $userRole = $res->fetch_array();
     return $userRole[0];
 }
 
-function formularOperatorAdding(int $userRole): string
+function getTempUserRole($userID): int
+{
+    global $con;
+    $res = $con->query("SELECT tempUserRole FROM user WHERE userID = '$userID'");
+    $tempUserRole = $res->fetch_array();
+    return $tempUserRole[0];
+}
+
+
+
+function formularOperatorAdding(int $userRole, int $tempUserRole): string
 {
 
-    if ($userRole === 3)
+    $adding = match (true)
     {
-        $adding = "";
-    }
-    elseif ($userRole === 1 || 2)
-    {
-        $adding = "<option value='Payout'> Execute that Fucker</option>";
-    }
+        $userRole === 1 => "<option value='Payout'> Execute that Fucker</option>",
 
-return $adding;
+        $userRole === 2 => "<option value='Payout'> Execute that Fucker</option>",
+
+        $tempUserRole === 2 => "<option value='Payout'> Execute that Fucker</option>",
+
+        default => "",
+    };
+    return $adding;
+
+
 }
 
 function updateContingent(int $slapsLeft,int $userIDSlapGive)
@@ -350,7 +363,7 @@ function fetchLatestPersonalDeposit($userID)
     $slapGiveName = getUserName($latestDeposit[4]);
     $slapTakeName = getUserName($latestDeposit[5]);
 
-    if (empty($dateOfDeposit))
+    if (!empty($dateOfDeposit))
     {
         echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
         echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "You" . " depositted " . $latestDeposit[2] . " Slaps to " . $slapTakeName;
@@ -462,6 +475,11 @@ function html_header($title = 'Ze Slapbank'): void
 function html_footer(): void
 {
     include __DIR__ . '/layout/footer.php';
+}
+
+function userNextToLogout($userName = 'Unknown'): void
+{
+    include __DIR__ . '/layout/header.php';
 }
 
 ?>

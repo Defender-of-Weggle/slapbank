@@ -42,7 +42,7 @@ if (isset($_POST["DB"]))
 }
 ?>
 
-<form action="main.php">
+<form action="transaction.php">
     <input type="hidden" hidden="hidden" value="<?php $userName?>">
     <input type="submit" value="Back to the Slapcave">
 </form>

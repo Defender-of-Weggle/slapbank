@@ -54,11 +54,13 @@
 </head>
 <body>
 
+
+
 <nav>
     <ul>
         <li><a class="left" href="index.php"> Overview </a></li>
-        <li><a class="left" href="main.php"> Transaction </a></li>
+        <li><a class="left" href="transaction.php"> Transaction </a></li>
         <li><a class="left" href="news.php"> News </a></li>
-        <li><a style="float:right" href="logout.php">Logout  </a></li>
+        <li><a style="float:right" href="logout.php">Logout </a></li>
     </ul>
 </nav>
