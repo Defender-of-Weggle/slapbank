@@ -1,7 +1,7 @@
 <?php
 include "functions.inc.php";
 html_header('Login or Register');
-session_start();
+//session_start();
 ?>
 
 <h2>Login:</h2>

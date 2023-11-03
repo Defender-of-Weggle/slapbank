@@ -431,26 +431,26 @@ function getBirthdaysForIndex()
 }
 
 
-function getUserAge($userID)
-{
-    global $con;
-    $sql = "SELECT birthday FROM user WHERE userID = '$userID'";
-    $result = $con->query($sql);
-    $birthday = $result->fetch_array();
-    $birthday = $birthday[0];
-
-
-    date_default_timezone_set("Europe/Berlin");
-    $dateOfBirth = new DateTime($birthday);
-    $currentDate = new DateTime(date("Y") . "-" . date("m") . "-" . date("d"));
-    $interval = $currentDate->diff($dateOfBirth);
-
-    $age = $interval->format("%Y");
-    return $age;
-
-
-
-}
+//function getUserAge($userID)
+//{
+//    global $con;
+//    $sql = "SELECT birthday FROM user WHERE userID = '$userID'";
+//    $result = $con->query($sql);
+//    $birthday = $result->fetch_array();
+//    $birthday = $birthday[0];
+//
+//
+//    date_default_timezone_set("Europe/Berlin");
+//    $dateOfBirth = new DateTime($birthday);
+//    $currentDate = new DateTime(date("Y") . "-" . date("m") . "-" . date("d"));
+//    $interval = $currentDate->diff($dateOfBirth);
+//
+//    $age = $interval->format("%Y");
+//    return $age;
+//
+//
+//
+//}
 
 
 function getSetting(string $key)
@@ -477,10 +477,69 @@ function html_footer(): void
     include __DIR__ . '/layout/footer.php';
 }
 
-function userNextToLogout($userName = 'Unknown'): void
+function userNextToLogout($profileName = 'Unknown'): void
 {
     include __DIR__ . '/layout/header.php';
 }
+
+function getUserAge($userID)
+{
+    global $con;
+    $sql = "SELECT TIMESTAMPDIFF (YEAR, birthday, CURDATE()) AS age FROM user WHERE userID = '$userID'";
+    $result = $con->query($sql);
+    $age = $result->fetch_assoc();
+    return $age["age"];
+
+}
+
+function getUserProfileText($userID)
+{
+    global $con;
+    $sql = "SELECT profileText FROM user WHERE userID = '$userID'";
+    $result = $con->query($sql);
+    $profileText = $result->fetch_assoc();
+    return $profileText["profileText"];
+}
+
+function hideAge($userID)
+{
+    global $con;
+    $sql = "SELECT hideAge FROM user WHERE userID = '$userID'";
+    $result = $con->query($sql);
+    $hideAge = $result->fetch_assoc();
+    return $hideAge["hideAge"];
+}
+
+function getAvailableUserTitles($userID)
+{
+    $balance = EigenerKontostand($userID);
+
+
+    global $con;
+    $sql = "SELECT SUM(slaps) AS slapsGiven FROM transaction WHERE userIDSlapGive = '$userID' AND operator = 'Payout'";
+    $result = $con->query($sql);
+    $slapsGiven = $result->fetch_assoc();
+    $amountOfPayouts = $con->affected_rows;
+    $slapsGiven = $slapsGiven["slapsGiven"];
+
+    $sql = "SELECT SUM(slaps) AS slapsGifted FROM transaction WHERE userIDSlapGive = '$userID' AND operator = 'Deposit'";
+    $result = $con->query($sql);
+    $slapsDeposited = $result->fetch_assoc();
+    $amountOfDeposits = $con->affected_rows;
+    $slapsDeposited = $slapsDeposited["slapsGifted"];
+
+
+}
+
+function getUserTitle($userID)
+{
+    global $con;
+    $sql = "SELECT userTitle FROM user WHERE userID = '$userID'";
+    $result = $con->query($sql);
+    $userTitle = $result->fetch_assoc();
+    return $userTitle["userTitle"];
+}
+
 
 ?>
 
