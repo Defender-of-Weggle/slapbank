@@ -1,7 +1,7 @@
 <?php
 include "functions.inc.php";
 html_header('Schellenkontostand');
-session_start ();
+//session_start ();
 
 if(!isset($_SESSION["login"]))
 {

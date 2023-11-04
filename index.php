@@ -56,6 +56,10 @@ Latest Withdrawal:<br>
 <div class="column">
     <p>Birthdays:</p>
     <?php getBirthdaysForIndex(); ?>
+    <form action="profile.php">
+        <input type="hidden" name="profileID" value="8">
+        <input type="submit">
+    </form>
 
 
 

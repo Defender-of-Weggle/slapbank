@@ -16,14 +16,14 @@ if(!isset($_SESSION["login"]))
     echo "<br><br>Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
     exit();
 }
-
+$profileID = $_GET["profileID"];
 $userID = getSessionUserID();
-$userName = getSessionUserName();
-$userRole = getUserRole($userID);
-$age = getUserAge($userID);
-$profileText = getUserProfileText($userID);
-$hideAge = hideAge($userID);
-$userTitle = getUserTitle($userID);
+$userName = getUserName($profileID);
+$userRole = getUserRole($profileID);
+$age = getUserAge($profileID);
+$profileText = getUserProfileText($profileID);
+$hideAge = hideAge($profileID);
+$userTitle = getUserTitle($profileID);
 
 ?>
 <div class="row">
@@ -78,7 +78,7 @@ $userTitle = getUserTitle($userID);
 
                     <div class="column">
                         <h3>Some Statistics of you</h3>
-
+                    <?php getAvailableUserTitles($profileID); ?>
                     </div>
     </div>
 

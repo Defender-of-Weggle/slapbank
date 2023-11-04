@@ -519,15 +519,40 @@ function getAvailableUserTitles($userID)
     $sql = "SELECT SUM(slaps) AS slapsGiven FROM transaction WHERE userIDSlapGive = '$userID' AND operator = 'Payout'";
     $result = $con->query($sql);
     $slapsGiven = $result->fetch_assoc();
-    $amountOfPayouts = $con->affected_rows;
+
     $slapsGiven = $slapsGiven["slapsGiven"];
+    $slapsGiven = $slapsGiven * -1;
+
+    $sql = "SELECT COUNT(*) FROM transaction WHERE userIDSlapGive = '$userID' AND operator = 'Payout'";
+    $result = $con->query($sql);
+    $amountOfPayouts = $result->fetch_column(0);
+
 
     $sql = "SELECT SUM(slaps) AS slapsGifted FROM transaction WHERE userIDSlapGive = '$userID' AND operator = 'Deposit'";
     $result = $con->query($sql);
     $slapsDeposited = $result->fetch_assoc();
-    $amountOfDeposits = $con->affected_rows;
     $slapsDeposited = $slapsDeposited["slapsGifted"];
 
+    $sql = "SELECT COUNT(*) FROM transaction WHERE userIDSlapGive = '$userID' AND operator = 'Deposit'";
+    $result = $con->query($sql);
+    $amountOfDeposits = $result->fetch_column(0);
+
+
+    switch (true){
+        case $slapsDeposited > 400 == $titleForDeposits = "Generous Gifter";
+        case $slapsDeposited > 600 == $titleForDeposits = "";
+        case $amountOfDeposits > 10 == $titleForAmountOfDeposits = "";
+        case $amountOfDeposits > 50 == $titleForAmountOfDeposits = "";
+        case $slapsGiven > 50 == $titleForGivenSlaps = "Slaps like a Kid";
+        case $slapsGiven > 50 == $titleForGivenSlaps = "";
+        case $amountOfPayouts > 10 == $titleForAmountOfPayouts = "fresh meat, needs beating";
+        case $amountOfPayouts > 50 == $titleForAmountOfPayouts = "";
+        case $balance > 100 == $titleForBalance = "Hoarder of Slaps";
+        case $balance > 200 == $titleForBalance = "The Jew of Slaps";
+    }
+//    http://localhost/slap/profile.php?profileID=8
+
+    echo "Slaps deposited<br>" . $slapsDeposited . "<br>amount of deposits<br>" . $amountOfDeposits . "<br>slaps given<br>" . $slapsGiven . "<br>amount of payouts<br>" . $amountOfPayouts . "<br>balance<br>" . $balance;
 
 }
 
