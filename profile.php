@@ -1,6 +1,7 @@
 <?php
+
 include "functions.inc.php";
-html_header('News');
+html_header('Profile');
 ?>
     <style>
         * {
@@ -9,21 +10,124 @@ html_header('News');
     </style>
 <?php
 
-initSession();
 
 if(!isset($_SESSION["login"]))
 {
     echo "<br><br>Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
     exit();
 }
-$profileID = $_GET["profileID"];
+$profileID = $_GET["profileID"] ?? $userID = getSessionUserID();
 $userID = getSessionUserID();
 $userName = getUserName($profileID);
 $userRole = getUserRole($profileID);
 $age = getUserAge($profileID);
 $profileText = getUserProfileText($profileID);
+$userTitle = $_POST["selectTitle"] ?? getUserTitle($profileID);
+$userMail = getUserMail($userID) ?? "";
+$userBirthday = getUserBirthday($userID);
+$upload = $_POST["upload"] ?? null;
+$oldPassword = $_POST["oldPassword"] ?? "";
+$newPassword = $_POST["newPassword"] ?? "";
+$newUserBirthday = $_POST["newUserBirthday"] ?? "";
+$newUserProfilText = $_POST["newProfileText"] ?? "";
+$newUserMail = $_POST["newMailAdress"] ?? "";
+
 $hideAge = hideAge($profileID);
-$userTitle = getUserTitle($profileID);
+if (isset($_POST["changeUsername"])) {
+    $hideAge = $_POST["hideAge"] ?? 0;
+}
+
+
+
+if (isset($_POST["calloutRandomSlapper"]))
+{
+    calloutRandomSlapper($userID, $userRole);
+    echo "Random Slapper was added";
+}
+
+if (isset($_POST["changePassword"]))
+{
+    updatePassword($oldPassword, $newPassword, $userID);
+    echo "Updating Password successful";
+}
+
+if (isset($_POST["newUserBirthday"]))
+{
+    updateUserBirthday($userID, $newUserBirthday);
+    echo "Birthday has been updated";
+}
+
+if (isset($_POST["changeUsername"]))
+{
+    $newUserName = $_POST["newUserName"];
+    updateUserName($userID, $newUserName, $hideAge, $userTitle);
+    echo "Username updated";
+}
+if (isset($_POST["newProfileText"]))
+{
+    updateProfileText($userID, $newUserProfilText);
+    echo "Profiletext updated, blyad";
+}
+
+if (isset($_POST["updateMail"]))
+{
+    updateUserMail($userID, $newUserMail);
+    echo "Mail adress updated";
+}
+
+
+if (!empty($upload))
+{
+    $target_dir = "../slap/profilePics/";
+    $target_file = $target_dir . basename($_FILES["ava"]["name"]);
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+// Check if image file is a actual image or fake image
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["ava"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            echo "File is not an image.";
+            $uploadOk = 0;
+        }
+    }
+
+
+// Check file size
+    if ($_FILES["ava"]["size"] > 500000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+
+// Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+        && $imageFileType != "gif" ) {
+        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        $uploadOk = 0;
+    }
+
+// Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+//    $_FILES["ava"] = $userID;
+    } else {
+        $name = $userID . "." . $imageFileType;
+        $target_file = $target_dir . $name;
+        if (move_uploaded_file($_FILES["ava"]["tmp_name"], $target_file)) {
+            echo "The file ". htmlspecialchars( basename( $_FILES["ava"]["name"])). " has been uploaded.";
+//            (move_uploaded_file($_FILES["ava"]["tmp_name"], $name));
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+
+
+}
+
 
 ?>
 <div class="row">
@@ -59,34 +163,124 @@ $userTitle = getUserTitle($profileID);
     <div class="column">
 
 
-        <img height="300px" width="400px" style="object-fit: cover" src="../slap/profilePics/default.jpg" alt="Profile Picture">
+<!--        <img height="300px" width="400px" style="object-fit: cover" src="../slap/profilePics/--><?php //$profileID ?><!--.gif" alt="Profile Picture">-->
+        <?php
+        $profilePicture = match (true){
+            file_exists("../slap/profilePics/$profileID.png") => $profilePicture = "<img height='300px' width='400px' style='object-fit: cover' src='../slap/profilePics/$profileID.png' alt='Profile Picture'>",
+            file_exists("../slap/profilePics/$profileID.jpg") => $profilePicture = "<img height='300px' width='400px' style='object-fit: cover' src='../slap/profilePics/$profileID.jpg' alt='Profile Picture'>",
+            file_exists("../slap/profilePics/$profileID.gif") => $profilePicture = "<img height='300px' width='400px' style='object-fit: cover' src='../slap/profilePics/$profileID.gif' alt='Profile Picture'>",
+            file_exists("../slap/profilePics/$profileID.jpeg") => $profilePicture = "<img height='300px' width='400px' style='object-fit: cover' src='../slap/profilePics/$profileID.jpeg' alt='Profile Picture'>",
+            default => $profilePicture = "<img height='300px' width='400px' style='object-fit: cover' src='../slap/profilePics/default.jpg' alt='Profile Picture'>"
 
+                };
 
-        <h3>About me:</h3>
+        echo $profilePicture;
+        ?>
+
+        <h3>About me, <?php echo $userName ?>:</h3>
         <p>
             <?php
-            if (!empty($profileText)) {
-                echo $profileText;
-            }
-            else
-            {
-                echo "Nothing to be told, yet";
-            }
+            $profileText = match (true) {
+                $profileID === $userID => $aboutMe = "<form action='profile.php' method='post'><textarea rows='10' cols='40' placeholder='$profileText' name='newProfileText'></textarea><br><input type='submit'></form>",
+                empty($profileText) => $aboutMe = "Nothing to be told, yet",
+                default => $aboutMe = $profileText
+
+            };
+            echo $aboutMe;
+
+//            if (!empty($profileText)) {
+//                echo $profileText;
+//            }
+//            else
+//            {
+//                echo "Nothing to be told, yet";
+//            }
             ?>
         </p>
     </div>
 
                     <div class="column">
                         <h3>Some Statistics of you</h3>
-                    <?php getAvailableUserTitles($profileID); ?>
+                    <?php getPersonalStatistics($profileID); ?>
                     </div>
     </div>
+<?php
+if ($profileID === $userID){
+
+
+?>
+
+<div class="row">
+    <div class="column">
+        <h3>Edit Profile:</h3>
+        <p>Change Avatar:</p>
+        <form action="profile.php" method="post" enctype="multipart/form-data">
+            <input type="hidden" hidden="hidden" value="upload" name="upload" id="upload">
+            <input type="file" name="ava" id="ava"><br><br>
+            <input type="submit">
+        </form>
+        <br><br>
+        <p>Change Name:</p>
+        <form action="profile.php" method="post">
+            <input type="hidden" name="changeUsername" value="1">
+            <input type="text" value="<?php echo $userName ?>" name="newUserName"><br><br>
+            hide age?
+            <input type="checkbox" name="hideAge" value="1" <?php echo ($hideAge ? 'checked' : '')?>>
+            <br>
+            <p>Change title</p>
+           <p>
+               <select name="selectTitle">
+                <?php getAvailableUserTitlesSelectOptions($userID, $userTitle); ?>
+            </select>
+           </p>
+            <input type="submit">
+        </form>
+    </div>
+    <div class="column">
+    <p>Change/set Mail:</p>
+    <form action="profile.php" method="post" name="updateMail">
+        <input name="newMailAdress" size="15" type="email" value="<?php echo $userMail; ?>"><br>
+        <input type="submit">
+    </form>
+    <br><br>
+    <p>Update/set Birthday:</p>
+    <form action="profile.php" method="post" name="updateBirthday">
+        <input type="date" value="<?php $userBirthday ?>" name="newUserBirthday"><br>
+        <input type="submit"><br>
+    </form>
+    </div>
+    <div class="column">
+        <p>Change your password:</p>
+        <form action="profile.php" name="changePassword" method="post">
+            <input type="password" name="oldPassword"> Old Password<br>
+            <input type="password" name="newPassword"> New Password<br><br>
+            <input type="submit"><br><br>
+        </form>
+
+        <?php
+        if ($userRole === 1)
+        {
+            ?>
+                Add random slapper for the day
+            <form action="profile.php" method="post" name="calloutRandomSlapper">
+                <input type="submit">
+            </form>
+
+            <?php
+        }
+        ?>
+
+
+    </div>
+</div>
 
 
 
 
 
-
+<?php
+}
+    ?>
 
 
 

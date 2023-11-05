@@ -2,3 +2,7 @@
 counter.txt
 daycounter.txt
 incomelog.txt
+
+#ignoriere alle bilder bis auf das default.jpg
+profilePics/*
+!profilePics/default.jpg

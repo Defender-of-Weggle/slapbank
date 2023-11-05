@@ -332,7 +332,7 @@ function fetchLatestDeposit()
 
 
     echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
-    echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . $slapGiveName . " deposits " . $latestDeposit[2] . " Slaps to " . $slapTakeName;
+    echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "<a href='profile.php?profileID=$latestDeposit[4]'>$slapGiveName</a>" . " deposits " . $latestDeposit[2] . " Slaps to " . "<a href='profile.php?profileID=$latestDeposit[5]'>$slapTakeName</a>";
 }
 
 function fetchLatestWithdrawal()
@@ -349,7 +349,7 @@ function fetchLatestWithdrawal()
 
 
     echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
-    echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . $slapGiveName . " slapped " . $slapTakeName . " " . $slaps . " times";
+    echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "<a href='profile.php?profileID=$latestDeposit[4]'>$slapGiveName</a>" . " slapped " . "<a href='profile.php?profileID=$latestDeposit[5]'>$slapTakeName</a>" . " " . $slaps . " times";
 }
 
 function fetchLatestPersonalDeposit($userID)
@@ -403,7 +403,7 @@ function fetchLatestPersonalWithdrawal($userID)
 function getBirthdaysForIndex()
 {
     global $con;
-    $sql = "SELECT userID, userName, birthday FROM user WHERE DAY(birthday) = DAY(CURRENT_DATE()) AND MONTH(birthday) = MONTH(CURRENT_DATE())";
+    $sql = "SELECT userID, userName, birthday, hideAge FROM user WHERE DAY(birthday) = DAY(CURRENT_DATE()) AND MONTH(birthday) = MONTH(CURRENT_DATE())";
     $result = $con->query($sql);
 
     // by michl
@@ -419,11 +419,18 @@ function getBirthdaysForIndex()
     {
         $userID = $dsatz["userID"];
         $userName = $dsatz["userName"];
+        $hideAge = $dsatz["hideAge"];
         $age = getUserAge($userID);
+        if ($hideAge == 1) {
 
-        echo "<li>";
-        echo "$userName turns $age today! Happy birthday!<br>";
-        echo "</li>";
+            echo "- <a href='profile.php?profileID=$userID'>$userName</a> turns...uhm, old enough i guess. Happy birthday retard!<br><br>";
+
+        }
+        else {
+
+            echo "- <a href='profile.php?profileID=$userID'>$userName</a> turns $age today! Happy birthday scumbag!<br><br>";
+
+        }
     }
     ?>
     </ul>
@@ -457,7 +464,7 @@ function getSetting(string $key)
 {
     global $con;
 
-    $sql = "SELECT `value` FROM settings WHERE `key` = 'incomeLimitationThreshold'";
+    $sql = "SELECT `value` FROM settings WHERE `key` = '$key'";
     $result = $con->query($sql);
 
     if ($result->num_rows) {
@@ -510,7 +517,7 @@ function hideAge($userID)
     return $hideAge["hideAge"];
 }
 
-function getAvailableUserTitles($userID)
+function getPersonalStatistics($userID)
 {
     $balance = EigenerKontostand($userID);
 
@@ -565,13 +572,235 @@ function getUserTitle($userID)
     return $userTitle["userTitle"];
 }
 
+function updateUserName($userID, $newUserName, $hideAge, $newTitle)
+{
+    global $con;
+    $ps = $con->prepare("UPDATE user SET username = ?, hideage = ?, userTitle = ? WHERE userID = ?");
+    $ps->bind_param("sisi", $newUserName, $hideAge, $newTitle, $userID);
+    $ps->execute();
+}
+
+function updateProfileText($userID, $newProfileText)
+{
+    global $con;
+    $ps = $con->prepare("UPDATE user SET profileText = ? WHERE userID = ?");
+    $ps->bind_param("si", $newProfileText, $userID);
+    $ps->execute();
+}
+
+function getUserMail($userID)
+{
+    global $con;
+    $sql = "SELECT email FROM user WHERE userID = '$userID'";
+    $result = $con->query($sql);
+    $userMail = $result->fetch_assoc();
+    return $userMail["email"];
+
+}
+
+function updateUserMail($userID, $newUserMail)
+{
+    global $con;
+    $ps = $con->prepare("UPDATE user set email = ? WHERE userID = ?");
+    $ps->bind_param("si", $newUserMail, $userID);
+    $ps->execute();
+}
+
+function getUserBirthday($userID)
+{
+    global $con;
+    $sql = "SELECT birthday FROM user WHERE userID = '$userID'";
+    $result = $con->query($sql);
+    $userBirthday = $result->fetch_assoc();
+    $userBirthday = $userBirthday["birthday"];
+    $userBirthday = new DateTime($userBirthday);
+    $userBirthday->format("d/m/y");
+    return $userBirthday;
+}
+
+function updateUserBirthday($userID, $newUserBirthday)
+{
+    global $con;
+    $ps = $con->prepare("UPDATE user set birthday = ? WHERE userID = ?");
+    $ps->bind_param("si", $newUserBirthday, $userID);
+    $ps->execute();
+}
+
+
+function getAvailableUserTitlesSelectOptions($userID, $actualTitle)
+{
+    global $con;
+
+    $balance = EigenerKontostand($userID);
+
+    $sql = "SELECT SUM(slaps) AS slapsGiven FROM transaction WHERE userIDSlapGive = '$userID' AND operator = 'Payout'";
+    $result = $con->query($sql);
+    $slapsGiven = $result->fetch_assoc();
+
+    $slapsGiven = $slapsGiven["slapsGiven"];
+    $slapsGiven = $slapsGiven * -1;
+
+    $sql = "SELECT COUNT(*) FROM transaction WHERE userIDSlapGive = '$userID' AND operator = 'Payout'";
+    $result = $con->query($sql);
+    $amountOfPayouts = $result->fetch_column(0);
+
+    $sql = "SELECT SUM(slaps) AS slapsGifted FROM transaction WHERE userIDSlapGive = '$userID' AND operator = 'Deposit'";
+    $result = $con->query($sql);
+    $slapsDeposited = $result->fetch_assoc();
+    $slapsDeposited = $slapsDeposited["slapsGifted"];
+
+    $sql = "SELECT COUNT(*) FROM transaction WHERE userIDSlapGive = '$userID' AND operator = 'Deposit'";
+    $result = $con->query($sql);
+    $amountOfDeposits = $result->fetch_column(0);
+
+    $titles = [
+        "slapsDeposited" => [
+            "weak victim" => 0,
+            "fresh meat, needs beating" => 10,
+            "Slaps like a Kid" => 40,
+            "Hoarder of Slaps" => 100,
+            "The Jew of Slaps" => 200,
+            "Generous Gifter" => 400,
+            "The Michael Moore of Slaps" => 10000
+        ],
+        "slapsGiven" => [
+
+        ],
+        "amountOfPayouts" => [
+
+        ],
+        "amountOfDeposits" => [
+
+        ],
+        "balance" => [
+
+        ]
+    ];
+
+    $output = '';
+    $hasSelected = false;
+
+    foreach ($titles["slapsDeposited"] as $title => $neededDepositedSlaps) {
+        if ($slapsDeposited >= $neededDepositedSlaps) {
+            if ($title === $actualTitle) {
+                $output .= "<option selected>$title</option>";
+                $hasSelected = true;
+            } else {
+                $output .= "<option>$title</option>";
+            }
+        }
+    }
+
+    foreach ($titles["slapsGiven"] as $title => $neededGivenSlaps) {
+        if ($slapsGiven >= $neededGivenSlaps) {
+            if ($title === $actualTitle) {
+                $output .= "<option selected>$title</option>";
+                $hasSelected = true;
+            } else {
+                $output .= "<option>$title</option>";
+            }
+        }
+    }
+
+    foreach ($titles["amountOfPayouts"] as $title => $neededAmountOfPayouts) {
+        if ($amountOfPayouts >= $neededAmountOfPayouts) {
+            if ($title === $actualTitle) {
+                $output .= "<option selected>$title</option>";
+                $hasSelected = true;
+            } else {
+                $output .= "<option>$title</option>";
+            }
+        }
+    }
+
+    foreach ($titles["amountOfDeposits"] as $title => $neededAmountOfDeposits) {
+        if ($amountOfDeposits >= $neededAmountOfDeposits) {
+            if ($title === $actualTitle) {
+                $output .= "<option selected>$title</option>";
+                $hasSelected = true;
+            } else {
+                $output .= "<option>$title</option>";
+            }
+        }
+    }
+
+    foreach ($titles["balance"] as $title => $minimumBalance) {
+        if ($balance >= $minimumBalance) {
+            if ($title === $actualTitle) {
+                $output .= "<option selected>$title</option>";
+                $hasSelected = true;
+            } else {
+                $output .= "<option>$title</option>";
+            }
+        }
+    }
+
+    if ($hasSelected) {
+        $output = "<option selected></option>" . $output;
+    } else {
+        $output = "<option></option>" . $output;
+    }
+
+    echo $output;
+}
+
+function updatePassword($oldPassword, $newPassword, $userID)
+{
+    global $con;
+    $sql = "SELECT password FROM user WHERE userID = '$userID'";
+    $result = $con->query($sql);
+    $password = $result->fetch_assoc();
+    $password = $password["password"];
+    if ($password === $oldPassword)
+    {
+        $ps = $con->prepare("UPDATE user SET password = ? WHERE userID = ?");
+        $ps->bind_param("si", $newPassword, $userID);
+        $ps->execute();
+    }
+    else
+    {
+        echo "Failed to update Password";
+    }
+
+}
+
+
+function calloutRandomSlapper($userID, $userRole)
+{
+    global $con;
+    $sql = "SELECT userRole FROM user WHERE userID = '$userID'";
+    $roleFromDB = $con->query($sql);
+    $roleFromDB = $roleFromDB["userRole"];
+
+    if ($roleFromDB === $userRole)
+    {
+        $sql = "UPDATE user SET tempUserRole=2
+WHERE NOT (DAY(birthday) = DAY(CURRENT_DATE()) AND MONTH(birthday) = MONTH(CURRENT_DATE()))
+AND userRole = 3
+ORDER BY RAND()
+LIMIT 1";
+        $con->query($sql);
+    }
+}
+
 
 ?>
 
 
 
 
-
+<!--switch (true){-->
+<!--case $slapsDeposited > 400: echo "<option>Generous Gifter</option>>";-->
+<!--case $slapsDeposited > 600 == $title = "<option></option>";-->
+<!--case $amountOfDeposits > 10 == $title = "<option></option>";-->
+<!--case $amountOfDeposits > 50 == $title = "<option></option>";-->
+<!--case $slapsGiven > 50 == $title = "<option>Slaps like a Kid</option>";-->
+<!--case $slapsGiven > 50 == $title = "<option></option>";-->
+<!--case $amountOfPayouts > 10 == $title = "<option>fresh meat, needs beating</option>";-->
+<!--case $amountOfPayouts > 50 == $title = "<option></option>";-->
+<!--case $balance > 100 == $title = "<option>Hoarder of Slaps</option>";-->
+<!--case $balance > 200 == $title = "<option>The Jew of Slaps</option>";-->
+<!--}-->
 
 
 
