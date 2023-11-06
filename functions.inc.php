@@ -129,7 +129,7 @@ function transaction(string $operator, int $slaps, string $comment, int $userIDS
     {
         if ($slaps > $victimBalance)
         {
-            exit("You cant slap someone into negative Balance!$victimBalance ");
+            exit("You cant slap someone into negative Balance!");
         }
         else
         {
@@ -366,7 +366,7 @@ function fetchLatestPersonalDeposit($userID)
     if (!empty($dateOfDeposit))
     {
         echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
-        echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "You" . " depositted " . $latestDeposit[2] . " Slaps to " . $slapTakeName;
+        echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "You" . " depositted " . $latestDeposit[2] . " Slaps to " . "<a href='profile.php?profileID=$latestDeposit[5]'>$slapTakeName</a>";
     }
     else
     {
@@ -390,7 +390,7 @@ function fetchLatestPersonalWithdrawal($userID)
     {
 
         echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
-        echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "You" . " slapped " . $slapTakeName . " " . $slaps . " times";
+        echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "You" . " slapped " . "<a href='profile.php?profileID=$latestDeposit[5]'>$slapTakeName</a>" . " " . $slaps . " times";
     }
     else
     {
@@ -783,24 +783,128 @@ LIMIT 1";
     }
 }
 
+function getAdminMembers()
+{
+    global $con;
+    $sql = "SELECT username, userID FROM user WHERE userRole = '1'";
+    $result = $con->query($sql);
+    while ($dsatz = $result->fetch_assoc())
+    {
+        $name = $dsatz["username"];
+        $userID = $dsatz["userID"];
+        echo "<tr><td><a href='profile.php?profileID=$userID'> $name </a></td></tr>";
+    }
+}
+
+function getSlapperMembers()
+{
+    global $con;
+    $sql = "SELECT username, userID FROM user WHERE userRole = '2'";
+    $result = $con->query($sql);
+    while ($dsatz = $result->fetch_assoc())
+    {
+        $name = $dsatz["username"];
+        $userID = $dsatz["userID"];
+        echo "<tr><td><a href='profile.php?profileID=$userID'> $name </a></td></tr>";
+    }
+}
+
+function getRegularMembers()
+{
+    global $con;
+    $sql = "SELECT username, userID FROM user WHERE userRole = '3'";
+    $result = $con->query($sql);
+    while ($dsatz = $result->fetch_assoc())
+    {
+        $name = $dsatz["username"];
+        $userID = $dsatz["userID"];
+        echo "<tr><td><a href='profile.php?profileID=$userID'> $name </a></td></tr>";
+    }
+}
+
+function getTempSlapperMembers()
+{
+    global $con;
+    $sql = "SELECT username, userID FROM user WHERE tempUserRole = '2'";
+    $result = $con->query($sql);
+    while ($dsatz = $result->fetch_assoc())
+    {
+        $name = $dsatz["username"];
+        $userID = $dsatz["userID"];
+        echo "<tr><td><a href='profile.php?profileID=$userID'> $name </a></td></tr>";
+    }
+}
+
+function getLastTransactions($page = 0)
+{
+    $limit = 20;
+    $offset = 20;
+
+    $transactions = [
+        "currentPage" => null,
+        "previousPage" => null,
+        "nextPage" => null,
+        "dataRows" => []
+    ];
+
+    global $con;
+
+    $sql = "SELECT COUNT(id) FROM transaction";
+    $result = $con->query($sql);
+    $countOfTransactions = $result->fetch_column(0);
+    $maxPage = floor($countOfTransactions / 20);
+
+    if ($page >= 0 && $page <= $maxPage) {
+        $current_offset = $page * $offset;
+
+        $sql = "SELECT * FROM transaction ORDER BY `date` DESC LIMIT $limit OFFSET $current_offset";
+        $result = $con->query($sql);
+
+        $transactions['currentPage'] = $page;
+        $transactions['previousPage'] = $page > 0 ? $page -1 : null;
+        $transactions['nextPage'] = $page < $maxPage ? $page +1 : null;
+
+        while ($dsatz = $result->fetch_assoc())
+        {
+            $operator = $dsatz["operator"];
+            $slaps = $dsatz["slaps"];
+            if ($operator === "Payout") {
+                $slaps = $slaps * -1;
+            }
+
+            $userIDSlapGive = $dsatz["userIDSlapGive"];
+            $userNameSlapGive = getUserName($userIDSlapGive);
+
+            $userIDSlapTake = $dsatz["userIDSlapTake"];
+            $userNameSlapTake = getUserName($userIDSlapTake);
+
+            $date = $dsatz["date"];
+            $date = new DateTime($date);
+            $formattedDate = $date->format("d.m.Y H:i:s");
+
+            $transactions['dataRows'][] = [
+                "id" => $dsatz["id"],
+                "operator" => $operator,
+                "slaps" => $slaps,
+                "comment" => $dsatz["comment"],
+                "userNameSlapGive" => $userNameSlapGive,
+                "userNameSlapTake" => $userNameSlapTake,
+                "formattedDate" => $formattedDate
+            ];
+        }
+    }
+
+    return $transactions;
+}
+
+
+
 
 ?>
 
 
 
 
-<!--switch (true){-->
-<!--case $slapsDeposited > 400: echo "<option>Generous Gifter</option>>";-->
-<!--case $slapsDeposited > 600 == $title = "<option></option>";-->
-<!--case $amountOfDeposits > 10 == $title = "<option></option>";-->
-<!--case $amountOfDeposits > 50 == $title = "<option></option>";-->
-<!--case $slapsGiven > 50 == $title = "<option>Slaps like a Kid</option>";-->
-<!--case $slapsGiven > 50 == $title = "<option></option>";-->
-<!--case $amountOfPayouts > 10 == $title = "<option>fresh meat, needs beating</option>";-->
-<!--case $amountOfPayouts > 50 == $title = "<option></option>";-->
-<!--case $balance > 100 == $title = "<option>Hoarder of Slaps</option>";-->
-<!--case $balance > 200 == $title = "<option>The Jew of Slaps</option>";-->
-<!--}-->
 
 
 

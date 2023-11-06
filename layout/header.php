@@ -67,6 +67,8 @@ initSession();
         <li><a class="left" href="index.php"> Overview </a></li>
         <li><a class="left" href="transaction.php"> Transaction </a></li>
         <li><a class="left" href="news.php"> News </a></li>
+        <li><a class="left" href="members.php"> Members</a></li>
+        <li><a class="left" href="history.php"> History</a></li>
         <li><a style="float:right" href="logout.php"> Logout </a></li>
         <li><a style="float: right" href="profile.php"> Profile </a></li>
     </ul>
