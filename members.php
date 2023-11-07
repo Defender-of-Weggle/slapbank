@@ -3,6 +3,12 @@ include "functions.inc.php";
 
 html_header('Overview');
 
+if(!isset($_SESSION["login"]))
+{
+    echo "<br><br>Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
+    exit();
+}
+
 ?>
     <style>
         * {

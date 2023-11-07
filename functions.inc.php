@@ -559,18 +559,18 @@ function getPersonalStatistics($userID)
     $amountOfDeposits = $result->fetch_column(0);
 
 
-    switch (true){
-        case $slapsDeposited > 400 == $titleForDeposits = "Generous Gifter";
-        case $slapsDeposited > 600 == $titleForDeposits = "";
-        case $amountOfDeposits > 10 == $titleForAmountOfDeposits = "";
-        case $amountOfDeposits > 50 == $titleForAmountOfDeposits = "";
-        case $slapsGiven > 50 == $titleForGivenSlaps = "Slaps like a Kid";
-        case $slapsGiven > 50 == $titleForGivenSlaps = "";
-        case $amountOfPayouts > 10 == $titleForAmountOfPayouts = "fresh meat, needs beating";
-        case $amountOfPayouts > 50 == $titleForAmountOfPayouts = "";
-        case $balance > 100 == $titleForBalance = "Hoarder of Slaps";
-        case $balance > 200 == $titleForBalance = "The Jew of Slaps";
-    }
+//    switch (true){
+//        case $slapsDeposited > 400 == $titleForDeposits = "Generous Gifter";
+//        case $slapsDeposited > 600 == $titleForDeposits = "";
+//        case $amountOfDeposits > 10 == $titleForAmountOfDeposits = "";
+//        case $amountOfDeposits > 50 == $titleForAmountOfDeposits = "";
+//        case $slapsGiven > 50 == $titleForGivenSlaps = "Slaps like a Kid";
+//        case $slapsGiven > 50 == $titleForGivenSlaps = "";
+//        case $amountOfPayouts > 10 == $titleForAmountOfPayouts = "fresh meat, needs beating";
+//        case $amountOfPayouts > 50 == $titleForAmountOfPayouts = "";
+//        case $balance > 100 == $titleForBalance = "Hoarder of Slaps";
+//        case $balance > 200 == $titleForBalance = "The Jew of Slaps";
+//    }
 //    http://localhost/slap/profile.php?profileID=8
 
     echo "Slaps deposited<br>" . $slapsDeposited . "<br>amount of deposits<br>" . $amountOfDeposits . "<br>slaps given<br>" . $slapsGiven . "<br>amount of payouts<br>" . $amountOfPayouts . "<br>balance<br>" . $balance;
@@ -669,7 +669,7 @@ function getAvailableUserTitlesSelectOptions($userID, $actualTitle)
 
     $titles = [
         "slapsDeposited" => [
-            "weak victim" => 0,
+            "pathetic victim" => 0,
             "fresh meat, needs beating" => 10,
             "Slaps like a Kid" => 40,
             "Hoarder of Slaps" => 100,
