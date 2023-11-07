@@ -166,13 +166,13 @@ if (!empty($upload))
 <!--        <img height="300px" width="400px" style="object-fit: cover" src="../slap/profilePics/--><?php //$profileID ?><!--.gif" alt="Profile Picture">-->
         <?php
         $profilePicture = match (true){
-            file_exists("../slap/profilePics/$profileID.png") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/$profileID.png' alt='Profile Picture'>",
-            file_exists("../slap/profilePics/$profileID.jpg") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/$profileID.jpg' alt='Profile Picture'>",
-            file_exists("../slap/profilePics/$profileID.gif") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/$profileID.gif' alt='Profile Picture'>",
-            file_exists("../slap/profilePics/$profileID.jpeg") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/$profileID.jpeg' alt='Profile Picture'>",
-            default => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/default.jpg' alt='Profile Picture'>"
+            file_exists(__DIR__."/profilePics/$profileID.png") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/$profileID.png' alt='Profile Picture'>",
+            file_exists(__DIR__."/profilePics/$profileID.jpg") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/$profileID.jpg' alt='Profile Picture'>",
+            file_exists(__DIR__."/profilePics/$profileID.gif") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/$profileID.gif' alt='Profile Picture'>",
+            file_exists(__DIR__."/profilePics/$profileID.jpeg") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/$profileID.jpeg' alt='Profile Picture'>",
+            default => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='profilePics/default.jpg' alt='Profile Picture'>"
 
-                };
+        };
 
         echo $profilePicture;
         ?>
