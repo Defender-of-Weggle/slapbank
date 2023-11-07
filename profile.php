@@ -39,7 +39,7 @@ if (isset($_POST["changeUsername"])) {
 
 
 
-if (isset($_POST["calloutRandomSlapper"]))
+if (isset($_POST["addRandomSlapper"]))
 {
     calloutRandomSlapper($userID, $userRole);
     echo "Random Slapper was added";
@@ -48,20 +48,20 @@ if (isset($_POST["calloutRandomSlapper"]))
 if (isset($_POST["changePassword"]))
 {
     updatePassword($oldPassword, $newPassword, $userID);
-    echo "Updating Password successful";
+    echo "<br>Updating Password successful";
 }
 
 if (isset($_POST["newUserBirthday"]))
 {
     updateUserBirthday($userID, $newUserBirthday);
-    echo "Birthday has been updated";
+    echo "Birthday has been set";
 }
 
 if (isset($_POST["changeUsername"]))
 {
     $newUserName = $_POST["newUserName"];
     updateUserName($userID, $newUserName, $hideAge, $userTitle);
-    echo "Username updated";
+    echo "Username/Title updated";
 }
 if (isset($_POST["newProfileText"]))
 {
@@ -239,11 +239,13 @@ if ($profileID === $userID){
     <div class="column">
     <p>Change/set Mail:</p>
     <form action="profile.php" method="post" name="updateMail">
-        <input name="newMailAdress" size="15" type="email" value="<?php echo $userMail; ?>"><br>
-        <input type="submit">
+        <input name="newMailAdress" readonly="readonly" placeholder="Useless@anyway.here" size="16" type="email""><br>
+        <input type="submit" disabled="disabled" value="disabled">
     </form>
     <br><br>
-    <p>Update/set Birthday:</p>
+    <p>Set Birthday:</p>
+        <?php
+        if (checkSetupBirthday($userID) == "0000-00-00"){ ?>
     <form action="profile.php" method="post" name="updateBirthday">
         <input type="date" value="<?php $userBirthday ?>" name="newUserBirthday"><br>
         <input type="submit"><br>
@@ -253,16 +255,25 @@ if ($profileID === $userID){
         <p>Change your password:</p>
         <form action="profile.php" name="changePassword" method="post">
             <input type="password" name="oldPassword"> Old Password<br>
-            <input type="password" name="newPassword"> New Password<br><br>
+            <input type="password" name="newPassword"> new Password<br><br>
             <input type="submit"><br><br>
         </form>
-
+        <?php
+        }
+        else
+        {
+            echo "Your Birthday is set, no more updates on it";
+        }
+        ?>
+    </div>
+    <div class="column">
         <?php
         if ($userRole === 1)
         {
             ?>
                 Add random slapper for the day
             <form action="profile.php" method="post" name="calloutRandomSlapper">
+                <input type="hidden" value="1" name="addRandomSlapper">
                 <input type="submit">
             </form>
 

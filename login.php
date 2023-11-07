@@ -28,7 +28,7 @@ if (isset($_POST["login"]) && $_POST["userName"] && $_POST["password"])
 <br>
 
 
-<h2>Registrierung</h2>
+<h2>Register</h2>
 <form action="login.php" method="post">
     <input name="register" value="1" hidden="hidden">
     <p><input name="newUserName"> Username</p>

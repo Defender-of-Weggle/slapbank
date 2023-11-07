@@ -16,19 +16,21 @@ html_header('Overview');
     <div class="column"></div>
 
     <div class="column">
-<h2>List of members</h2><br><br>
-    <table>
 
 
-        <tr><th>Admins:<th></tr>
+
+
+        <ul style="list-style-type: none">
+            <li><h2>List of members</h2></li>
+            Admins:
             <?php getAdminMembers();
-            echo "<tr><td>Slapping Members</td></tr>";
+            echo "<li>Slapping Members</li>";
             getSlapperMembers();
-            echo "<tr><td>Temporary Slappers</td></tr>";
+            echo "<li>Temporary Slappers";
             getTempSlapperMembers();
-            echo "<tr><td>Regular Members</td></tr>";
+            echo "<li>Regular Members</li>";
             getRegularMembers();?>
-    </table>
+        </ul>
 </div>
 <div class="column"></div>
 

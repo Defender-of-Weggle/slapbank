@@ -14,7 +14,7 @@ function Login($userName, $password)
     {
         exit("Connection error occured");
     }
-        $ps = $con->prepare("SELECT userName, password FROM user WHERE userName = ? AND password = ?");
+        $ps = $con->prepare("SELECT userName, password FROM user WHERE userName = ? AND password = SHA2(?, 256)");
         $ps->bind_param("ss", $_POST["userName"], $_POST["password"]);
         $ps->execute();
         $ps->bind_result($userName, $password);
@@ -68,7 +68,7 @@ function Login($userName, $password)
 function Register($userName, $password)
 {
     global $con;
-    $ps = $con->prepare("INSERT INTO user(userName, password)VALUES (?, ?)");
+    $ps = $con->prepare("INSERT INTO user(userName, password)VALUES (?, SHA2 (?, 256))");
     $ps->bind_param("ss", $_POST["newUserName"], $_POST["newPassword"]);
     $ps->execute();
     if ($ps->affected_rows > 0)
@@ -287,12 +287,12 @@ function fetchNewsPosts()
         echo "<table class='newstable'>";
 
         echo "<tr>";
-                echo "<td style='width: 10%'>Post Nr.: $newsID </td>";
-                echo "<td style='margin-left: 20px' 'width: 10%'>Autor: $userName </td>";
+                echo "<td style='width: 10%'># $newsID</td>";
+//                echo " by <a href='.profile.php?profileID=$userID'>$userName</a></td>";
                 echo "<td style='font-size: 22px' 'text-align: center' 'width: 50%'>$title</td>";
                 echo "<td style='width: 30%'>" . $postDate->format("D, d M Y H:i:s") . "</td>";
         echo "</tr>";
-        echo "<tr style='min-height: 100px'><td style=text-align: 'center' 'width: 80%' colspan='4'>$content</td></tr>";
+        echo "<tr style='min-height: 50px'><td style=text-align: 'center' 'width: 80%' colspan='4'>$content</td></tr>";
 
 
 
@@ -331,8 +331,16 @@ function fetchLatestDeposit()
     $slapTakeName = getUserName($latestDeposit[5]);
 
 
+if (!empty($latestDeposit)) {
+
     echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
     echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "<a href='profile.php?profileID=$latestDeposit[4]'>$slapGiveName</a>" . " deposits " . $latestDeposit[2] . " Slaps to " . "<a href='profile.php?profileID=$latestDeposit[5]'>$slapTakeName</a>";
+    }
+    else
+    {
+        echo "> No deposits yet? dafuq are you waiting for?";
+    }
+
 }
 
 function fetchLatestWithdrawal()
@@ -347,9 +355,15 @@ function fetchLatestWithdrawal()
     $slapTakeName = getUserName($latestDeposit[5]);
     $slaps = $latestDeposit[2] * -1;
 
+    if (!empty($latestDeposit)) {
+        echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
+        echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "<a href='profile.php?profileID=$latestDeposit[4]'>$slapGiveName</a>" . " slapped " . "<a href='profile.php?profileID=$latestDeposit[5]'>$slapTakeName</a>" . " " . $slaps . " times";
+    }
+    else
+    {
+        echo "No Payouts yet, jesus, slap each other already!";
+    }
 
-    echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
-    echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "<a href='profile.php?profileID=$latestDeposit[4]'>$slapGiveName</a>" . " slapped " . "<a href='profile.php?profileID=$latestDeposit[5]'>$slapTakeName</a>" . " " . $slaps . " times";
 }
 
 function fetchLatestPersonalDeposit($userID)
@@ -363,7 +377,7 @@ function fetchLatestPersonalDeposit($userID)
     $slapGiveName = getUserName($latestDeposit[4]);
     $slapTakeName = getUserName($latestDeposit[5]);
 
-    if (!empty($dateOfDeposit))
+    if (!empty($latestDeposit))
     {
         echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
         echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "You" . " depositted " . $latestDeposit[2] . " Slaps to " . "<a href='profile.php?profileID=$latestDeposit[5]'>$slapTakeName</a>";
@@ -753,7 +767,7 @@ function updatePassword($oldPassword, $newPassword, $userID)
     $password = $password["password"];
     if ($password === $oldPassword)
     {
-        $ps = $con->prepare("UPDATE user SET password = ? WHERE userID = ?");
+        $ps = $con->prepare("UPDATE user SET password = SHA2(?, 256) WHERE userID = ?");
         $ps->bind_param("si", $newPassword, $userID);
         $ps->execute();
     }
@@ -770,9 +784,8 @@ function calloutRandomSlapper($userID, $userRole)
     global $con;
     $sql = "SELECT userRole FROM user WHERE userID = '$userID'";
     $roleFromDB = $con->query($sql);
-    $roleFromDB = $roleFromDB["userRole"];
-
-    if ($roleFromDB === $userRole)
+    $roleFromDB = $roleFromDB->fetch_column(0);
+    if ($roleFromDB == $userRole)
     {
         $sql = "UPDATE user SET tempUserRole=2
 WHERE NOT (DAY(birthday) = DAY(CURRENT_DATE()) AND MONTH(birthday) = MONTH(CURRENT_DATE()))
@@ -792,7 +805,7 @@ function getAdminMembers()
     {
         $name = $dsatz["username"];
         $userID = $dsatz["userID"];
-        echo "<tr><td><a href='profile.php?profileID=$userID'> $name </a></td></tr>";
+        echo "<li><a href='profile.php?profileID=$userID'> $name </a></li>";
     }
 }
 
@@ -805,7 +818,7 @@ function getSlapperMembers()
     {
         $name = $dsatz["username"];
         $userID = $dsatz["userID"];
-        echo "<tr><td><a href='profile.php?profileID=$userID'> $name </a></td></tr>";
+        echo "<li><a href='profile.php?profileID=$userID'> $name </a></li>";
     }
 }
 
@@ -818,7 +831,7 @@ function getRegularMembers()
     {
         $name = $dsatz["username"];
         $userID = $dsatz["userID"];
-        echo "<tr><td><a href='profile.php?profileID=$userID'> $name </a></td></tr>";
+        echo "<li><a href='profile.php?profileID=$userID'> $name </a></li>";
     }
 }
 
@@ -831,9 +844,11 @@ function getTempSlapperMembers()
     {
         $name = $dsatz["username"];
         $userID = $dsatz["userID"];
-        echo "<tr><td><a href='profile.php?profileID=$userID'> $name </a></td></tr>";
+        echo "<li><a href='profile.php?profileID=$userID'> $name </a></li>";
     }
 }
+
+
 
 function getLastTransactions($page = 0)
 {
@@ -897,7 +912,14 @@ function getLastTransactions($page = 0)
     return $transactions;
 }
 
-
+function checkSetupBirthday($userID)
+{
+    global $con;
+    $sql = "SELECT birthday FROM user WHERE userID = '$userID'";
+    $result = $con->query($sql);
+    $birthday = $result->fetch_column(0);
+    return $birthday;
+}
 
 
 ?>

@@ -35,10 +35,10 @@ $balance = EigenerKontostand($userID) ?? "n.a.";
     <div class="column">
     <p>Latest Transactions:</p>
     <p>Deposit: </p>
-<?php fetchLatestDeposit() ?>
+<?php @fetchLatestDeposit() ?>
     <br><br>
     <p>Withdrawal: </p>>
-    <?php fetchLatestWithdrawal() ?>
+    <?php @fetchLatestWithdrawal() ?>
 
 </div>
                         <div class="column">
@@ -56,10 +56,7 @@ $balance = EigenerKontostand($userID) ?? "n.a.";
             <div class="column">
                 <p>Birthdays:</p>
                 <?php getBirthdaysForIndex(); ?>
-                <form action="profile.php">
-                    <input type="hidden" name="profileID" value="8">
-                    <input type="submit">
-                </form>
+
 
             </div>
 </div>
@@ -67,6 +64,7 @@ $balance = EigenerKontostand($userID) ?? "n.a.";
         <div class="column">
             <h4>How this stupid thing works, more or less</h4>
             <ul><li>Everybody starts with a contingent of 25 Slaps</li>
+                <li></li>
                 <li><strong>The Roles</strong></li>
                 <li>Default role - Deposit only</li>
                 <li>Deposits use contingents</li>
@@ -83,6 +81,14 @@ $balance = EigenerKontostand($userID) ?? "n.a.";
             </ul>
 
         </div>
+        <div class="column">
+
+        </div>
+
+    <div class="column">
+
+
+    </div>
 
 
 

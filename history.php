@@ -3,11 +3,17 @@ include "functions.inc.php";
 
 html_header('Overview');
 
+
+
 ?>
+
+
+
+
 
 <div class="row">
     <div class="column">
-        <h3>....:</h3>
+
 
     </div>
     <div class="column" style="text-align: left">
@@ -18,6 +24,7 @@ html_header('Overview');
             $transactionPage = 0;
 
             //seitenzählung beginnt mit 0!!! 0 ist immer erste seite...
+
             $transactionData = getLastTransactions($transactionPage);
 
             //print_r($transactionData);
@@ -84,7 +91,8 @@ html_header('Overview');
     </div>
     <div class="column">
 
-        <h3>....</h3>
+
+
 
 
     </div>

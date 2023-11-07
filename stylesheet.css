@@ -70,9 +70,8 @@ select
 
 .newstable
 {
-    z-index: -1;
     min-height: 300px;
-    border: 10px chartreuse;
+    border: 5px chartreuse;
     border-radius: 10px;
     background-color: #303030;
     color: chartreuse;
