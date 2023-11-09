@@ -19,7 +19,9 @@ if(!isset($_SESSION["login"]))
 $profileID = $_GET["profileID"] ?? $userID = getSessionUserID();
 $userID = getSessionUserID();
 $userName = getUserName($profileID);
-$userRole = getUserRole($profileID);
+$userRoles = getUserRole($userID);
+$userRole = intval($userRoles[0]);
+$tempUserRole = intval($userRoles[1]);
 $age = getUserAge($profileID);
 $profileText = getUserProfileText($profileID);
 $userTitle = $_POST["selectTitle"] ?? getUserTitle($profileID);
@@ -78,7 +80,7 @@ if (isset($_POST["updateMail"]))
 
 if (!empty($upload))
 {
-    $target_dir = "../slap/profilePics/";
+    $target_dir = __DIR__."/profilePics/";
     $target_file = $target_dir . basename($_FILES["ava"]["name"]);
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -97,7 +99,7 @@ if (!empty($upload))
 
 
 // Check file size
-    if ($_FILES["ava"]["size"] > 500000) {
+    if ($_FILES["ava"]["size"] > 5000000) {
         echo "Sorry, your file is too large.";
         $uploadOk = 0;
     }
@@ -157,6 +159,10 @@ if (!empty($upload))
                               default => "Regular Slapvictim"
 
                         };
+                       if ($tempUserRole == 2) {
+                           echo ", Temporary Slapman";
+                       }
+
                 echo "</p>";
             ?>
         </div>
@@ -166,11 +172,12 @@ if (!empty($upload))
 <!--        <img height="300px" width="400px" style="object-fit: cover" src="../slap/profilePics/--><?php //$profileID ?><!--.gif" alt="Profile Picture">-->
         <?php
         $profilePicture = match (true){
-            file_exists(__DIR__."/profilePics/$profileID.png") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/$profileID.png' alt='Profile Picture'>",
-            file_exists(__DIR__."/profilePics/$profileID.jpg") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/$profileID.jpg' alt='Profile Picture'>",
-            file_exists(__DIR__."/profilePics/$profileID.gif") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/$profileID.gif' alt='Profile Picture'>",
-            file_exists(__DIR__."/profilePics/$profileID.jpeg") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='../slap/profilePics/$profileID.jpeg' alt='Profile Picture'>",
+            file_exists(__DIR__."/profilePics/$profileID.png") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='profilePics/$profileID.png' alt='Profile Picture'>",
+            file_exists(__DIR__."/profilePics/$profileID.jpg") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='profilePics/$profileID.jpg' alt='Profile Picture'>",
+            file_exists(__DIR__."/profilePics/$profileID.gif") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='profilePics/$profileID.gif' alt='Profile Picture'>",
+            file_exists(__DIR__."/profilePics/$profileID.jpeg") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='profilePics/$profileID.jpeg' alt='Profile Picture'>",
             default => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='profilePics/default.jpg' alt='Profile Picture'>"
+
 
         };
 

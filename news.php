@@ -12,7 +12,11 @@ if(!isset($_SESSION["login"]))
 
 $userID = getSessionUserID();
 $userName = getSessionUserName();
-$userRole = getUserRole($userID);
+$userRoles = getUserRole($userID);
+$userRole = intval($userRoles[0]);
+$tempUserRole = intval($userRoles[1]);
+
+
 $title = $_POST["title"] ?? "";
 $content = $_POST["content"] ?? "";
 
@@ -44,7 +48,7 @@ if ($userRole === 1)
             </form>
     <?php
 }
-
+echo "<br><br>";
 
 
 fetchNewsPosts();

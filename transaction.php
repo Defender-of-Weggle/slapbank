@@ -14,8 +14,9 @@ $userID = getSessionUserID();
 
 $userName = getSessionUserName();
 $contingent = getContingent($userID);
-$userRole = getUserRole($userID);
-$tempUserRole = getTempUserRole($userID);
+$userRoles = getUserRole($userID);
+$userRole = intval($userRoles[0]);
+$tempUserRole = intval($userRoles[1]);
 $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
 
 

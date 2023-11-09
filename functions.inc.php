@@ -121,9 +121,9 @@ function transaction(string $operator, int $slaps, string $comment, int $userIDS
     $victimBalance = EigenerKontostand($userIDSlapTake);
     $contingent = getContingent($userIDSlapGive);
     $slapsLeft = $contingent - $slaps;
-    if ($slaps > $contingent)
+    if ($slaps > $contingent OR $slaps <= 0)
     {
-        exit("Fuck you, your deposit limit for today is $contingent");
+        exit("Fuck You!");
     }
     if ($operator === "Payout")
     {
@@ -216,13 +216,15 @@ function getContingent($userID): int
     return $contingent[0];
 }
 
-function getUserRole($userID): int
+function getUserRole($userID)
 {
     global $con;
     $res = $con->query("SELECT userRole, tempUserRole FROM user WHERE userID = '$userID'");
-    $userRole = $res->fetch_array();
-    return $userRole[0];
+    $userRole = $res->fetch_row();
+    return $userRole;
 }
+
+
 
 function getTempUserRole($userID): int
 {
@@ -921,6 +923,17 @@ function checkSetupBirthday($userID)
     return $birthday;
 }
 
+
+function getLatestMember()
+{
+    global $con;
+    $sql = "SELECT MAX(userID) FROM user";
+    $result = $con->query($sql);
+    $latestUser = $result->fetch_column(0);
+    return $latestUser;
+
+
+}
 
 ?>
 

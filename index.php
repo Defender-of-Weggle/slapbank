@@ -13,7 +13,9 @@ html_header('Overview');
 //initSession();
 if(!isset($_SESSION["login"]))
 {
-    echo "<br><br>Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
+    echo "<br><br>Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'><br><br><br>
+    \"this website is a slap bank account - when you want to reach out and virually bitch slap that special someone\"<br>
+    Nex, 8th November 2023";
     exit();
 }
 
@@ -24,6 +26,8 @@ $userID = getSessionUserID() ?? "";
 $userName = getSessionUserName() ?? "";
 $contingent = getContingent($userID) ?? "n.a.";
 $balance = EigenerKontostand($userID) ?? "n.a.";
+$latestMemberID = getLatestMember();
+$latestMember = getUserName(getLatestMember());
 
 
 
@@ -86,7 +90,8 @@ $balance = EigenerKontostand($userID) ?? "n.a.";
         </div>
 
     <div class="column">
-
+            Latest registration:<br><br>
+        <a href="profile.php?profileID?=<?php $latestMemberID ?>"><?php echo $latestMember;?></a>
 
     </div>
 
