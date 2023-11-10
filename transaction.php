@@ -10,6 +10,7 @@ if(!isset($_SESSION["login"]))
     exit();
 }
 
+
 $userID = getSessionUserID();
 
 $userName = getSessionUserName();
@@ -22,6 +23,32 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
 
 
 ?>
+<style>
+    .slider{
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #222222;
+        color: chartreuse;
+        height: 15px;
+        width: 70px;
+    }
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 10px; /* Set a specific slider handle width */
+        height: 10px; /* Slider handle height */
+        background: chartreuse; /* Green background */
+        cursor: grab; /* Cursor on hover */
+    }
+    .transaction {
+        width: 70%;
+        height: 100%;
+
+    }
+
+</style>
+
+
 <h1>Slap Balance:
 <?php EigenerKontostand(getSessionUserID());
 ?>
@@ -42,7 +69,22 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
     <br><br><p><label for="comment">Reason?(Optional, sometimes you just have to)</label></p>
     <textarea name="comment" rows="5" cols="20" placeholder="This sucker ate my cookie! MINE!"></textarea><br><br>
     <p><label for="slaps">Amount of Slaps</label></p>
-    <input name="slaps" size="1"><?php echo " $contingent left today"; ?><br><br>
+
+    <p><input type="range" name="slaps" min="1" max="<?php echo $contingent;?>" value="1" class="slider" id="myRange"> <span id="demo"></span> Slaps</p>
+
+
+
+    <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+    </script>
+
+<?php echo " $contingent left today"; ?><br><br>
     <p><label for="operator">Type of transaction</label> </p>
     <p><select name="operator">
             <option value="Deposit"> Deposit</option>

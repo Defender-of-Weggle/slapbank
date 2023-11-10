@@ -10,6 +10,16 @@ html_header('Overview');
     </style>
 <?php
 
+
+if (isset($_POST["login"]) && $_POST["userName"] && $_POST["password"]) {
+    Login($_POST["userName"], $_POST["password"]);
+    setSessionUserName($_POST["userName"]);
+    setSessionUserID(getUserID($_POST["userName"]));
+} else {
+    echo "Login to proceed<br><br>";
+}
+
+
 //initSession();
 if(!isset($_SESSION["login"]))
 {
@@ -27,7 +37,7 @@ $userName = getSessionUserName() ?? "";
 $contingent = getContingent($userID) ?? "n.a.";
 $balance = EigenerKontostand($userID) ?? "n.a.";
 $latestMemberID = getLatestMember();
-$latestMember = getUserName(getLatestMember());
+$latestMember = getUserName($latestMemberID);
 
 
 
@@ -86,12 +96,19 @@ $latestMember = getUserName(getLatestMember());
 
         </div>
         <div class="column">
-
+            <h4>Rules</h4>
+            <ul>
+                <li>No multi accounts</li>
+                <li>On purpose damn high set ages will be set to 1 digit once :)</li>
+                <li>Birthday can only be set once</li>
+            </ul>
         </div>
 
     <div class="column">
-            Latest registration:<br><br>
-        <a href="profile.php?profileID?=<?php $latestMemberID ?>"><?php echo $latestMember;?></a>
+        <?php
+        echo "Latest registration:<br><br>";
+        echo "<a href='profile.php?profileID=$latestMemberID'>$latestMember</a>"
+        ?>
 
     </div>
 

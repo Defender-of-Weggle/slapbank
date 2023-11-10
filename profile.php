@@ -19,14 +19,14 @@ if(!isset($_SESSION["login"]))
 $profileID = $_GET["profileID"] ?? $userID = getSessionUserID();
 $userID = getSessionUserID();
 $userName = getUserName($profileID);
-$userRoles = getUserRole($userID);
+$userRoles = getUserRole($profileID);
 $userRole = intval($userRoles[0]);
 $tempUserRole = intval($userRoles[1]);
 $age = getUserAge($profileID);
 $profileText = getUserProfileText($profileID);
 $userTitle = $_POST["selectTitle"] ?? getUserTitle($profileID);
-$userMail = getUserMail($userID) ?? "";
-$userBirthday = getUserBirthday($userID);
+$userMail = getUserMail($profileID) ?? "";
+$userBirthday = getUserBirthday($profileID);
 $upload = $_POST["upload"] ?? null;
 $oldPassword = $_POST["oldPassword"] ?? "";
 $newPassword = $_POST["newPassword"] ?? "";
@@ -188,7 +188,7 @@ if (!empty($upload))
         <p>
             <?php
             $profileText = match (true) {
-                $profileID === $userID => $aboutMe = "<form action='profile.php' method='post'><textarea rows='10' cols='40' placeholder='$profileText' name='newProfileText'></textarea><br><input type='submit'></form>",
+                $profileID === $userID => $aboutMe = "<form action='profile.php' method='post'><textarea rows='10' cols='40' name='newProfileText'>$profileText</textarea><br><input type='submit'></form>",
                 empty($profileText) => $aboutMe = "Nothing to be told, yet",
                 default => $aboutMe = $profileText
 
