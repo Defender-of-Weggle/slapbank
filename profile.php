@@ -111,13 +111,20 @@ if (!empty($upload))
         $uploadOk = 0;
     }
 
+
+
+
+
 // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
         echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 //    $_FILES["ava"] = $userID;
     } else {
-        $name = $userID . "." . $imageFileType;
+        if (file_exists(__DIR__."/profilePics/$profileID")){
+            unlink(__DIR__."/profilePics/$profileID");
+        }
+        $name = $userID;
         $target_file = $target_dir . $name;
         if (move_uploaded_file($_FILES["ava"]["tmp_name"], $target_file)) {
             echo "The file ". htmlspecialchars( basename( $_FILES["ava"]["name"])). " has been uploaded.";
@@ -172,10 +179,7 @@ if (!empty($upload))
 <!--        <img height="300px" width="400px" style="object-fit: cover" src="../slap/profilePics/--><?php //$profileID ?><!--.gif" alt="Profile Picture">-->
         <?php
         $profilePicture = match (true){
-            file_exists(__DIR__."/profilePics/$profileID.png") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='profilePics/$profileID.png' alt='Profile Picture'>",
-            file_exists(__DIR__."/profilePics/$profileID.jpg") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='profilePics/$profileID.jpg' alt='Profile Picture'>",
-            file_exists(__DIR__."/profilePics/$profileID.gif") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='profilePics/$profileID.gif' alt='Profile Picture'>",
-            file_exists(__DIR__."/profilePics/$profileID.jpeg") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='profilePics/$profileID.jpeg' alt='Profile Picture'>",
+            file_exists(__DIR__."/profilePics/$profileID") => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='profilePics/$profileID' alt='Profile Picture'>",
             default => $profilePicture = "<img height='300px' width='300px' style='object-fit: cover' src='profilePics/default.jpg' alt='Profile Picture'>"
 
 

@@ -10,7 +10,7 @@ if(!isset($_SESSION["login"]))
 }
 
 
-$userName = getSessionUserName();
+$userName = htmlentities(getSessionUserName());
 
 
 

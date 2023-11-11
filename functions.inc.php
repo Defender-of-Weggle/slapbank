@@ -340,7 +340,7 @@ if (!empty($latestDeposit)) {
     }
     else
     {
-        echo "> No deposits yet? dafuq are you waiting for?";
+        echo "No deposits yet? dafuq are you waiting for?";
     }
 
 }

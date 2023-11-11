@@ -50,7 +50,7 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
 
 
 <h1>Slap Balance:
-<?php EigenerKontostand(getSessionUserID());
+<?php echo EigenerKontostand(getSessionUserID());
 ?>
 </h1>
 

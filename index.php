@@ -15,8 +15,6 @@ if (isset($_POST["login"]) && $_POST["userName"] && $_POST["password"]) {
     Login($_POST["userName"], $_POST["password"]);
     setSessionUserName($_POST["userName"]);
     setSessionUserID(getUserID($_POST["userName"]));
-} else {
-    echo "Login to proceed<br><br>";
 }
 
 
@@ -51,7 +49,7 @@ $latestMember = getUserName($latestMemberID);
     <p>Deposit: </p>
 <?php @fetchLatestDeposit() ?>
     <br><br>
-    <p>Withdrawal: </p>>
+    <p>Withdrawal: </p>
     <?php @fetchLatestWithdrawal() ?>
 
 </div>
