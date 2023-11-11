@@ -65,11 +65,11 @@ if(!isset($_SESSION["login"]))
                                     </tr>
                                     <tr>
                                         <td style="text-align: right; font-weight: bold">benefactor:</td>
-                                        <td><?php echo $row['userNameSlapGive'] ?></td>
+                                        <td><?php echo "<a href='profile.php?profileID=" . $row['userIDSlapGive'] . "'>" . $row['userNameSlapGive'] . "</a>" ?></td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: right; font-weight: bold">recipient:</td>
-                                        <td><?php echo $row['userNameSlapTake'] ?></td>
+                                        <td><?php echo "<a href='profile.php?profileID=" . $row['userIDSlapTake'] . "'>" .  $row['userNameSlapTake'] . "</a>" ?></td>
                                     </tr>
 
                                 </table>

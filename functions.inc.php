@@ -102,7 +102,7 @@ function UserWahl()
     $res = $con->query($sql);
     while ($dsatz = $res->fetch_assoc())
     {
-?><option name="userIDSlapTake" value="<?php echo $dsatz["userID"]?>"><?php echo $dsatz["userName"];
+?><option name="userIDSlapTake" value="<?php echo $dsatz["userID"]?>"><?php echo htmlentities($dsatz["userName"]);
         echo " (";
 
         $userID = $dsatz["userID"];
@@ -165,7 +165,7 @@ function userSlapTakeDefinition($userIDSlapTake)
     global $con;
     $res = $con->query("SELECT userName FROM user WHERE userID = '$userIDSlapTake'");
     $userSlapTake = $res->fetch_array();
-    return $userSlapTake[0];
+    return htmlentities($userSlapTake[0]);
 }
 
 function initSession() {
@@ -176,12 +176,12 @@ function initSession() {
 
 function setSessionUserName(string $UserName) {
     initSession();
-    $_SESSION['userName'] = $UserName;
+    $_SESSION['userName'] = htmlentities($UserName);
 }
 
 function getSessionUserName() : string|null {
     if (session_status() === PHP_SESSION_ACTIVE) {
-        return $_SESSION['userName'];
+        return htmlentities($_SESSION['userName']);
     }
 
     return null;
@@ -266,7 +266,7 @@ function getUserName($userID)
     global $con;
     $result = $con->query("SELECT userName FROM user WHERE userID = '$userID'");
     $userName = $result->fetch_array();
-    return $userName[0];
+    return htmlentities($userName[0]);
 }
 
 function fetchNewsPosts()
@@ -434,7 +434,7 @@ function getBirthdaysForIndex()
     while ($dsatz = $result->fetch_assoc())
     {
         $userID = $dsatz["userID"];
-        $userName = $dsatz["userName"];
+        $userName = htmlentities($dsatz["userName"]);
         $hideAge = $dsatz["hideAge"];
         $age = getUserAge($userID);
         if ($hideAge == 1) {
@@ -521,7 +521,7 @@ function getUserProfileText($userID)
     $sql = "SELECT profileText FROM user WHERE userID = '$userID'";
     $result = $con->query($sql);
     $profileText = $result->fetch_assoc();
-    return $profileText["profileText"];
+    return htmlentities($profileText["profileText"]);
 }
 
 function hideAge($userID)
@@ -805,7 +805,7 @@ function getAdminMembers()
     $result = $con->query($sql);
     while ($dsatz = $result->fetch_assoc())
     {
-        $name = $dsatz["username"];
+        $name = htmlentities($dsatz["username"]);
         $userID = $dsatz["userID"];
         echo "<li><a href='profile.php?profileID=$userID'> $name </a></li>";
     }
@@ -818,7 +818,7 @@ function getSlapperMembers()
     $result = $con->query($sql);
     while ($dsatz = $result->fetch_assoc())
     {
-        $name = $dsatz["username"];
+        $name = htmlentities($dsatz["username"]);
         $userID = $dsatz["userID"];
         echo "<li><a href='profile.php?profileID=$userID'> $name </a></li>";
     }
@@ -831,7 +831,7 @@ function getRegularMembers()
     $result = $con->query($sql);
     while ($dsatz = $result->fetch_assoc())
     {
-        $name = $dsatz["username"];
+        $name = htmlentities($dsatz["username"]);
         $userID = $dsatz["userID"];
         echo "<li><a href='profile.php?profileID=$userID'> $name </a></li>";
     }
@@ -844,7 +844,7 @@ function getTempSlapperMembers()
     $result = $con->query($sql);
     while ($dsatz = $result->fetch_assoc())
     {
-        $name = $dsatz["username"];
+        $name = htmlentities($dsatz["username"]);
         $userID = $dsatz["userID"];
         echo "<li><a href='profile.php?profileID=$userID'> $name </a></li>";
     }
@@ -906,6 +906,8 @@ function getLastTransactions($page = 0)
                 "comment" => $dsatz["comment"],
                 "userNameSlapGive" => $userNameSlapGive,
                 "userNameSlapTake" => $userNameSlapTake,
+                "userIDSlapGive" => $userIDSlapGive,
+                "userIDSlapTake" => $userIDSlapTake,
                 "formattedDate" => $formattedDate
             ];
         }
@@ -930,7 +932,7 @@ function getLatestMember()
     $sql = "SELECT MAX(userID) FROM user";
     $result = $con->query($sql);
     $latestUser = $result->fetch_column(0);
-    return $latestUser;
+    return htmlentities($latestUser);
 
 
 }
