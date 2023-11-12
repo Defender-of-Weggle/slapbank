@@ -4,8 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <?php echo $pageTitle ?? 'Ze Slapbank'; ?></title>
+        <?php echo $pageTitle ?? 'Ze Slapbank'; ?>
+    </title>
         <link rel="stylesheet" href="stylesheet.css">
+
+    <?php
+    initSession();
+    ?>
     <style>
 
         body {
@@ -27,9 +32,7 @@
         }
 
 
-        <?php
-    initSession();
-    ?>
+
 
         html, body {
             margin: 0;
@@ -37,7 +40,7 @@
         }
 
         * {
-            font-family: "monospace-lucida-", monospace;
+            font-family: "Courier New", "Lucida Console", monospace;
             box-sizing: border-box;
         }
 

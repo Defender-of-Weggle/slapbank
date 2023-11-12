@@ -23,10 +23,6 @@ function Login($userName, $password)
         {
             $_SESSION["login"]="1";
             echo "Good day, $userName!<br>";
-            echo "<br>";
-            echo "<form action='index.php' method='post'>";
-            echo "<input type='hidden' hidden='hidden' name='UserName' value='$userName'>";
-            echo "<input type='submit' value='Check your Slap balance'>";
         }
         else
             echo "<a href='login.php'>Login failed</a>";
@@ -327,16 +323,19 @@ function fetchLatestDeposit()
     $sql = "SELECT * FROM transaction WHERE operator = 'Deposit' ORDER BY date DESC";
     $result = $con->query($sql);
     $latestDeposit = $result->fetch_array();
-    $dateOfDeposit = $latestDeposit[6];
+    $dateOfDeposit = $latestDeposit["date"];
     $dateOfDeposit = new DateTime($dateOfDeposit);
-    $slapGiveName = getUserName($latestDeposit[4]);
-    $slapTakeName = getUserName($latestDeposit[5]);
+    $slapGiveName = getUserName($latestDeposit["userIDSlapGive"]);
+    $slapTakeName = getUserName($latestDeposit["userIDSlapTake"]);
+    $slaps = $latestDeposit["slaps"];
+    $userIDSlapGive = $latestDeposit["userIDSlapGive"];
+    $userIDSlapTake = $latestDeposit["UserIDSlapTake"];
 
 
 if (!empty($latestDeposit)) {
 
     echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
-    echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "<a href='profile.php?profileID=$latestDeposit[4]'>$slapGiveName</a>" . " deposits " . $latestDeposit[2] . " Slaps to " . "<a href='profile.php?profileID=$latestDeposit[5]'>$slapTakeName</a>";
+    echo "Transaction Nr. " . $latestDeposit["id"] . "<br>" . "<a href='profile.php?profileID=$userIDSlapGive'>$slapGiveName</a>" . " deposits " . $slaps . " Slaps to " . "<a href='profile.php?profileID=$userIDSlapTake'>$slapTakeName</a>";
     }
     else
     {
@@ -351,15 +350,18 @@ function fetchLatestWithdrawal()
     $sql = "SELECT * FROM transaction WHERE operator = 'Payout' ORDER BY date DESC";
     $result = $con->query($sql);
     $latestDeposit = $result->fetch_array();
-    $dateOfDeposit = $latestDeposit[6];
+    $dateOfDeposit = $latestDeposit["date"];
     $dateOfDeposit = new DateTime($dateOfDeposit);
-    $slapGiveName = getUserName($latestDeposit[4]);
-    $slapTakeName = getUserName($latestDeposit[5]);
-    $slaps = $latestDeposit[2] * -1;
+    $slapGiveName = getUserName($latestDeposit["userIDSlapGive"]);
+    $slapTakeName = getUserName($latestDeposit["userIDSlapTake"]);
+    $userIDSlapGive = $latestDeposit["userIDSlapGive"];
+    $userIDSlapTake = $latestDeposit["UserIDSlapTake"];
+    $slaps = $latestDeposit["slaps"] * -1;
+
 
     if (!empty($latestDeposit)) {
         echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
-        echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "<a href='profile.php?profileID=$latestDeposit[4]'>$slapGiveName</a>" . " slapped " . "<a href='profile.php?profileID=$latestDeposit[5]'>$slapTakeName</a>" . " " . $slaps . " times";
+        echo "Transaction Nr. " . $latestDeposit["id"] . "<br>" . "<a href='profile.php?profileID=$userIDSlapGive'>$slapGiveName</a>" . " slapped " . "<a href='profile.php?profileID=$userIDSlapTake'>$slapTakeName</a>" . " " . $slaps . " times";
     }
     else
     {
@@ -374,15 +376,18 @@ function fetchLatestPersonalDeposit($userID)
     $sql = "SELECT * FROM transaction WHERE operator = 'Deposit' AND userIDSlapGive = '$userID' ORDER BY date DESC";
     $result = $con->query($sql);
     $latestDeposit = $result->fetch_array();
-    $dateOfDeposit = $latestDeposit[6];
+    $dateOfDeposit = $latestDeposit["date"];
     $dateOfDeposit = new DateTime($dateOfDeposit);
-    $slapGiveName = getUserName($latestDeposit[4]);
-    $slapTakeName = getUserName($latestDeposit[5]);
+    $slapGiveName = getUserName($latestDeposit["userIDSlapGive"]);
+    $slapTakeName = getUserName($latestDeposit["userIDSlapTake"]);
+    $userIDSlapGive = $latestDeposit["userIDSlapGive"];
+    $userIDSlapTake = $latestDeposit["UserIDSlapTake"];
+    $slaps = $latestDeposit["slaps"];
 
     if (!empty($latestDeposit))
     {
         echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
-        echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "You" . " depositted " . $latestDeposit[2] . " Slaps to " . "<a href='profile.php?profileID=$latestDeposit[5]'>$slapTakeName</a>";
+        echo "Transaction Nr. " . $latestDeposit["id"] . "<br>" . "You" . " depositted " . $slaps . " Slaps to " . "<a href='profile.php?profileID=$userIDSlapTake'>$slapTakeName</a>";
     }
     else
     {
@@ -396,17 +401,20 @@ function fetchLatestPersonalWithdrawal($userID)
     $sql = "SELECT * FROM transaction WHERE operator = 'Payout' AND userIDSlapGive = '$userID' ORDER BY date DESC";
     $result = $con->query($sql);
     $latestDeposit = $result->fetch_array();
-    $dateOfDeposit = $latestDeposit[6];
+    $dateOfDeposit = $latestDeposit["date"];
     $dateOfDeposit = new DateTime($dateOfDeposit);
-    $slapGiveName = getUserName($latestDeposit[4]);
-    $slapTakeName = getUserName($latestDeposit[5]);
-    $slaps = $latestDeposit[2] * -1;
+    $slapGiveName = getUserName($latestDeposit["userIDSlapGive"]);
+    $slapTakeName = getUserName($latestDeposit["userIDSlapTake"]);
+    $userIDSlapGive = $latestDeposit["userIDSlapGive"];
+    $userIDSlapTake = $latestDeposit["UserIDSlapTake"];
+    $slaps = $latestDeposit["slaps"] * -1;
+
 
     if (!empty($latestDeposit))
     {
 
         echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
-        echo "Transaction Nr. " . $latestDeposit[0] . "<br>" . "You" . " slapped " . "<a href='profile.php?profileID=$latestDeposit[5]'>$slapTakeName</a>" . " " . $slaps . " times";
+        echo "Transaction Nr. " . $latestDeposit["id"] . "<br>" . "You" . " slapped " . "<a href='profile.php?profileID=$userIDSlapTake'>$slapTakeName</a>" . " " . $slaps . " times";
     }
     else
     {
@@ -490,7 +498,7 @@ function getSetting(string $key)
     return null;
 }
 
-function html_header($title = 'Ze Slapbank'): void
+function html_header($pageTitle = 'Ze Slapbank'): void
 {
     include __DIR__ . '/layout/header.php';
 }
@@ -673,23 +681,55 @@ function getAvailableUserTitlesSelectOptions($userID, $actualTitle)
         "slapsDeposited" => [
             "pathetic victim" => 0,
             "fresh meat, needs beating" => 10,
-            "Slaps like a Kid" => 40,
-            "Hoarder of Slaps" => 100,
-            "The Jew of Slaps" => 200,
-            "Generous Gifter" => 400,
-            "The Michael Moore of Slaps" => 10000
+            "you look like you need a slap" => 40,
+            "May i interest you in some slaps?" => 100,
+            "Generous Gifter" => 200,
+            "SLAPS. FOR. EVERYBODY!" => 400,
+            "Slaptax avoider" => 1000
         ],
         "slapsGiven" => [
+            "ouch, my hand T.T" => 10,
+            "this will leave a scar.. one me" => 40,
+            "Bring it on, Lappen" => 100,
+            "some Slaps a day, keeps everyone away" => 200,
+            "Conan, Slapper of Camels" => 400,
+            "Bud fucking Spencer" => 1000
+
 
         ],
         "amountOfPayouts" => [
-
+            "Beginning of a long Slap Journey" => 10,
+            "I've seen some cheeks, hehe" => 30,
+            "My hand, your Face, NOW - no homo" => 50,
+            "Why is everybody avoiding me?" => 100,
+            "Weird, my hand has a six pack" => 200,
+            "Jack the Slapper" => 400,
+            "Dwayne the Slap Johnson" => 600,
+            "The Big Bang Slap" => 1000
         ],
         "amountOfDeposits" => [
+            "Giver of Slaps" => 15,
+            "Slap Santa" => 30,
+            "Slaps for Charity" => 50,
+            "Help the Hobos, give Slaps" => 100,
+            "Now thats why Rudolfs Nose is Red..." => 200,
+            "You won! It's Pain!" => 400,
+            "Make a Slap Foundation" => 600,
+            "Blessing of the Slap god" => 1000
+
+
+
 
         ],
         "balance" => [
-
+            "Saving for a BIG slap" => 10,
+            "Could you spare ma slap? im in need!" =>25,
+            "not enough to retire.." => 50,
+            "I. NEED. MORE." => 100,
+            "Hoarder of Slaps" => 200,
+            "Jew of Slap" => 400,
+            "Midas slapped" => 600,
+            "Jeff Bezos, fellow Slap Dealer" => 1000
         ]
     ];
 

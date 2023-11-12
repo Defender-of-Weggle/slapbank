@@ -1,8 +1,8 @@
 <?php
 include "functions.inc.php";
-html_header('Slap Balance');
+html_header('Slap Transaction');
 
-initSession();
+//initSession();
 
 if(!isset($_SESSION["login"]))
 {
@@ -23,14 +23,17 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
 
 
 ?>
-<style>
+<style xmlns="http://www.w3.org/1999/html">
+    * {
+        box-sizing: border-box;
+    }
     .slider{
         -webkit-appearance: none;
         appearance: none;
         background-color: #222222;
         color: chartreuse;
         height: 15px;
-        width: 70px;
+        width: 80px;
     }
     .slider::-webkit-slider-thumb {
         -webkit-appearance: none; /* Override default look */
@@ -40,33 +43,32 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
         background: chartreuse; /* Green background */
         cursor: grab; /* Cursor on hover */
     }
-    .transaction {
-        width: 70%;
-        height: 100%;
-
+    .redFont{
+        color: red;
+        font-weight: bold;
     }
-
 </style>
 
+<div class="row">
+    <div class="column">
+        <span>Slap Balance:
+            <?php echo EigenerKontostand(getSessionUserID());
+            ?></span>
 
-<h1>Slap Balance:
-<?php echo EigenerKontostand(getSessionUserID());
-?>
-</h1>
 
-<h2>
-    Share the pain:
-</h2>
+    </div>
+    <div style='width: 25%; display: flex; justify-content: center; background-color: black; border: solid chartreuse 2px; color: chartreuse; font-weight: bold'>
+
 
 
 <form action="transaction_result.php" method="post">
 <?php echo "<input type='hidden' name='UserName' value='". getSessionUserName() ."'>";?>
             <input type="hidden" name="DB">
-    <p><label for="userSlapTake">Choose your victim.</label></p>
+    <p><label for="userSlapTake">Share the pain with:</label></p>
         <select name="userIDSlapTake">
         <?php UserWahl();?>
         </select>
-    <br><br><p><label for="comment">Reason?(Optional, sometimes you just have to)</label></p>
+    <br><br><p><label for="comment"> Comment</label></p>
     <textarea name="comment" rows="5" cols="20" placeholder="This sucker ate my cookie! MINE!"></textarea><br><br>
     <p><label for="slaps">Amount of Slaps</label></p>
 
@@ -84,7 +86,7 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
         }
     </script>
 
-<?php echo " $contingent left today"; ?><br><br>
+<?php echo "<p class='redFont'> $contingent left today</p>"; ?><br><br>
     <p><label for="operator">Type of transaction</label> </p>
     <p><select name="operator">
             <option value="Deposit"> Deposit</option>
@@ -92,7 +94,17 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
         </select></p><br>
 
     <input type="submit" value="Slap it!"> <input type="reset">
-</form>
+        </form>
+    </div>
+</div>
 
+
+
+    <div class="column">
+
+    </div>
+
+
+</div>
 <?php
 html_footer();

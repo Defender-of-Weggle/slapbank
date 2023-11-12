@@ -1,7 +1,7 @@
 <?php
 include "functions.inc.php";
 
-html_header('Overview');
+html_header('History');
 
 
 if(!isset($_SESSION["login"]))

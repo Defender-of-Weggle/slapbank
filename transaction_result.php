@@ -1,6 +1,6 @@
 <?php
 include "functions.inc.php";
-html_header('Schellenkontostand');
+html_header('Transaction Result');
 //session_start ();
 
 if(!isset($_SESSION["login"]))
@@ -28,7 +28,15 @@ if (isset($_POST["DB"]))
     $userID = getSessionUserID();
     $userIDSlapTake = ($_POST["userIDSlapTake"]);
     $userSlapTake = userSlapTakeDefinition($userIDSlapTake);
-    transaction($_POST["operator"], $_POST["slaps"], $_POST["comment"], $userID, $userIDSlapTake);
+    $operator = $_POST["operator"];
+    $slaps = $_POST["slaps"];
+    $comment = htmlentities($_POST["comment"]);
+
+
+
+
+
+    transaction($operator, $slaps, $comment, $userID, $userIDSlapTake);
     if ($operator === "Deposit")
     {
         echo "Thanks for the Deposit.<br><br>";
