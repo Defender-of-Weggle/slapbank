@@ -47,6 +47,13 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
         color: red;
         font-weight: bold;
     }
+    @media (max-width: 700px){
+        .transactionForm{
+            width: 80%;
+        }
+    }
+
+
 </style>
 
 <div class="row">
@@ -57,44 +64,86 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
 
 
     </div>
-    <div style='width: 25%; display: flex; justify-content: center; background-color: black; border: solid chartreuse 2px; color: chartreuse; font-weight: bold'>
-
+    <table class="transactionForm" style="@media max-width: 700px {
+    width: 100%;} justify-content: space-evenly">
 
 
 <form action="transaction_result.php" method="post">
-<?php echo "<input type='hidden' name='UserName' value='". getSessionUserName() ."'>";?>
-            <input type="hidden" name="DB">
-    <p><label for="userSlapTake">Share the pain with:</label></p>
-        <select name="userIDSlapTake">
-        <?php UserWahl();?>
-        </select>
-    <br><br><p><label for="comment"> Comment</label></p>
-    <textarea name="comment" rows="5" cols="20" placeholder="This sucker ate my cookie! MINE!"></textarea><br><br>
-    <p><label for="slaps">Amount of Slaps</label></p>
+    <tr>
+        <td>
+                <?php echo "<input type='hidden' name='UserName' value='". getSessionUserName() ."'>";?>
+                <input type="hidden" name="DB">
+                <p><label for="userSlapTake">Share the pain with:</label></p>
+        </td>
+            <td>
+                <select name="userIDSlapTake">
+                <?php UserWahl();?>
+                </select>
+            </td>
+    </tr>
+    <tr>
+            <td>
+                <br><br><p><label for="comment"> Comment</label></p>
+            </td>
+            <td>
+                <textarea name="comment" rows="9" cols="20" placeholder="This sucker ate my cookie! MINE!"></textarea><br>
+                <br>
+                <input type="checkbox" name="hideComment">
 
-    <p><input type="range" name="slaps" min="1" max="<?php echo $contingent;?>" value="1" class="slider" id="myRange"> <span id="demo"></span> Slaps</p>
+                    Hide Comment?<br>
+                <p class="redFont">hiding doesnt do shit yet, dont bother</p>
+                <br>
+                <br>
+            </td>
+    </tr>
+        <tr>
+                <td>
+                    <p><label for="slaps">Amount of Slaps</label></p>
+                </td>
+            <td>
+
+                <br>
+                <p><input type="range" name="slaps" min="1" max="<?php echo $contingent;?>" value="1" class="slider" id="myRange"> <span id="demo"></span> Slaps</p>
 
 
+                        <script>
+                            var slider = document.getElementById("myRange");
+                            var output = document.getElementById("demo");
+                            output.innerHTML = slider.value;
 
-    <script>
-        var slider = document.getElementById("myRange");
-        var output = document.getElementById("demo");
-        output.innerHTML = slider.value;
+                            slider.oninput = function() {
+                                output.innerHTML = this.value;
+                            }
+                        </script>
 
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-        }
-    </script>
+                    <?php echo "<p class='redFont'> $contingent left today</p>"; ?><br><br>
 
-<?php echo "<p class='redFont'> $contingent left today</p>"; ?><br><br>
-    <p><label for="operator">Type of transaction</label> </p>
-    <p><select name="operator">
-            <option value="Deposit"> Deposit</option>
-            <?php echo $adding; ?>
-        </select></p><br>
+            </td>
+        </tr>
+    <tr>
+        <td>
 
-    <input type="submit" value="Slap it!"> <input type="reset">
-        </form>
+            <p><label for="operator">Type of transaction</label> </p>
+
+        </td>
+        <td>
+            <br>
+                <p><select name="operator">
+                        <option value="Deposit"> Deposit</option>
+                        <?php echo $adding; ?>
+                    </select></p><br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Slap it!">
+        </td>
+        <td>
+            <input type="reset">
+                </form>
+        </td>
+    </tr>
+    </table>
     </div>
 </div>
 

@@ -74,7 +74,7 @@ while ($dsatz = $result->fetch_assoc()) {
 
 
     $birthdayContingent = $timeStamp . " ID: " . $userID . " Username: " . $userName . " turned $age, the gifted contingent: " . $contingent . " => " . $newContingent;
-    echo $birthdayContingent . "<br>";
+//    echo $birthdayContingent . "<br>";
     $birthdayContingent .= "\n";
 
     $userID = $dsatz["userID"];
@@ -88,7 +88,7 @@ while ($dsatz = $result->fetch_assoc()) {
     $con->query("UPDATE user SET contingent = '$newContingent', tempUserRole = 2 WHERE userID = '$userID'");
 
 
-
+    calloutRandomSlapper(1, 1);
 
 }
 

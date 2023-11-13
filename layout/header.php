@@ -6,7 +6,8 @@
     <title>
         <?php echo $pageTitle ?? 'Ze Slapbank'; ?>
     </title>
-        <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="./layout/stylesheet.css">
+
 
     <?php
     initSession();
