@@ -91,7 +91,7 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
                 <input type="checkbox" name="hideComment">
 
                     Hide Comment?<br>
-                <p class="redFont">hiding doesnt do shit yet, dont bother</p>
+
                 <br>
                 <br>
             </td>

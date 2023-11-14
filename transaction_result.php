@@ -30,13 +30,14 @@ if (isset($_POST["DB"]))
     $userSlapTake = userSlapTakeDefinition($userIDSlapTake);
     $operator = $_POST["operator"];
     $slaps = $_POST["slaps"];
+    $hideComment = $_POST["hideComment"];
     $comment = htmlentities($_POST["comment"]);
 
 
 
 
 
-    transaction($operator, $slaps, $comment, $userID, $userIDSlapTake);
+    transaction($operator, $slaps, $comment, $hideComment, $userID, $userIDSlapTake);
     if ($operator === "Deposit")
     {
         echo "Thanks for the Deposit.<br><br>";

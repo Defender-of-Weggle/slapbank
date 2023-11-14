@@ -126,7 +126,10 @@ h2
     object-fit: cover;
 }
 
-
+.redFont{
+    color: red;
+    font-weight: bold;
+}
 
 
 

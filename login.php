@@ -16,7 +16,7 @@ html_header('Login or Register');
 <br>
 
 
-?>
+
 <br>
 
 

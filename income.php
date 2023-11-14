@@ -46,8 +46,7 @@ while ($dsatz = $res->fetch_assoc())
     };
     $update = $update + $dsatz["contingent"];
     $logParagraph .= $update . "\n";
-    echo $logParagraph . "<br>";
-//    echo "incomelimitationthreshol = " .$incomeLimitationThreshold . "<br>" . "Incomeafterlimitation = " . $incomeAfterLimitation . "<br>" . "IncomeStandard = " . $incomeStandard . "<br>";
+
     $logFile = fopen("incomelog.txt", "a") or die("Unable to open File, blyad..");
     fwrite($logFile, $logParagraph);
     fclose($logFile);
@@ -60,9 +59,7 @@ $sql = "SELECT userID, userName, birthday, tempUserRole FROM user WHERE DAY(birt
 $result = $con->query($sql);
 
 
-if ($result->num_rows === 0) {
-    echo "No birthdays today, sucker";
-}
+
 
 while ($dsatz = $result->fetch_assoc()) {
     $userID = $dsatz["userID"];
@@ -88,9 +85,16 @@ while ($dsatz = $result->fetch_assoc()) {
     $con->query("UPDATE user SET contingent = '$newContingent', tempUserRole = 2 WHERE userID = '$userID'");
 
 
-    calloutRandomSlapper(1, 1);
 
 }
+$sql = "UPDATE user SET tempUserRole=2
+WHERE NOT (DAY(birthday) = DAY(CURRENT_DATE()) AND MONTH(birthday) = MONTH(CURRENT_DATE()))
+AND userRole = 3
+ORDER BY RAND()
+LIMIT 1";
+$con->query($sql);
+
+
 
 html_footer();
 

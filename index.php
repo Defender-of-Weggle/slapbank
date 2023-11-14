@@ -77,19 +77,20 @@ $latestMember = getUserName($latestMemberID);
             <h4>How this stupid thing works, more or less</h4>
             <ul><li>Everybody starts with a contingent of 25 Slaps</li>
                 <li></li>
-                <li><strong>The Roles</strong></li>
-                <li>Default role - Deposit only</li>
+                <li><strong style="color: red">The Roles</strong></li>
+                <li><span style="color: red">Default role - Deposit only</span></li>
                 <li>Deposits use contingents</li>
-                <li>On birthday will become a slapman for the day</li>
-                <li>On birthday will get contingent added worth the age</li>
+
                 <li> </li>
-                    <li>Executive role - The "both is good" guy</li>
+                <li><span style="color: red">Executive role - can deposit and slap</span></li>
                 <li>Deposits and execution of slaps uses contingent</li>
                 <li>On birthday will get contingent added worth the age</li>
-                <li></li><li><strong>General stuff</strong></li>
-                <li>Server refreshes contingents everyday as followed:</li>
-                <li>Your contingent will be increased by 10 every day</li>
-                <li>When you reach a total of 30, it will shrink down to 3</li>
+                <li></li><li><strong style="color: red">General stuff</strong></li>
+                <li><span style="color: red">New!</span> Daily Random Slapper(every 24 hours a new one) </li>
+                <li>On birthday accounts will get contingent added worth their age</li>
+                <li>Server refreshes contingents every day as followed:</li>
+                <li>Your spending limit is 30 or lower: 10</li>
+                <li>Your spending limit is Above 30: 3</li>
             </ul>
 
         </div>

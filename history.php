@@ -9,17 +9,24 @@ if(!isset($_SESSION["login"]))
     echo "<br><br>Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
     exit();
 }
-
+$sessionUserID = getSessionUserID();
 
 ?>
 
+<style>
+    .redFont{
+        color: red;
+        font-weight: bold;
+    }
+</style>
 
 
 
 
 <div class="row">
     <div class="column">
-
+        <br><br>
+    <span>* Only benefactor and recipient can read read the comment</span>
 
     </div>
     <div class="column" style="text-align: left">
@@ -61,7 +68,51 @@ if(!isset($_SESSION["login"]))
                                     </tr>
                                     <tr>
                                         <td style="text-align: right; font-weight: bold">comment:</td>
-                                        <td><?php echo $row['comment'] ?></td>
+                                        <td><?php
+
+
+                                            switch ($row["hideComment"]){
+                                                case 0:
+                                                    $comment = $row["comment"];
+                                                    break;
+                                                case 1:
+                                                $comment = match (true) {
+                                                    $sessionUserID == $row["userIDSlapGive"] => $comment = $row['comment'],
+
+                                                    $sessionUserID == $row["userIDSlapTake"] => $comment = $row['comment'],
+
+//                                                    $sessionUserID == $row["userIDSlapGive"] or $row["userIDSlapTake"] => $comment = $row['comment'],
+
+                                                    $sessionUserID !== $row["userIDSlapGive"] => $comment = "<p class='redFont'>Confidential comment, get lost*</p>",
+
+                                                    $sessionUserID !== $row["userIDSlapTake"]  => $comment = "<p class='redFont'>Confidential comment, get lost*</p>",
+
+//                                                case $sessionUserID == $row["userIDSlapGive"] OR $row["userIDSlapTake"] AND $row["hideComment"] == 1:
+//                                                    echo $row['comment'];
+//                                                    break;
+//
+//                                                case $sessionUserID !== $row["userIDSlapGive"] OR $row["userIDSlapTake"] AND $row["hideComment"] == 1:
+//                                                    echo "<p class='redFont'>Confidential comment, get lost</p>";
+//                                                    break;
+//
+
+
+                                                };
+                                            }
+
+
+                                            echo $comment;
+
+//                                            if ($row["hideComment"] === 1)
+//                                            {
+//                                                echo "<p class='redFont'>Confidential comment, get lost</p>";
+//                                            }
+//                                            elseif ($sessionUserID === $row["userIDSlapGive"] OR $row["userIDSlapTake"])
+//                                            {
+//                                                echo $row['comment'];
+//                                            }
+
+                                            ?></td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: right; font-weight: bold">benefactor:</td>

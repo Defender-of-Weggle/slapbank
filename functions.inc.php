@@ -112,7 +112,7 @@ function UserWahl()
     $con->close();
 }
 
-function transaction(string $operator, int $slaps, string $comment, int $userIDSlapGive, int $userIDSlapTake)
+function transaction(string $operator, int $slaps, string $comment, bool $hideComment, int $userIDSlapGive, int $userIDSlapTake)
 {
     $victimBalance = EigenerKontostand($userIDSlapTake);
     $contingent = getContingent($userIDSlapGive);
@@ -133,9 +133,9 @@ function transaction(string $operator, int $slaps, string $comment, int $userIDS
         }
     }
     global $con;
-        $ps = $con->prepare("INSERT INTO transaction (operator, slaps, comment, userIDSlapGive, userIDSlapTake) VALUES(?, ?, ?, ?, ?)");
+        $ps = $con->prepare("INSERT INTO transaction (operator, slaps, comment, hideComment, userIDSlapGive, userIDSlapTake) VALUES(?, ?, ?, ?, ?, ?)");
 //    $ps = $con->prepare("INSERT INTO transaction (Operator, Slaps, Comment, UserSlapGive, UserSlapTake) VALUES ?, ?, ?, ?, ?");
-    $ps->bind_param("sisii", $operator, $slaps, $comment, $userIDSlapGive, $userIDSlapTake);
+    $ps->bind_param("sissii", $operator, $slaps, $comment, $hideComment, $userIDSlapGive, $userIDSlapTake);
     $ps->execute();
     if ($ps->affected_rows > 0)
     {
@@ -838,6 +838,7 @@ LIMIT 1";
     }
 }
 
+
 function getAdminMembers()
 {
     global $con;
@@ -944,6 +945,7 @@ function getLastTransactions($page = 0)
                 "operator" => $operator,
                 "slaps" => $slaps,
                 "comment" => $dsatz["comment"],
+                "hideComment" => intval($dsatz["hideComment"]),
                 "userNameSlapGive" => $userNameSlapGive,
                 "userNameSlapTake" => $userNameSlapTake,
                 "userIDSlapGive" => $userIDSlapGive,
