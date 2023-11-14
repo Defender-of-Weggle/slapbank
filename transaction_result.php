@@ -30,7 +30,7 @@ if (isset($_POST["DB"]))
     $userSlapTake = userSlapTakeDefinition($userIDSlapTake);
     $operator = $_POST["operator"];
     $slaps = $_POST["slaps"];
-    $hideComment = $_POST["hideComment"];
+    $hideComment = $_POST["hideComment"] ?? 0;
     $comment = htmlentities($_POST["comment"]);
 
 

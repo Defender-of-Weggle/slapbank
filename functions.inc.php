@@ -320,22 +320,25 @@ function newPostSend($userID, $title, $content)
 function fetchLatestDeposit()
 {
     global $con;
-    $sql = "SELECT * FROM transaction WHERE operator = 'Deposit' ORDER BY date DESC";
+    $sql = "SELECT * FROM transaction WHERE operator = 'Deposit' ORDER BY date DESC LIMIT 1";
     $result = $con->query($sql);
     $latestDeposit = $result->fetch_array();
     $dateOfDeposit = $latestDeposit["date"];
     $dateOfDeposit = new DateTime($dateOfDeposit);
-    $slapGiveName = getUserName($latestDeposit["userIDSlapGive"]);
-    $slapTakeName = getUserName($latestDeposit["userIDSlapTake"]);
-    $slaps = $latestDeposit["slaps"];
     $userIDSlapGive = $latestDeposit["userIDSlapGive"];
-    $userIDSlapTake = $latestDeposit["UserIDSlapTake"];
-
+    $userIDSlapTake = $latestDeposit["userIDSlapTake"];
+    $slapGiveName = getUserName($userIDSlapGive);
+    $slapTakeName = getUserName($userIDSlapTake);
+    $slaps = $latestDeposit["slaps"];
+//    $userIDSlapGive = $latestDeposit["userIDSlapGive"];
+//    $userIDSlapTake = $latestDeposit["UserIDSlapTake"];
 
 if (!empty($latestDeposit)) {
 
     echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
-    echo "Transaction Nr. " . $latestDeposit["id"] . "<br>" . "<a href='profile.php?profileID=$userIDSlapGive'>$slapGiveName</a>" . " deposits " . $slaps . " Slaps to " . "<a href='profile.php?profileID=$userIDSlapTake'>$slapTakeName</a>";
+    echo "Transaction Nr. " . $latestDeposit["id"] . "<br>" .
+        "<a href='profile.php?profileID=$userIDSlapGive'>$slapGiveName</a>" . " deposits " . $slaps . " Slaps to " .
+        "<a href='profile.php?profileID=" . $userIDSlapTake . "'>$slapTakeName</a>";
     }
     else
     {
@@ -355,13 +358,13 @@ function fetchLatestWithdrawal()
     $slapGiveName = getUserName($latestDeposit["userIDSlapGive"]);
     $slapTakeName = getUserName($latestDeposit["userIDSlapTake"]);
     $userIDSlapGive = $latestDeposit["userIDSlapGive"];
-    $userIDSlapTake = $latestDeposit["UserIDSlapTake"];
+    $userIDSlapTake = $latestDeposit["userIDSlapTake"];
     $slaps = $latestDeposit["slaps"] * -1;
-
 
     if (!empty($latestDeposit)) {
         echo $dateOfDeposit->format("D, d M Y H:i:s") . "<br>";
-        echo "Transaction Nr. " . $latestDeposit["id"] . "<br>" . "<a href='profile.php?profileID=$userIDSlapGive'>$slapGiveName</a>" . " slapped " . "<a href='profile.php?profileID=$userIDSlapTake'>$slapTakeName</a>" . " " . $slaps . " times";
+        echo "Transaction Nr. " . $latestDeposit["id"] . "<br>" . "<a href='profile.php?profileID=$userIDSlapGive'>$slapGiveName</a>" .
+            " slapped " . "<a href='profile.php?profileID=$userIDSlapTake'>$slapTakeName</a>" . " " . $slaps . " times";
     }
     else
     {
@@ -381,7 +384,7 @@ function fetchLatestPersonalDeposit($userID)
     $slapGiveName = getUserName($latestDeposit["userIDSlapGive"]);
     $slapTakeName = getUserName($latestDeposit["userIDSlapTake"]);
     $userIDSlapGive = $latestDeposit["userIDSlapGive"];
-    $userIDSlapTake = $latestDeposit["UserIDSlapTake"];
+    $userIDSlapTake = $latestDeposit["userIDSlapTake"];
     $slaps = $latestDeposit["slaps"];
 
     if (!empty($latestDeposit))
@@ -406,7 +409,7 @@ function fetchLatestPersonalWithdrawal($userID)
     $slapGiveName = getUserName($latestDeposit["userIDSlapGive"]);
     $slapTakeName = getUserName($latestDeposit["userIDSlapTake"]);
     $userIDSlapGive = $latestDeposit["userIDSlapGive"];
-    $userIDSlapTake = $latestDeposit["UserIDSlapTake"];
+    $userIDSlapTake = $latestDeposit["userIDSlapTake"];
     $slaps = $latestDeposit["slaps"] * -1;
 
 
