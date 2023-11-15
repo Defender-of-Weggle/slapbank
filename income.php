@@ -96,6 +96,11 @@ $con->query($sql);
 
 
 
+$sql = "UPDATE jackpot SET currentJackpot = currentJackpot + 10";
+$con->query($sql);
+
+
+
 html_footer();
 
 ?>

@@ -16,7 +16,7 @@ $userName = htmlentities(getSessionUserName());
 
 //print_R($_SESSION);
 //print_R($_POST);
-$userIDSlapTake = $_POST["userIDSlapTake"] ?? 'Unbekannter Nutzer';
+$userIDSlapTake = $_POST["userIDSlapTake"] ?? 'Unknown user';
 $slaps = $_POST["slaps"] ?? 0;
 $operator = $_POST["operator"] ?? "Deposit";
 

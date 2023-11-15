@@ -183,6 +183,7 @@
         <li><a style="text-decoration: none" href="index.php"> Overview </a></li>
         <li><a style="text-decoration: none" href="transaction.php"> Transaction </a></li>
         <li><a style="text-decoration: none" href="history.php"> History</a></li>
+        <li><a style="text-decoration: none" href="lottery.php"> Lottery</a></li>
         <li><a style="text-decoration: none" href="members.php"> Members</a></li>
         <li><a style="text-decoration: none" href="news.php"> News </a></li>
         <li><a style="text-decoration: none" href="profile.php"> Profile </a></li>

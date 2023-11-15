@@ -982,6 +982,123 @@ function getLatestMember()
 
 }
 
+function getCurrentJackpot()
+{
+    global $con;
+    $sql = "SELECT * FROM jackpot";
+    $res = $con->query($sql);
+    $jackpot = $res->fetch_array();
+    return $jackpot;
+}
+
+function updateJackpot($newJackpot){
+    global $con;
+    $sql = "UPDATE jackpot SET currentJackpot = '$newJackpot'";
+    $con->query($sql);
+}
+
+function slapLottery($userID, $slaps)
+{
+
+
+$jackpot = getCurrentJackpot()["currentJackpot"];
+$userRole = getUserRole($userID);
+$tempUserRole = getTempUserRole($userID);
+$contingent = getContingent($userID);
+$winCount = 0;
+
+
+$contingent = $contingent - $slaps;
+
+//if ($userRole === 3 AND $tempUserRole === 3) {
+//    $noTempRoleWin = 1;
+//}
+//else{
+//    $noTempRoleWin = 0;
+//}
+    for ($i = 1; $i <= $slaps; $i++) {
+        $randomInt = random_int(1, 75);
+
+        $win = match (true) {
+            $randomInt <= 55 => 0,
+
+            $randomInt <= 65 => 1,
+
+            $randomInt <= 70 => 5,
+
+            $randomInt <= 73 => 7,
+
+            $randomInt <= 74 => 10,
+
+            $randomInt == 75 => $jackpot,
+
+            default => 0
+        };
+
+
+
+
+            if ($win == 5) {
+                global $con;
+                $sql = "SELECT tempUserRole, userRole FROM user WHERE userID = '$userID'";
+                $res = $con->query($sql);
+                $result = $res->fetch_assoc();
+                $userRole = $result["userRole"];
+                $tempUserRole = $result["tempUserRole"];
+                if ($tempUserRole === $userRole) {
+
+
+                    global $con;
+                    $sql = "UPDATE user SET tempUserRole = 2 WHERE userID = '$userID'";
+                    $con->query($sql);
+                    $win = "5 Slaps AND the temporary Slap role! Congratulations, sucker";
+                }
+            }
+
+
+
+
+
+
+                    if ($win == $jackpot) {
+                        $jackpot = 11;
+                        echo "<p style='color: red'>Win nr. $i: Ze fucking Jackpot! enjoy $win Slaps to give</p>";
+                        $winCount = $winCount + $win;
+                        $contingent = $contingent + $win;
+                    }
+                    else
+                    {
+
+                    echo "<p style='color: red'>Ticket Nr. $i: You won: $win Slaps</p>";
+                        if (is_string($win)){
+                            $win = 5;
+                        }
+                        $winCount = $winCount + $win;
+                        $contingent = $contingent + $win;
+                    }
+
+    }
+                    $jackpot = $jackpot + $slaps;
+
+                    updateJackpot($jackpot);
+
+                    global $con;
+                    $sql = "UPDATE user SET contingent = '$contingent' WHERE userID = '$userID'";
+                    $con->query($sql);
+
+
+
+
+                    global $con;
+                    $sql = "INSERT INTO lottery (userID, slapsUsed, slapsWon) VALUES ($userID, $slaps, $winCount)";
+                    $con->query($sql);
+
+
+
+}
+
+
+
 ?>
 
 
