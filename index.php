@@ -36,7 +36,7 @@ $contingent = getContingent($userID) ?? "n.a.";
 $balance = EigenerKontostand($userID) ?? "n.a.";
 $latestMemberID = getLatestMember();
 $latestMember = getUserName($latestMemberID);
-
+$currentJackpot = getCurrentJackpot()["currentJackpot"];
 
 
 ?>
@@ -83,8 +83,8 @@ $latestMember = getUserName($latestMemberID);
 
                 <li> </li>
                 <li><span style="color: red">Executive role - can deposit and slap</span></li>
-                <li>Deposits and execution of slaps uses contingent</li>
-                <li>On birthday will get contingent added worth the age</li>
+                <li>Deposits and execution of slaps uses same contingent</li>
+
                 <li></li><li><strong style="color: red">General stuff</strong></li>
                 <li><span style="color: red">New!</span> Daily Random Slapper(every 24 hours a new one) </li>
                 <li>On birthday accounts will get contingent added worth their age</li>
@@ -106,7 +106,8 @@ $latestMember = getUserName($latestMemberID);
     <div class="column">
         <?php
         echo "Latest registration:<br><br>";
-        echo "<a href='profile.php?profileID=$latestMemberID'>$latestMember</a>"
+        echo "<a href='profile.php?profileID=$latestMemberID'>$latestMember</a><br><br>";
+        echo "Currently in Jackpot:<br><a href='lottery.php'><p class='redFont'> $currentJackpot slaps</p></a>"
         ?>
 
     </div>

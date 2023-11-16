@@ -96,7 +96,7 @@ $con->query($sql);
 
 
 
-$sql = "UPDATE jackpot SET currentJackpot = currentJackpot + 10";
+$sql = "UPDATE jackpot SET currentJackpot = currentJackpot + 1";
 $con->query($sql);
 
 

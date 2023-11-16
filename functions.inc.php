@@ -693,7 +693,8 @@ function getAvailableUserTitlesSelectOptions($userID, $actualTitle)
         "slapsGiven" => [
             "ouch, my hand T.T" => 10,
             "this will leave a scar.. one me" => 40,
-            "Bring it on, Lappen" => 100,
+            "Bring it on, Lappen!" => 50,
+            "Guts, 100 man Slapper" => 100,
             "some Slaps a day, keeps everyone away" => 200,
             "Conan, Slapper of Camels" => 400,
             "Bud fucking Spencer" => 1000
@@ -716,8 +717,8 @@ function getAvailableUserTitlesSelectOptions($userID, $actualTitle)
             "Slaps for Charity" => 50,
             "Help the Hobos, give Slaps" => 100,
             "Now thats why Rudolfs Nose is Red..." => 200,
-            "You won! It's Pain!" => 400,
-            "Make a Slap Foundation" => 600,
+            "Go slap me Crowdfunding" => 400,
+            "Make a WishSlap Foundation" => 600,
             "Blessing of the Slap god" => 1000
 
 
@@ -726,7 +727,7 @@ function getAvailableUserTitlesSelectOptions($userID, $actualTitle)
         ],
         "balance" => [
             "Saving for a BIG slap" => 10,
-            "Could you spare ma slap? im in need!" =>25,
+            "Could you spare me a slap? im in need!" =>25,
             "not enough to retire.." => 50,
             "I. NEED. MORE." => 100,
             "Hoarder of Slaps" => 200,
@@ -1017,20 +1018,21 @@ $contingent = $contingent - $slaps;
 //    $noTempRoleWin = 0;
 //}
     for ($i = 1; $i <= $slaps; $i++) {
-        $randomInt = random_int(1, 75);
-
+        $randomInt = random_int(1, 100);
+        var_dump($randomInt);
+//            $randomInt = 75;
         $win = match (true) {
-            $randomInt <= 55 => 0,
+            $randomInt <= 60 => 0,
 
-            $randomInt <= 65 => 1,
+            $randomInt <= 80 => 1,
 
-            $randomInt <= 70 => 5,
+            $randomInt <= 85 => 5,
 
-            $randomInt <= 73 => 7,
+            $randomInt <= 87 => 7,
 
-            $randomInt <= 74 => 10,
+            $randomInt <= 89 => 10,
 
-            $randomInt == 75 => $jackpot,
+            $randomInt == 90 => $jackpot,
 
             default => 0
         };
@@ -1062,19 +1064,18 @@ $contingent = $contingent - $slaps;
 
                     if ($win == $jackpot) {
                         $jackpot = 11;
-                        echo "<p style='color: red'>Win nr. $i: Ze fucking Jackpot! enjoy $win Slaps to give</p>";
+                        echo "<p style='color: red'>Win nr. $i: Ze fucking Jackpot! enjoy $win Slaps</p>";
                         $winCount = $winCount + $win;
                         $contingent = $contingent + $win;
                     }
                     else
                     {
-
                     echo "<p style='color: red'>Ticket Nr. $i: You won: $win Slaps</p>";
-                        if (is_string($win)){
-                            $win = 5;
-                        }
-                        $winCount = $winCount + $win;
-                        $contingent = $contingent + $win;
+                    if (is_string($win)){
+                        $win = 5;
+                    }
+                    $winCount = $winCount + $win;
+                    $contingent = $contingent + $win;
                     }
 
     }

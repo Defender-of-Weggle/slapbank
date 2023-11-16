@@ -8,6 +8,14 @@ if(!isset($_SESSION["login"]))
     exit();
 }
 $userID = getSessionUserID();
+
+if (isset($_POST["slaps"])) {
+    $slaps = $_POST["slaps"];
+    slapLottery($userID, $slaps);
+}
+
+
+
 $jackpot = getCurrentJackpot()["currentJackpot"];
 $lastJackpotUpdate = getCurrentJackpot()["lastUpdated"];
 $lastJackpotUpdate = new DateTime($lastJackpotUpdate);
@@ -85,12 +93,7 @@ $contingent = getContingent($userID);
             <?php echo "<p class='redFont'> $contingent left today</p>"; ?><br><br>
             <input type="submit" value="Slap your Luck">
         </form>
-        <?php
-            if (isset($_POST["slaps"])) {
-            $slaps = $_POST["slaps"];
-            slapLottery($userID, $slaps);
-            }
-        ?>
+
 
     </div>
 
