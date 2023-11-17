@@ -1003,12 +1003,21 @@ function slapLottery($userID, $slaps)
 
 
 $jackpot = getCurrentJackpot()["currentJackpot"];
+$lastJackpotPayout = getCurrentJackpot()["lastPayout"];
 $userRole = getUserRole($userID);
 $tempUserRole = getTempUserRole($userID);
 $contingent = getContingent($userID);
 $winCount = 0;
 
+$lastJackpotPayout = new DateTimeImmutable($lastJackpotPayout);
 
+$dateNow = new DateTimeImmutable('now');
+
+$dateDifference = $lastJackpotPayout->diff($dateNow);
+    if ($dateDifference->format('%R%a') < 7) {
+        $noJackpot = 1;
+    }
+//echo "Day difference: $dateDifference tage";
 $contingent = $contingent - $slaps;
 
 //if ($userRole === 3 AND $tempUserRole === 3) {
@@ -1018,8 +1027,13 @@ $contingent = $contingent - $slaps;
 //    $noTempRoleWin = 0;
 //}
     for ($i = 1; $i <= $slaps; $i++) {
-        $randomInt = random_int(1, 100);
-        var_dump($randomInt);
+        if (isset($noJackpot)){
+            $randomInt = random_int(1, 89);
+        }
+        else {
+            $randomInt = random_int(1, 90);
+        }
+//        var_dump($randomInt);
 //            $randomInt = 75;
         $win = match (true) {
             $randomInt <= 60 => 0,
@@ -1063,16 +1077,24 @@ $contingent = $contingent - $slaps;
 
 
                     if ($win == $jackpot) {
-                        $jackpot = 11;
                         echo "<p style='color: red'>Win nr. $i: Ze fucking Jackpot! enjoy $win Slaps</p>";
                         $winCount = $winCount + $win;
                         $contingent = $contingent + $win;
+                        global $con;
+                        $sql = "UPDATE jackpot SET lastPayout = current_time, idLastWinner = $userID, lastWonJackpot = '$jackpot';";
+                        $con->query($sql);
+                        $jackpot = 20;
+
                     }
                     else
                     {
                     echo "<p style='color: red'>Ticket Nr. $i: You won: $win Slaps</p>";
                     if (is_string($win)){
                         $win = 5;
+                    }
+                    $jackpot = $jackpot - $win;
+                    if ($jackpot < 18){
+                        $jackpot = 20;
                     }
                     $winCount = $winCount + $win;
                     $contingent = $contingent + $win;

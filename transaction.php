@@ -33,12 +33,12 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
         background-color: #222222;
         color: chartreuse;
         height: 15px;
-        width: 80px;
+        width: 120px;
     }
     .slider::-webkit-slider-thumb {
         -webkit-appearance: none; /* Override default look */
         appearance: none;
-        width: 10px; /* Set a specific slider handle width */
+        width: 5px; /* Set a specific slider handle width */
         height: 10px; /* Slider handle height */
         background: chartreuse; /* Green background */
         cursor: grab; /* Cursor on hover */

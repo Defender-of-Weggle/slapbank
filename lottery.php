@@ -14,16 +14,18 @@ if (isset($_POST["slaps"])) {
     slapLottery($userID, $slaps);
 }
 
-
-
+$lastJackpotWinnerID = getCurrentJackpot()["idLastWinner"] ?? 1;
+$lastJackpotWinner = getUserName($lastJackpotWinnerID) ?? "None";
+$lastWonJackpot = getCurrentJackpot()["lastWonJackpot"] ?? "None";
+$dateLastJackpotWin = getCurrentJackpot()["lastPayout"];
+$dateLastJackpotWin = new DateTime($dateLastJackpotWin);
 $jackpot = getCurrentJackpot()["currentJackpot"];
 $lastJackpotUpdate = getCurrentJackpot()["lastUpdated"];
 $lastJackpotUpdate = new DateTime($lastJackpotUpdate);
 if (empty($jackpot)) {
-    $jackpot = 11;
+    $jackpot = 20;
     updateJackpot($jackpot);
 }
-
 $contingent = getContingent($userID);
 
 //if (isset($_POST["slaps"])) {
@@ -42,12 +44,12 @@ $contingent = getContingent($userID);
         background-color: #222222;
         color: chartreuse;
         height: 15px;
-        width: 80px;
+        width: 120px;
     }
     .slider::-webkit-slider-thumb {
         -webkit-appearance: none; /* Override default look */
         appearance: none;
-        width: 10px; /* Set a specific slider handle width */
+        width: 5px; /* Set a specific slider handle width */
         height: 10px; /* Slider handle height */
         background: chartreuse; /* Green background */
         cursor: grab; /* Cursor on hover */
@@ -102,7 +104,10 @@ $contingent = getContingent($userID);
 
         <h4>top 3 Winners:</h4>
         <p>Coming soon, or not</p>
-
+        <br><br>
+        <h4>Last Jackpot Winner:</h4>
+        <p><?php echo "<a href='profile.php?profileID=$lastJackpotWinnerID'>$lastJackpotWinner</a> with a Jackpot of:<span class='redFont'> $lastWonJackpot</span>" ?></p>
+        <p><?php echo $dateLastJackpotWin->format("d/m/y H:i"); ?></p>
 
     </div>
 

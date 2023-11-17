@@ -28,8 +28,13 @@ if(!isset($_SESSION["login"]))
 }
 
 $userID = getSessionUserID() ?? "";
-
-
+$lastJackpotWinnerID = getCurrentJackpot()["idLastWinner"] ?? 1;
+$lastJackpotWinner = getUserName($lastJackpotWinnerID) ?? "None";
+$lastWonJackpot = getCurrentJackpot()["lastWonJackpot"] ?? "None";
+$dateLastJackpotWin = getCurrentJackpot()["lastPayout"];
+$dateLastJackpotWin = new DateTime($dateLastJackpotWin);
+$lastJackpotUpdate = getCurrentJackpot()["lastUpdated"];
+$lastJackpotUpdate = new DateTime($lastJackpotUpdate);
 
 $userName = getSessionUserName() ?? "";
 $contingent = getContingent($userID) ?? "n.a.";
@@ -105,9 +110,14 @@ $currentJackpot = getCurrentJackpot()["currentJackpot"];
 
     <div class="column">
         <?php
-        echo "Latest registration:<br><br>";
-        echo "<a href='profile.php?profileID=$latestMemberID'>$latestMember</a><br><br>";
-        echo "Currently in Jackpot:<br><a href='lottery.php'><p class='redFont'> $currentJackpot slaps</p></a>"
+        echo "<h4>Latest registration:</h4>";
+        echo "<a href='profile.php?profileID=$latestMemberID'>$latestMember</a><br><br><br>";
+        echo "<h4>Currently in Jackpot:</h4><a href='lottery.php'><p class='redFont'> $currentJackpot slaps</p></a><br>";
+        echo "<h4>Last Jackpot Winner:</h4>";
+        echo "<p> <a href='profile.php?profileID=$lastJackpotWinnerID'>$lastJackpotWinner</a> with a Jackpot of: <span class='redFont'> $lastWonJackpot</span></p>";
+        echo "<p>";
+        echo $dateLastJackpotWin->format("d/m/y H:i");
+        echo "</p>";
         ?>
 
     </div>
