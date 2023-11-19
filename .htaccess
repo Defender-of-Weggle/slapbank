@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.slapcenter.metalkorner.de [NC]
+RewriteRule ^(.*)$ https://slapcenter.metalkorner.de/$1 [L,R=301]
+
+<Files "income.php">  
+  Order Allow,Deny
+  Deny from all
+</Files>
+
+#deny all docker related files
+<Files "Dockerfile|docker-compose*">
+  Order Allow,Deny
+  Deny from all
+</Files>
