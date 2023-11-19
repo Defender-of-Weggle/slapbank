@@ -9,3 +9,6 @@ profilePics/*
 
 #ignoriere custom docker settings
 docker-compose.override.yml
+
+#ignore .env file
+.env
