@@ -1001,13 +1001,21 @@ function updateJackpot($newJackpot){
 function slapLottery($userID, $slaps)
 {
 
-
+if ($slaps <= 0)
+{
+    die("Fuck off");
+}
 $jackpot = getCurrentJackpot()["currentJackpot"];
 $lastJackpotPayout = getCurrentJackpot()["lastPayout"];
 $userRole = getUserRole($userID);
 $tempUserRole = getTempUserRole($userID);
 $contingent = getContingent($userID);
 $winCount = 0;
+
+if ($slaps > $contingent)
+{
+    die("Fuck off");
+}
 
 $lastJackpotPayout = new DateTimeImmutable($lastJackpotPayout);
 
