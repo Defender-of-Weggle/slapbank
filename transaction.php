@@ -136,7 +136,7 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
     </tr>
     <tr>
         <td>
-            <input type="submit" value="Slap it!">
+            <input type="submit" autofocus="autofocus" value="Slap it!">
         </td>
         <td>
             <input type="reset">

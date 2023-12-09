@@ -872,7 +872,7 @@ function getSlapperMembers()
 function getRegularMembers()
 {
     global $con;
-    $sql = "SELECT username, userID FROM user WHERE userRole = '3'";
+    $sql = "SELECT username, userID FROM user WHERE userRole = '3' AND tempUserRole = '3'";
     $result = $con->query($sql);
     while ($dsatz = $result->fetch_assoc())
     {
@@ -1042,7 +1042,7 @@ $contingent = $contingent - $slaps;
             $randomInt = random_int(1, 90);
         }
 //        var_dump($randomInt);
-//            $randomInt = 75;
+//            $randomInt = 90;
         $win = match (true) {
             $randomInt <= 60 => 0,
 
@@ -1062,7 +1062,7 @@ $contingent = $contingent - $slaps;
 
 
 
-            if ($win == 5) {
+            if ($win >= 5 AND $win <= 10) {
                 global $con;
                 $sql = "SELECT tempUserRole, userRole FROM user WHERE userID = '$userID'";
                 $res = $con->query($sql);
@@ -1075,7 +1075,8 @@ $contingent = $contingent - $slaps;
                     global $con;
                     $sql = "UPDATE user SET tempUserRole = 2 WHERE userID = '$userID'";
                     $con->query($sql);
-                    $win = "5 Slaps AND the temporary Slap role! Congratulations, sucker";
+                    $win2 = $win;
+                    $win = "$win2 Slaps AND the temporary Slap role! Congratulations, sucker. enjoy the";
                 }
             }
 
@@ -1085,6 +1086,18 @@ $contingent = $contingent - $slaps;
 
 
                     if ($win == $jackpot) {
+                        global $con;
+                        $sql = "SELECT tempUserRole, userRole FROM user WHERE userID = '$userID'";
+                        $res = $con->query($sql);
+                        $result = $res->fetch_assoc();
+                        $userRole = $result["userRole"];
+                        $tempUserRole = $result["tempUserRole"];
+
+                        if ($tempUserRole === $userRole)
+
+                            $sql = "UPDATE user SET tempUserRole = 2 WHERE userID = '$userID'";
+                            $con->query($sql);
+                            echo "<p style='color: red'>I grant you the holy slapability for today, get some cheeks slapped.</p><p style='color: red'>oh yea, dont forget your actual win:</p>";
                         echo "<p style='color: red'>Win nr. $i: Ze fucking Jackpot! enjoy $win Slaps</p>";
                         $winCount = $winCount + $win;
                         $contingent = $contingent + $win;

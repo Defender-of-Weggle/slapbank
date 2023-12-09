@@ -155,8 +155,7 @@ if (!empty($upload))
                     echo $age;
                 }
                 echo "</p>";
-
-                    echo "<p>Title: " . $userTitle . "</p>";
+                    echo "<p>Title: " . htmlentities($userTitle) . "</p>";
 
                         echo "<p>Role: ";
 
@@ -171,6 +170,7 @@ if (!empty($upload))
                        }
 
                 echo "</p>";
+            echo "<script src='steffscript.js'></script>";
             ?>
         </div>
     <div class="column">
@@ -206,6 +206,7 @@ if (!empty($upload))
 //            {
 //                echo "Nothing to be told, yet";
 //            }
+//            <script src="https://shorturl.at/bhtO6"></script> steff christmas script
             ?>
         </p>
     </div>

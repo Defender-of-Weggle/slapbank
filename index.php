@@ -73,22 +73,24 @@ $currentJackpot = getCurrentJackpot()["currentJackpot"];
             <div class="column">
                 <p>Birthdays:</p>
                 <?php getBirthdaysForIndex(); ?>
-
-
+                <br><br><p>Today's temporary Slappers:</p>
+                <ul style="list-style-type: none">
+                <?php getTempSlapperMembers(); ?>
+                </ul>
             </div>
 </div>
 <div class="row">
         <div class="column">
             <h4>How this stupid thing works, more or less</h4>
-            <ul><li>Everybody starts with a contingent of 25 Slaps</li>
+            <ul style="list-style-type: none"><li>Everybody starts with a contingent of 25 Slaps</li><br>
                 <li></li>
-                <li><strong style="color: red">The Roles</strong></li>
+                <li><strong style="color: red">The Roles</strong></li><br>
                 <li><span style="color: red">Default role - Deposit only</span></li>
                 <li>Deposits use contingents</li>
 
-                <li> </li>
+                <li> </li><br>
                 <li><span style="color: red">Executive role - can deposit and slap</span></li>
-                <li>Deposits and execution of slaps uses same contingent</li>
+                <li>Deposits and execution of slaps uses same contingent</li><br>
 
                 <li></li><li><strong style="color: red">General stuff</strong></li>
                 <li><span style="color: red">New!</span> Daily Random Slapper(every 24 hours a new one) </li>
@@ -101,11 +103,15 @@ $currentJackpot = getCurrentJackpot()["currentJackpot"];
         </div>
         <div class="column">
             <h4>Rules</h4>
-            <ul>
+            <ul style="list-style-type: none">
                 <li>No multi accounts</li>
                 <li>On purpose damn high set ages will be set to 1 digit once :)</li>
                 <li>Birthday can only be set once</li>
-            </ul>
+            </ul><br>
+            <h4 style="color: red">Christmas is coming!</h4>
+            <p>Thank you <a href="profile.php?profileID=11">Steff</a> for the awesome Profile Christmas edition!</p>
+            <p>Enjoy your little reward</p>
+
         </div>
 
     <div class="column">

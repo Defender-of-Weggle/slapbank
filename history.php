@@ -11,6 +11,7 @@ if(!isset($_SESSION["login"]))
 }
 $sessionUserID = getSessionUserID();
 
+$transactionPage = $_GET["page"] ?? 0;
 ?>
 
 <style>
@@ -30,11 +31,23 @@ $sessionUserID = getSessionUserID();
 
     </div>
     <div class="column" style="text-align: left">
-        <h2>last 20 transactions</h2>
+        <?php
+        echo "<div class='row'><div class='column'>";
+        if ($transactionPage == 0){
+            $pagePlusOne = $transactionPage + 1;
+            echo "<form action='history.php'><input name='page' value='$pagePlusOne' hidden='hidden'><input type='submit' value='Next Page'></form></div></div>";
+        }else{
+            $pagePlusOne = $transactionPage + 1;
+            $pageMinusOne = $transactionPage - 1;
+            echo "<form action='history.php'><input name='page' value='$pageMinusOne' hidden='hidden'><input type='submit' value='Previous Page'></form></div><div class='column'></div><div class='column'>";
+            echo "<form action='history.php'><input name='page' value='$pagePlusOne' hidden='hidden'><input type='submit' value='Next Page'></form></div></div>";
+        }
+        ?>
+        <h2>Transaction History</h2>
 
         <?php
 
-            $transactionPage = 0;
+//            $transactionPage = 0;
 
             //seitenzählung beginnt mit 0!!! 0 ist immer erste seite...
 
@@ -49,8 +62,19 @@ $sessionUserID = getSessionUserID();
                         <?php
 
                             foreach ($dataRows as $row) {
-                                echo "<li style='list-style-type: none; border-style: solid; border-width: 1px; margin-bottom: 10px;'>";
-                                echo "<div style='width: 100%; display: flex; justify-content: space-between; background-color: chartreuse; color: black; font-weight: bold'>";
+                                if ($row["operator"] === "Payout"){
+                                    $styleColors = "background-color: red; color: black; font-weight: bold'>";
+                                    $borderColor = "border-color: red";
+                                }
+                                else{
+                                    $styleColors = "background-color: chartreuse; color: black; font-weight: bold'>";
+                                    $borderColor = "border-color: chartreuse";
+                                }
+
+                                echo "<li style='list-style-type: none; border-style: solid; $borderColor; border-width: 1px; margin-bottom: 10px;'>";
+                                echo "<div style='width: 100%; display: flex; justify-content: space-between; $styleColors";
+
+
                                 echo "<span>#{$row['id']}</span>";
                                 echo "<span>{$row['formattedDate']}</span>";
                                 echo "</div>";
@@ -60,7 +84,16 @@ $sessionUserID = getSessionUserID();
                                 <table style="border-spacing: 5px 10px;">
                                     <tr>
                                         <td style="text-align: right; font-weight: bold">type:</td>
-                                        <td><?php echo $row['operator'] ?></td>
+                                        <td>
+                                            <?php
+                                            if ($row["operator"] === "Payout"){
+                                                echo "<span style='color: red'>";
+                                                echo $row['operator'];
+                                                echo "</span>";}
+                                            else{
+                                            echo $row['operator'];
+                                            } ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: right; font-weight: bold">amount:</td>
@@ -138,6 +171,17 @@ $sessionUserID = getSessionUserID();
                 echo "<div>no transactions here :/</div>";
             }
 
+
+        echo "<div class='row'><div class='column'>";
+        if ($transactionPage == 0){
+            $pagePlusOne = $transactionPage + 1;
+            echo "<form action='history.php'><input name='page' value='$pagePlusOne' hidden='hidden'><input type='submit' value='Next Page'></form></div></div>";
+        }else{
+            $pagePlusOne = $transactionPage + 1;
+            $pageMinusOne = $transactionPage - 1;
+            echo "<form action='history.php'><input name='page' value='$pageMinusOne' hidden='hidden'><input type='submit' value='Previous Page'></form></div><div class='column'></div><div class='column'>";
+            echo "<form action='history.php'><input name='page' value='$pagePlusOne' hidden='hidden'><input type='submit' value='Next Page'></form></div></div>";
+        }
         ?>
 
 
@@ -161,6 +205,8 @@ $sessionUserID = getSessionUserID();
 
 
 </div>
+
+
 
 
 
