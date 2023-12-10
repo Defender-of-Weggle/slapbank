@@ -35,6 +35,7 @@ $transactionPage = $_GET["page"] ?? 0;
         echo "<div class='row'><div class='column'>";
         if ($transactionPage == 0){
             $pagePlusOne = $transactionPage + 1;
+            echo "</div><div class='column'></div><div class='column'>";
             echo "<form action='history.php'><input name='page' value='$pagePlusOne' hidden='hidden'><input type='submit' value='Next Page'></form></div></div>";
         }else{
             $pagePlusOne = $transactionPage + 1;
@@ -175,6 +176,7 @@ $transactionPage = $_GET["page"] ?? 0;
         echo "<div class='row'><div class='column'>";
         if ($transactionPage == 0){
             $pagePlusOne = $transactionPage + 1;
+            echo "</div><div class='column'></div><div class='column'>";
             echo "<form action='history.php'><input name='page' value='$pagePlusOne' hidden='hidden'><input type='submit' value='Next Page'></form></div></div>";
         }else{
             $pagePlusOne = $transactionPage + 1;
