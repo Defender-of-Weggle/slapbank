@@ -91,26 +91,50 @@ function EigenerKontostand($userID)
 
 
 
-function UserWahl()
-{
-    global $con;
-    $sql = "SELECT userName, userID FROM user";
-    $res = $con->query($sql);
-    while ($dsatz = $res->fetch_assoc())
-    {
-?><option name="userIDSlapTake" value="<?php echo $dsatz["userID"]?>"><?php echo htmlentities($dsatz["userName"]);
-        echo " (";
+function userWahl($userID) {
+global $con;
+$sql = "SELECT userName, userID FROM user WHERE NOT userID = '$userID'";
+$res = $con->query($sql);
 
-        $userID = $dsatz["userID"];
-        $kontostand = EigenerKontostand($userID);
-        echo $kontostand;
-        echo ")";
-        ?></option><?php
-    }
+while ($dsatz = $res->fetch_assoc())
+            {
+            $userID = $dsatz["userID"];
+            $userName = $dsatz["userName"];
+            $balance = EigenerKontostand($userID);
 
-    $res->close();
-    $con->close();
+                    $userSelection['row'][] = [
+                            'userID' => $userID,
+                            'userName' => $userName,
+                            'balance' => $balance
+                            ];
+
+
+                    }
+return $userSelection;
+
 }
+
+
+//function UserWahl()
+//{
+//    global $con;
+//    $sql = "SELECT userName, userID FROM user";
+//    $res = $con->query($sql);
+//    while ($dsatz = $res->fetch_assoc())
+//    {
+//?><!--<option name="userIDSlapTake" value="--><?php //echo $dsatz["userID"]?><!--">--><?php //echo htmlentities($dsatz["userName"]);
+//        echo " (";
+//
+//        $userID = $dsatz["userID"];
+//        $kontostand = EigenerKontostand($userID);
+//        echo $kontostand;
+//        echo ")";
+//        ?><!--</option>--><?php
+//    }
+//
+//    $res->close();
+//    $con->close();
+//}
 
 function transaction(string $operator, int $slaps, string $comment, bool $hideComment, int $userIDSlapGive, int $userIDSlapTake)
 {

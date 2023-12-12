@@ -19,6 +19,7 @@ $userRoles = getUserRole($userID);
 $userRole = intval($userRoles[0]);
 $tempUserRole = intval($userRoles[1]);
 $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
+$userIDTarget = $_GET["userIDTarget"] ?? "";
 
 
 
@@ -77,10 +78,28 @@ $adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
         </td>
             <td>
                 <select name="userIDSlapTake">
-                <?php UserWahl();?>
+                <?php
+               $userSelectionData = userWahl($userID);
+
+
+               foreach ($userSelectionData["row"] as $row) {
+                   $userID = $row["userID"];
+                   $userName = htmlentities($row["userName"]);
+                   $userBalance = $row["balance"];
+                   if ($userIDTarget === $userID){
+                       echo "<option name'userIDSlapTake' selected='selected' value'$userID'>$userName ($userBalance)";
+                   }
+                   else {
+                       echo "<option name='userIDSlapTake' value='$userID'>$userName ($userBalance)";
+                   }
+               }
+
+
+                ?>
                 </select>
             </td>
     </tr>
+
     <tr>
             <td>
                 <br><br><p><label for="comment"> Comment</label></p>

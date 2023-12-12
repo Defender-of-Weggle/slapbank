@@ -44,7 +44,7 @@ $transactionPage = $_GET["page"] ?? 0;
             echo "<form action='history.php'><input name='page' value='$pagePlusOne' hidden='hidden'><input type='submit' value='Next Page'></form></div></div>";
         }
         ?>
-        <h2>Transaction History</h2>
+        <h2>Transaction History Page <?php echo $transactionPage + 1; ?></h2>
 
         <?php
 

@@ -170,6 +170,10 @@ if (!empty($upload))
                        }
 
                 echo "</p>";
+                       echo "<form action='transaction.php'>";
+                       echo "<input name='userIDTarget' value='$profileID' hidden='hidden'>";
+                       echo "<input type='submit' value='Slap this sick Fuck'>";
+                       echo "</form>";
             echo "<script src='steffscript.js'></script>";
             ?>
         </div>
