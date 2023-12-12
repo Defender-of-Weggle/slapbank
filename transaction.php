@@ -18,8 +18,8 @@ $contingent = getContingent($userID);
 $userRoles = getUserRole($userID);
 $userRole = intval($userRoles[0]);
 $tempUserRole = intval($userRoles[1]);
-$adding = formularOperatorAdding($userRole, $tempUserRole) ?? "";
-$userIDTarget = $_GET["userIDTarget"] ?? "";
+$adding = formularOperatorAdding($userRole, $tempUserRole) ?? "0";
+$userIDTarget = @intval($_GET["userIDTarget"]) ?? "";
 
 
 
@@ -81,16 +81,18 @@ $userIDTarget = $_GET["userIDTarget"] ?? "";
                 <?php
                $userSelectionData = userWahl($userID);
 
-
                foreach ($userSelectionData["row"] as $row) {
-                   $userID = $row["userID"];
+                   $slapTakeUserID = intval($row["userID"]);
                    $userName = htmlentities($row["userName"]);
                    $userBalance = $row["balance"];
-                   if ($userIDTarget === $userID){
-                       echo "<option name'userIDSlapTake' selected='selected' value'$userID'>$userName ($userBalance)";
+
+
+
+                   if ($userIDTarget === $slapTakeUserID){
+                       echo "<option name='userIDSlapTake' selected='selected' value='$slapTakeUserID'>$userName ($userBalance)";
                    }
                    else {
-                       echo "<option name='userIDSlapTake' value='$userID'>$userName ($userBalance)";
+                       echo "<option name='userIDSlapTake' value='$slapTakeUserID'>$userName ($userBalance)";
                    }
                }
 
