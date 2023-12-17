@@ -1,0 +1,142 @@
+body {
+    background-color: black;
+    font-family: "Courier New", "Lucida Console", monospace;
+    color: chartreuse;
+    text-align: center;
+}
+
+/* unvisited link */
+a:link {
+    color: green;
+}
+
+/* visited link */
+a:visited {
+    color: darkred;
+}
+
+/* mouse over link */
+a:hover {
+    color: greenyellow;
+}
+
+/* selected link */
+a:active {
+    color: red;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: chartreuse;
+    border: 2px chartreuse;
+    border-radius: 8px;
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input
+{
+    background-color: #303030;
+    color: chartreuse;
+    border: 2px chartreuse;
+    border-radius: 4px;
+}
+
+textarea
+{
+    color: chartreuse;
+    border: 2px chartreuse;
+    border-radius: 4px;
+    background-color: #303030;
+}
+
+text
+{
+    color: chartreuse;
+    background-color: #303030;
+    border: 2px chartreuse;
+    border-radius: 4px;
+}
+
+select
+{
+    color: chartreuse;
+    border: 2px chartreuse;
+    border-radius: 4px;
+    background-color: #303030;
+}
+
+
+.newstable
+{
+    min-height: 300px;
+    border: 5px chartreuse;
+    border-radius: 10px;
+    background-color: #303030;
+    color: chartreuse;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+
+}
+
+h1
+{
+    text-align: center;
+    font-size: 22px;
+    color: chartreuse;
+
+}
+
+h2
+{
+    text-align: center;
+    font-size: 18px;
+    color: chartreuse;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+
+.profilePic img{
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.redFont{
+    color: red;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
