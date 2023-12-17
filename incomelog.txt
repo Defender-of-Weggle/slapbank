@@ -1,0 +1,835 @@
+__________________________________________ Day: 1 __________________________________________
+05 Nov 2023 13:25:14 ID: 1 Username: Test Contingent old to new: 0 => 30
+05 Nov 2023 13:25:14 ID: 2 Username: abc Contingent old to new: 224 => 30
+05 Nov 2023 13:25:14 ID: 3 Username: Test2 Contingent old to new: 224 => 30
+05 Nov 2023 13:25:14 ID: 4 Username: Mr Michi Contingent old to new: 224 => 30
+05 Nov 2023 13:25:14 ID: 5 Username: Test3 Contingent old to new: 224 => 30
+05 Nov 2023 13:25:14 ID: 7 Username: Willi Sama Contingent old to new: 224 => 30
+05 Nov 2023 13:25:14 ID: 8 Username: Jack the Slapper Contingent old to new: 174 => 30
+05 Nov 2023 13:25:14 ID: 9 Username: Iron Fist Contingent old to new: 224 => 30
+05 Nov 2023 13:25:14 ID: 10 Username: Iron Fist2 Contingent old to new: 224 => 30
+__________________________________________ Day: 2 __________________________________________
+05 Nov 2023 13:26:30 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:26:30 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:26:30 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:26:30 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:26:30 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:26:30 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:26:30 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:26:30 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:26:30 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 3 __________________________________________
+05 Nov 2023 13:27:04 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:04 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:04 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:04 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:04 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:04 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:04 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:04 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:04 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 4 __________________________________________
+05 Nov 2023 13:27:13 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:13 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:13 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:13 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:13 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:13 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:13 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:13 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:13 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 5 __________________________________________
+05 Nov 2023 13:27:17 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:17 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:17 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:17 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:17 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:17 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:17 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:17 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:17 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 6 __________________________________________
+05 Nov 2023 13:27:18 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:18 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:18 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:18 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:18 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:18 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:18 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:18 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:18 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 7 __________________________________________
+05 Nov 2023 13:27:20 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 8 __________________________________________
+05 Nov 2023 13:27:20 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:20 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 9 __________________________________________
+05 Nov 2023 13:27:21 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:21 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:21 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:21 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:21 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:21 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:21 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:21 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:21 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 10 __________________________________________
+05 Nov 2023 13:27:22 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:22 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:22 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:22 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:22 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:22 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:22 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:22 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:22 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 11 __________________________________________
+05 Nov 2023 13:27:23 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 12 __________________________________________
+05 Nov 2023 13:27:23 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:23 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 13 __________________________________________
+05 Nov 2023 13:27:24 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:24 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:24 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:24 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:24 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:24 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:24 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:24 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:24 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 14 __________________________________________
+05 Nov 2023 13:27:25 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 15 __________________________________________
+05 Nov 2023 13:27:25 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 16 __________________________________________
+05 Nov 2023 13:27:25 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:25 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 17 __________________________________________
+05 Nov 2023 13:27:26 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 18 __________________________________________
+05 Nov 2023 13:27:26 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 19 __________________________________________
+05 Nov 2023 13:27:26 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:26 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 20 __________________________________________
+05 Nov 2023 13:27:27 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 21 __________________________________________
+05 Nov 2023 13:27:27 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 22 __________________________________________
+05 Nov 2023 13:27:27 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 23 __________________________________________
+05 Nov 2023 13:27:27 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 24 __________________________________________
+05 Nov 2023 13:27:27 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:27 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 25 __________________________________________
+05 Nov 2023 13:27:28 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 26 __________________________________________
+05 Nov 2023 13:27:28 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 27 __________________________________________
+05 Nov 2023 13:27:28 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:28 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 28 __________________________________________
+05 Nov 2023 13:27:29 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 29 __________________________________________
+05 Nov 2023 13:27:29 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:29 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 30 __________________________________________
+05 Nov 2023 13:27:30 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:30 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:30 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:30 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:30 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:30 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:30 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:30 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:30 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 31 __________________________________________
+05 Nov 2023 13:27:33 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 32 __________________________________________
+05 Nov 2023 13:27:33 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:33 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 33 __________________________________________
+05 Nov 2023 13:27:34 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 34 __________________________________________
+05 Nov 2023 13:27:34 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:27:34 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 35 __________________________________________
+05 Nov 2023 13:29:42 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 36 __________________________________________
+05 Nov 2023 13:29:42 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 37 __________________________________________
+05 Nov 2023 13:29:42 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:42 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 38 __________________________________________
+05 Nov 2023 13:29:49 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 39 __________________________________________
+05 Nov 2023 13:29:49 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:49 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 40 __________________________________________
+05 Nov 2023 13:29:50 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 41 __________________________________________
+05 Nov 2023 13:29:50 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 42 __________________________________________
+05 Nov 2023 13:29:50 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:50 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 43 __________________________________________
+05 Nov 2023 13:29:51 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 44 __________________________________________
+05 Nov 2023 13:29:51 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 45 __________________________________________
+05 Nov 2023 13:29:51 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 46 __________________________________________
+05 Nov 2023 13:29:51 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 47 __________________________________________
+05 Nov 2023 13:29:51 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 48 __________________________________________
+05 Nov 2023 13:29:51 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:51 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 49 __________________________________________
+05 Nov 2023 13:29:52 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 50 __________________________________________
+05 Nov 2023 13:29:52 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 51 __________________________________________
+05 Nov 2023 13:29:52 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 52 __________________________________________
+05 Nov 2023 13:29:52 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:29:52 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+__________________________________________ Day: 53 __________________________________________
+05 Nov 2023 13:36:12 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:36:12 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:36:12 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:36:12 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:36:12 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:36:12 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:36:12 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:36:12 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:36:12 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 54 __________________________________________
+05 Nov 2023 13:36:15 ID: 1 Username: Test Contingent old to new: 30 => 30
+05 Nov 2023 13:36:15 ID: 2 Username: abc Contingent old to new: 30 => 30
+05 Nov 2023 13:36:15 ID: 3 Username: Test2 Contingent old to new: 30 => 30
+05 Nov 2023 13:36:15 ID: 4 Username: Mr Michi Contingent old to new: 30 => 30
+05 Nov 2023 13:36:15 ID: 5 Username: Test3 Contingent old to new: 30 => 30
+05 Nov 2023 13:36:15 ID: 7 Username: Willi Sama Contingent old to new: 30 => 30
+05 Nov 2023 13:36:15 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 30
+05 Nov 2023 13:36:15 ID: 9 Username: Iron Fist Contingent old to new: 30 => 30
+05 Nov 2023 13:36:15 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 30
+Mr Michiturned 34 today, old contingent: 30 new: 64__________________________________________ Day: 55 __________________________________________
+05 Nov 2023 13:42:01 ID: 1 Username: Test Contingent old to new: 30 => 60
+05 Nov 2023 13:42:01 ID: 2 Username: abc Contingent old to new: 30 => 60
+05 Nov 2023 13:42:01 ID: 3 Username: Test2 Contingent old to new: 30 => 60
+05 Nov 2023 13:42:01 ID: 4 Username: Mr Michi Contingent old to new: 30 => 60
+05 Nov 2023 13:42:01 ID: 5 Username: Test3 Contingent old to new: 30 => 60
+05 Nov 2023 13:42:01 ID: 7 Username: Willi Sama Contingent old to new: 30 => 60
+05 Nov 2023 13:42:01 ID: 8 Username: Jack the Slapper Contingent old to new: 30 => 60
+05 Nov 2023 13:42:01 ID: 9 Username: Iron Fist Contingent old to new: 30 => 60
+05 Nov 2023 13:42:01 ID: 10 Username: Iron Fist2 Contingent old to new: 30 => 60
+Mr Michiturned 34 today, old contingent: 60 new: 94__________________________________________ Day: 56 __________________________________________
+05 Nov 2023 13:42:02 ID: 1 Username: Test Contingent old to new: 60 => 90
+05 Nov 2023 13:42:02 ID: 2 Username: abc Contingent old to new: 60 => 90
+05 Nov 2023 13:42:02 ID: 3 Username: Test2 Contingent old to new: 60 => 90
+05 Nov 2023 13:42:02 ID: 4 Username: Mr Michi Contingent old to new: 60 => 90
+05 Nov 2023 13:42:02 ID: 5 Username: Test3 Contingent old to new: 60 => 90
+05 Nov 2023 13:42:02 ID: 7 Username: Willi Sama Contingent old to new: 60 => 90
+05 Nov 2023 13:42:02 ID: 8 Username: Jack the Slapper Contingent old to new: 60 => 90
+05 Nov 2023 13:42:02 ID: 9 Username: Iron Fist Contingent old to new: 60 => 90
+05 Nov 2023 13:42:02 ID: 10 Username: Iron Fist2 Contingent old to new: 60 => 90
+Mr Michiturned 34 today, old contingent: 90 new: 124__________________________________________ Day: 57 __________________________________________
+05 Nov 2023 13:42:03 ID: 1 Username: Test Contingent old to new: 90 => 120
+05 Nov 2023 13:42:03 ID: 2 Username: abc Contingent old to new: 90 => 120
+05 Nov 2023 13:42:03 ID: 3 Username: Test2 Contingent old to new: 90 => 120
+05 Nov 2023 13:42:03 ID: 4 Username: Mr Michi Contingent old to new: 90 => 120
+05 Nov 2023 13:42:03 ID: 5 Username: Test3 Contingent old to new: 90 => 120
+05 Nov 2023 13:42:03 ID: 7 Username: Willi Sama Contingent old to new: 90 => 120
+05 Nov 2023 13:42:03 ID: 8 Username: Jack the Slapper Contingent old to new: 90 => 120
+05 Nov 2023 13:42:03 ID: 9 Username: Iron Fist Contingent old to new: 90 => 120
+05 Nov 2023 13:42:03 ID: 10 Username: Iron Fist2 Contingent old to new: 90 => 120
+Mr Michiturned 34 today, old contingent: 120 new: 154__________________________________________ Day: 58 __________________________________________
+05 Nov 2023 13:42:04 ID: 1 Username: Test Contingent old to new: 120 => 150
+05 Nov 2023 13:42:04 ID: 2 Username: abc Contingent old to new: 120 => 150
+05 Nov 2023 13:42:04 ID: 3 Username: Test2 Contingent old to new: 120 => 150
+05 Nov 2023 13:42:04 ID: 4 Username: Mr Michi Contingent old to new: 120 => 150
+05 Nov 2023 13:42:04 ID: 5 Username: Test3 Contingent old to new: 120 => 150
+05 Nov 2023 13:42:04 ID: 7 Username: Willi Sama Contingent old to new: 120 => 150
+05 Nov 2023 13:42:04 ID: 8 Username: Jack the Slapper Contingent old to new: 120 => 150
+05 Nov 2023 13:42:04 ID: 9 Username: Iron Fist Contingent old to new: 120 => 150
+05 Nov 2023 13:42:04 ID: 10 Username: Iron Fist2 Contingent old to new: 120 => 150
+Mr Michiturned 34 today, old contingent: 150 new: 184__________________________________________ Day: 59 __________________________________________
+05 Nov 2023 13:42:04 ID: 1 Username: Test Contingent old to new: 150 => 180
+05 Nov 2023 13:42:04 ID: 2 Username: abc Contingent old to new: 150 => 180
+05 Nov 2023 13:42:04 ID: 3 Username: Test2 Contingent old to new: 150 => 180
+05 Nov 2023 13:42:04 ID: 4 Username: Mr Michi Contingent old to new: 150 => 180
+05 Nov 2023 13:42:04 ID: 5 Username: Test3 Contingent old to new: 150 => 180
+05 Nov 2023 13:42:04 ID: 7 Username: Willi Sama Contingent old to new: 150 => 180
+05 Nov 2023 13:42:04 ID: 8 Username: Jack the Slapper Contingent old to new: 150 => 180
+05 Nov 2023 13:42:04 ID: 9 Username: Iron Fist Contingent old to new: 150 => 180
+05 Nov 2023 13:42:04 ID: 10 Username: Iron Fist2 Contingent old to new: 150 => 180
+Mr Michiturned 34 today, old contingent: 180 new: 214__________________________________________ Day: 60 __________________________________________
+05 Nov 2023 13:42:04 ID: 1 Username: Test Contingent old to new: 180 => 210
+05 Nov 2023 13:42:04 ID: 2 Username: abc Contingent old to new: 180 => 210
+05 Nov 2023 13:42:04 ID: 3 Username: Test2 Contingent old to new: 180 => 210
+05 Nov 2023 13:42:04 ID: 4 Username: Mr Michi Contingent old to new: 180 => 210
+05 Nov 2023 13:42:04 ID: 5 Username: Test3 Contingent old to new: 180 => 210
+05 Nov 2023 13:42:04 ID: 7 Username: Willi Sama Contingent old to new: 180 => 210
+05 Nov 2023 13:42:04 ID: 8 Username: Jack the Slapper Contingent old to new: 180 => 210
+05 Nov 2023 13:42:04 ID: 9 Username: Iron Fist Contingent old to new: 180 => 210
+05 Nov 2023 13:42:04 ID: 10 Username: Iron Fist2 Contingent old to new: 180 => 210
+Mr Michiturned 34 today, old contingent: 210 new: 244__________________________________________ Day: 61 __________________________________________
+05 Nov 2023 13:44:53 ID: 1 Username: Test Contingent old to new: 210 => 240
+05 Nov 2023 13:44:53 ID: 2 Username: abc Contingent old to new: 210 => 240
+05 Nov 2023 13:44:53 ID: 3 Username: Test2 Contingent old to new: 210 => 240
+05 Nov 2023 13:44:53 ID: 4 Username: Mr Michi Contingent old to new: 210 => 240
+05 Nov 2023 13:44:53 ID: 5 Username: Test3 Contingent old to new: 210 => 240
+05 Nov 2023 13:44:53 ID: 7 Username: Willi Sama Contingent old to new: 210 => 240
+05 Nov 2023 13:44:53 ID: 8 Username: Jack the Slapper Contingent old to new: 210 => 240
+05 Nov 2023 13:44:53 ID: 9 Username: Iron Fist Contingent old to new: 210 => 240
+05 Nov 2023 13:44:53 ID: 10 Username: Iron Fist2 Contingent old to new: 210 => 240
+Mr Michiturned 34 today, old contingent: 240 new: 274__________________________________________ Day: 62 __________________________________________
+05 Nov 2023 13:45:15 ID: 1 Username: Test Contingent old to new: 240 => 270
+05 Nov 2023 13:45:15 ID: 2 Username: abc Contingent old to new: 240 => 270
+05 Nov 2023 13:45:15 ID: 3 Username: Test2 Contingent old to new: 240 => 270
+05 Nov 2023 13:45:15 ID: 4 Username: Mr Michi Contingent old to new: 240 => 270
+05 Nov 2023 13:45:15 ID: 5 Username: Test3 Contingent old to new: 240 => 270
+05 Nov 2023 13:45:15 ID: 7 Username: Willi Sama Contingent old to new: 240 => 270
+05 Nov 2023 13:45:15 ID: 8 Username: Jack the Slapper Contingent old to new: 240 => 270
+05 Nov 2023 13:45:15 ID: 9 Username: Iron Fist Contingent old to new: 240 => 270
+05 Nov 2023 13:45:15 ID: 10 Username: Iron Fist2 Contingent old to new: 240 => 270
+Mr Michiturned 34 today, old contingent: 270 new: 304__________________________________________ Day: 63 __________________________________________
+05 Nov 2023 13:58:25 ID: 1 Username: Test Contingent old to new: 270 => 273
+05 Nov 2023 13:58:25 ID: 2 Username: abc Contingent old to new: 270 => 273
+05 Nov 2023 13:58:25 ID: 3 Username: Test2 Contingent old to new: 270 => 273
+05 Nov 2023 13:58:25 ID: 4 Username: Mr Michi Contingent old to new: 270 => 273
+05 Nov 2023 13:58:25 ID: 5 Username: Test3 Contingent old to new: 270 => 273
+05 Nov 2023 13:58:25 ID: 7 Username: Willi Sama Contingent old to new: 270 => 273
+05 Nov 2023 13:58:25 ID: 8 Username: Jack the Slapper Contingent old to new: 270 => 273
+05 Nov 2023 13:58:25 ID: 9 Username: Iron Fist Contingent old to new: 270 => 273
+05 Nov 2023 13:58:25 ID: 10 Username: Iron Fist2 Contingent old to new: 270 => 273
+Mr Michiturned 34 today, old contingent: 273 new: 307__________________________________________ Day: 64 __________________________________________
+05 Nov 2023 13:58:27 ID: 1 Username: Test Contingent old to new: 273 => 276
+05 Nov 2023 13:58:27 ID: 2 Username: abc Contingent old to new: 273 => 276
+05 Nov 2023 13:58:27 ID: 3 Username: Test2 Contingent old to new: 273 => 276
+05 Nov 2023 13:58:27 ID: 4 Username: Mr Michi Contingent old to new: 273 => 276
+05 Nov 2023 13:58:27 ID: 5 Username: Test3 Contingent old to new: 273 => 276
+05 Nov 2023 13:58:27 ID: 7 Username: Willi Sama Contingent old to new: 273 => 276
+05 Nov 2023 13:58:27 ID: 8 Username: Jack the Slapper Contingent old to new: 273 => 276
+05 Nov 2023 13:58:27 ID: 9 Username: Iron Fist Contingent old to new: 273 => 276
+05 Nov 2023 13:58:27 ID: 10 Username: Iron Fist2 Contingent old to new: 273 => 276
+Mr Michiturned 34 today, old contingent: 276 new: 310__________________________________________ Day: 65 __________________________________________
+05 Nov 2023 13:58:28 ID: 1 Username: Test Contingent old to new: 276 => 279
+05 Nov 2023 13:58:28 ID: 2 Username: abc Contingent old to new: 276 => 279
+05 Nov 2023 13:58:28 ID: 3 Username: Test2 Contingent old to new: 276 => 279
+05 Nov 2023 13:58:28 ID: 4 Username: Mr Michi Contingent old to new: 276 => 279
+05 Nov 2023 13:58:28 ID: 5 Username: Test3 Contingent old to new: 276 => 279
+05 Nov 2023 13:58:28 ID: 7 Username: Willi Sama Contingent old to new: 276 => 279
+05 Nov 2023 13:58:28 ID: 8 Username: Jack the Slapper Contingent old to new: 276 => 279
+05 Nov 2023 13:58:28 ID: 9 Username: Iron Fist Contingent old to new: 276 => 279
+05 Nov 2023 13:58:28 ID: 10 Username: Iron Fist2 Contingent old to new: 276 => 279
+Mr Michiturned 34 today, old contingent: 279 new: 313__________________________________________ Day: 66 __________________________________________
+05 Nov 2023 13:58:56 ID: 1 Username: Test Contingent old to new: 279 => 282
+05 Nov 2023 13:58:56 ID: 2 Username: abc Contingent old to new: 279 => 282
+05 Nov 2023 13:58:56 ID: 3 Username: Test2 Contingent old to new: 279 => 282
+05 Nov 2023 13:58:56 ID: 4 Username: Mr Michi Contingent old to new: 279 => 282
+05 Nov 2023 13:58:56 ID: 5 Username: Test3 Contingent old to new: 279 => 282
+05 Nov 2023 13:58:56 ID: 7 Username: Willi Sama Contingent old to new: 279 => 282
+05 Nov 2023 13:58:56 ID: 8 Username: Jack the Slapper Contingent old to new: 279 => 282
+05 Nov 2023 13:58:56 ID: 9 Username: Iron Fist Contingent old to new: 279 => 282
+05 Nov 2023 13:58:56 ID: 10 Username: Iron Fist2 Contingent old to new: 279 => 282
+Mr Michiturned 34 today, old contingent: 282 new: 316__________________________________________ Day: 67 __________________________________________
+05 Nov 2023 13:59:51 ID: 1 Username: Test Contingent old to new: 282 => 285
+05 Nov 2023 13:59:51 ID: 2 Username: abc Contingent old to new: 282 => 285
+05 Nov 2023 13:59:51 ID: 3 Username: Test2 Contingent old to new: 282 => 285
+05 Nov 2023 13:59:51 ID: 4 Username: Mr Michi Contingent old to new: 282 => 285
+05 Nov 2023 13:59:51 ID: 5 Username: Test3 Contingent old to new: 282 => 285
+05 Nov 2023 13:59:51 ID: 7 Username: Willi Sama Contingent old to new: 282 => 285
+05 Nov 2023 13:59:51 ID: 8 Username: Jack the Slapper Contingent old to new: 282 => 285
+05 Nov 2023 13:59:51 ID: 9 Username: Iron Fist Contingent old to new: 282 => 285
+05 Nov 2023 13:59:51 ID: 10 Username: Iron Fist2 Contingent old to new: 282 => 285
+Mr Michiturned 34 today, old contingent: 285 new: 319
+__________________________________________ Day: 68 __________________________________________
+05 Nov 2023 13:59:51 ID: 1 Username: Test Contingent old to new: 285 => 288
+05 Nov 2023 13:59:51 ID: 2 Username: abc Contingent old to new: 285 => 288
+05 Nov 2023 13:59:51 ID: 3 Username: Test2 Contingent old to new: 285 => 288
+05 Nov 2023 13:59:51 ID: 4 Username: Mr Michi Contingent old to new: 285 => 288
+05 Nov 2023 13:59:51 ID: 5 Username: Test3 Contingent old to new: 285 => 288
+05 Nov 2023 13:59:51 ID: 7 Username: Willi Sama Contingent old to new: 285 => 288
+05 Nov 2023 13:59:51 ID: 8 Username: Jack the Slapper Contingent old to new: 285 => 288
+05 Nov 2023 13:59:51 ID: 9 Username: Iron Fist Contingent old to new: 285 => 288
+05 Nov 2023 13:59:51 ID: 10 Username: Iron Fist2 Contingent old to new: 285 => 288
+Mr Michiturned 34 today, old contingent: 288 new: 322
+__________________________________________ Day: 69 __________________________________________
+05 Nov 2023 14:04:36 ID: 1 Username: Test Contingent old to new: 288 => 291
+05 Nov 2023 14:04:36 ID: 2 Username: abc Contingent old to new: 288 => 291
+05 Nov 2023 14:04:36 ID: 3 Username: Test2 Contingent old to new: 288 => 291
+05 Nov 2023 14:04:36 ID: 4 Username: Mr Michi Contingent old to new: 288 => 291
+05 Nov 2023 14:04:36 ID: 5 Username: Test3 Contingent old to new: 288 => 291
+05 Nov 2023 14:04:36 ID: 7 Username: Willi Sama Contingent old to new: 288 => 291
+05 Nov 2023 14:04:36 ID: 8 Username: Jack the Slapper Contingent old to new: 288 => 291
+05 Nov 2023 14:04:36 ID: 9 Username: Iron Fist Contingent old to new: 288 => 291
+05 Nov 2023 14:04:36 ID: 10 Username: Iron Fist2 Contingent old to new: 288 => 291
+05 Nov 2023 14:04:36 ID: 4 Username: Mr Michi turned 34, the gift: 291 => 325
+__________________________________________ Day: 70 __________________________________________
+05 Nov 2023 14:04:57 ID: 1 Username: Test Contingent old to new: 291 => 294
+05 Nov 2023 14:04:57 ID: 2 Username: abc Contingent old to new: 291 => 294
+05 Nov 2023 14:04:57 ID: 3 Username: Test2 Contingent old to new: 291 => 294
+05 Nov 2023 14:04:57 ID: 4 Username: Mr Michi Contingent old to new: 291 => 294
+05 Nov 2023 14:04:57 ID: 5 Username: Test3 Contingent old to new: 291 => 294
+05 Nov 2023 14:04:57 ID: 7 Username: Willi Sama Contingent old to new: 291 => 294
+05 Nov 2023 14:04:57 ID: 8 Username: Jack the Slapper Contingent old to new: 291 => 294
+05 Nov 2023 14:04:57 ID: 9 Username: Iron Fist Contingent old to new: 291 => 294
+05 Nov 2023 14:04:57 ID: 10 Username: Iron Fist2 Contingent old to new: 291 => 294
+05 Nov 2023 14:04:57 ID: 4 Username: Mr Michi turned 34, the gifted contingent: 294 => 328
+__________________________________________ Day: 71 __________________________________________
+05 Nov 2023 18:05:39 ID: 1 Username: Test Contingent old to new: 294 => 297
+05 Nov 2023 18:05:39 ID: 2 Username: abc Contingent old to new: 294 => 297
+05 Nov 2023 18:05:39 ID: 3 Username: Test2 Contingent old to new: 294 => 297
+05 Nov 2023 18:05:39 ID: 4 Username: Mr Smichers Contingent old to new: 244 => 247
+05 Nov 2023 18:05:39 ID: 5 Username: Test3 Contingent old to new: 294 => 297
+05 Nov 2023 18:05:39 ID: 7 Username: Willi Sama Contingent old to new: 294 => 297
+05 Nov 2023 18:05:39 ID: 8 Username: Jack the Slapper Contingent old to new: 294 => 297
+05 Nov 2023 18:05:39 ID: 9 Username: Iron Fist Contingent old to new: 294 => 297
+05 Nov 2023 18:05:39 ID: 10 Username: Iron Fist2 Contingent old to new: 294 => 297
+05 Nov 2023 18:05:39 ID: 4 Username: Mr Smichers turned 400, the gifted contingent: 247 => 647
+__________________________________________ Day: 72 __________________________________________
+05 Nov 2023 18:06:23 ID: 1 Username: Test Contingent old to new: 297 => 300
+05 Nov 2023 18:06:23 ID: 2 Username: abc Contingent old to new: 297 => 300
+05 Nov 2023 18:06:23 ID: 3 Username: Test2 Contingent old to new: 297 => 300
+05 Nov 2023 18:06:23 ID: 4 Username: Mr Smichers Contingent old to new: 247 => 250
+05 Nov 2023 18:06:23 ID: 5 Username: Test3 Contingent old to new: 297 => 300
+05 Nov 2023 18:06:23 ID: 7 Username: Willi Sama Contingent old to new: 297 => 300
+05 Nov 2023 18:06:23 ID: 8 Username: Jack the Slapper Contingent old to new: 297 => 300
+05 Nov 2023 18:06:23 ID: 9 Username: Iron Fist Contingent old to new: 297 => 300
+05 Nov 2023 18:06:23 ID: 10 Username: Iron Fist2 Contingent old to new: 297 => 300
+05 Nov 2023 18:06:23 ID: 4 Username: Mr Smichers turned 400, the gifted contingent: 250 => 650
+__________________________________________ Day: 73 __________________________________________
+05 Nov 2023 18:08:14 ID: 1 Username: Test Contingent old to new: 300 => 303
+05 Nov 2023 18:08:14 ID: 2 Username: abc Contingent old to new: 300 => 303
+05 Nov 2023 18:08:14 ID: 3 Username: Test2 Contingent old to new: 300 => 303
+05 Nov 2023 18:08:14 ID: 4 Username: Mr Smichers Contingent old to new: 50 => 53
+05 Nov 2023 18:08:14 ID: 5 Username: Test3 Contingent old to new: 300 => 303
+05 Nov 2023 18:08:14 ID: 7 Username: Willi Sama Contingent old to new: 300 => 303
+05 Nov 2023 18:08:14 ID: 8 Username: Jack the Slapper Contingent old to new: 300 => 303
+05 Nov 2023 18:08:14 ID: 9 Username: Iron Fist Contingent old to new: 300 => 303
+05 Nov 2023 18:08:14 ID: 10 Username: Iron Fist2 Contingent old to new: 300 => 303
+05 Nov 2023 18:08:14 ID: 4 Username: Mr Smichers turned 400, the gifted contingent: 53 => 453
+__________________________________________ Day: 74 __________________________________________
+05 Nov 2023 18:11:30 ID: 1 Username: Test Contingent old to new: 303 => 306
+05 Nov 2023 18:11:30 ID: 2 Username: abc Contingent old to new: 303 => 306
+05 Nov 2023 18:11:30 ID: 3 Username: Test2 Contingent old to new: 303 => 306
+05 Nov 2023 18:11:30 ID: 4 Username: Mr Smichers Contingent old to new: 53 => 56
+05 Nov 2023 18:11:30 ID: 5 Username: Test3 Contingent old to new: 303 => 306
+05 Nov 2023 18:11:30 ID: 7 Username: Willi Sama Contingent old to new: 303 => 306
+05 Nov 2023 18:11:30 ID: 8 Username: Jack the Slapper Contingent old to new: 303 => 306
+05 Nov 2023 18:11:30 ID: 9 Username: Iron Fist Contingent old to new: 303 => 306
+05 Nov 2023 18:11:30 ID: 10 Username: Iron Fist2 Contingent old to new: 303 => 306
+05 Nov 2023 18:11:30 ID: 4 Username: Mr Smichers turned 400, the gifted contingent: 56 => 456
+__________________________________________ Day: 75 __________________________________________
+05 Nov 2023 18:11:32 ID: 1 Username: Test Contingent old to new: 306 => 309
+05 Nov 2023 18:11:32 ID: 2 Username: abc Contingent old to new: 306 => 309
+05 Nov 2023 18:11:32 ID: 3 Username: Test2 Contingent old to new: 306 => 309
+05 Nov 2023 18:11:32 ID: 4 Username: Mr Smichers Contingent old to new: 456 => 459
+05 Nov 2023 18:11:32 ID: 5 Username: Test3 Contingent old to new: 306 => 309
+05 Nov 2023 18:11:32 ID: 7 Username: Willi Sama Contingent old to new: 306 => 309
+05 Nov 2023 18:11:32 ID: 8 Username: Jack the Slapper Contingent old to new: 306 => 309
+05 Nov 2023 18:11:32 ID: 9 Username: Iron Fist Contingent old to new: 306 => 309
+05 Nov 2023 18:11:32 ID: 10 Username: Iron Fist2 Contingent old to new: 306 => 309
+05 Nov 2023 18:11:32 ID: 4 Username: Mr Smichers turned 400, the gifted contingent: 459 => 859
+__________________________________________ Day: 76 __________________________________________
+05 Nov 2023 18:11:33 ID: 1 Username: Test Contingent old to new: 309 => 312
+05 Nov 2023 18:11:33 ID: 2 Username: abc Contingent old to new: 309 => 312
+05 Nov 2023 18:11:33 ID: 3 Username: Test2 Contingent old to new: 309 => 312
+05 Nov 2023 18:11:33 ID: 4 Username: Mr Smichers Contingent old to new: 859 => 862
+05 Nov 2023 18:11:33 ID: 5 Username: Test3 Contingent old to new: 309 => 312
+05 Nov 2023 18:11:33 ID: 7 Username: Willi Sama Contingent old to new: 309 => 312
+05 Nov 2023 18:11:33 ID: 8 Username: Jack the Slapper Contingent old to new: 309 => 312
+05 Nov 2023 18:11:33 ID: 9 Username: Iron Fist Contingent old to new: 309 => 312
+05 Nov 2023 18:11:33 ID: 10 Username: Iron Fist2 Contingent old to new: 309 => 312
+05 Nov 2023 18:11:33 ID: 4 Username: Mr Smichers turned 400, the gifted contingent: 862 => 1262
+__________________________________________ Day: 77 __________________________________________
+06 Nov 2023 22:57:11 ID: 1 Username: Test Contingent old to new: 187 => 190
+06 Nov 2023 22:57:11 ID: 2 Username: abc Contingent old to new: 312 => 315
+06 Nov 2023 22:57:11 ID: 3 Username: Test2 Contingent old to new: 312 => 315
+06 Nov 2023 22:57:11 ID: 4 Username: Mr Smichers Contingent old to new: 1262 => 1265
+06 Nov 2023 22:57:11 ID: 5 Username: Test3 Contingent old to new: 312 => 315
+06 Nov 2023 22:57:11 ID: 7 Username: Willi Sama Contingent old to new: 312 => 315
+06 Nov 2023 22:57:11 ID: 8 Username: Jack the Slapper Contingent old to new: 312 => 315
+06 Nov 2023 22:57:11 ID: 9 Username: Iron Fist Contingent old to new: 312 => 315
+06 Nov 2023 22:57:11 ID: 10 Username: Iron Fist2 Contingent old to new: 312 => 315
+06 Nov 2023 22:57:11 ID: 11 Username: Angry Octo Contingent old to new: 15 => 25
+__________________________________________ Day: 78 __________________________________________
+07 Nov 2023 21:15:26 ID: 1 Username: Test Contingent old to new: 25 => 35
+__________________________________________ Day: 79 __________________________________________
+07 Nov 2023 21:15:32 ID: 1 Username: Test Contingent old to new: 35 => 38
+__________________________________________ Day: 80 __________________________________________
+07 Nov 2023 21:15:33 ID: 1 Username: Test Contingent old to new: 38 => 41
+__________________________________________ Day: 81 __________________________________________
+07 Nov 2023 21:15:33 ID: 1 Username: Test Contingent old to new: 41 => 44
+__________________________________________ Day: 82 __________________________________________
+07 Nov 2023 21:15:34 ID: 1 Username: Test Contingent old to new: 44 => 47
+__________________________________________ Day: 83 __________________________________________
+07 Nov 2023 21:15:34 ID: 1 Username: Test Contingent old to new: 47 => 50
+__________________________________________ Day: 84 __________________________________________
+07 Nov 2023 21:15:35 ID: 1 Username: Test Contingent old to new: 50 => 53
+__________________________________________ Day: 85 __________________________________________
+14 Nov 2023 15:14:26 ID: 1 Username: Test Contingent old to new: 14 => 24
+14 Nov 2023 15:14:26 ID: 2 Username: <br>(\/)<br>(0.0)<br>()() Contingent old to new: 18 => 28
+14 Nov 2023 15:14:26 ID: 3 Username: Test4 Contingent old to new: 25 => 35
+14 Nov 2023 15:14:26 ID: 4 Username: Test4 Contingent old to new: 25 => 35
+__________________________________________ Day: 86 __________________________________________
+14 Nov 2023 15:26:55 ID: 1 Username: Test Contingent old to new: 24 => 34
+14 Nov 2023 15:26:55 ID: 2 Username: <br>(\/)<br>(0.0)<br>()() Contingent old to new: 28 => 38
+14 Nov 2023 15:26:55 ID: 3 Username: Test4 Contingent old to new: 35 => 38
+14 Nov 2023 15:26:55 ID: 4 Username: Test4 Contingent old to new: 35 => 38
+__________________________________________ Day: 87 __________________________________________
+15 Nov 2023 19:22:22 ID: 1 Username: Test Contingent old to new: 4762 => 4765
+15 Nov 2023 19:22:22 ID: 2 Username: <br>(\/)<br>(0.0)<br>()() Contingent old to new: 38 => 41
+15 Nov 2023 19:22:22 ID: 3 Username: Test4 Contingent old to new: 38 => 41
+15 Nov 2023 19:22:22 ID: 4 Username: Test4 Contingent old to new: 38 => 41
+15 Nov 2023 19:22:22 ID: 5 Username: Jack the Slapper Contingent old to new: 15733 => 15736
+__________________________________________ Day: 88 __________________________________________
+15 Nov 2023 19:22:25 ID: 1 Username: Test Contingent old to new: 4765 => 4768
+15 Nov 2023 19:22:25 ID: 2 Username: <br>(\/)<br>(0.0)<br>()() Contingent old to new: 41 => 44
+15 Nov 2023 19:22:25 ID: 3 Username: Test4 Contingent old to new: 41 => 44
+15 Nov 2023 19:22:25 ID: 4 Username: Test4 Contingent old to new: 41 => 44
+15 Nov 2023 19:22:25 ID: 5 Username: Jack the Slapper Contingent old to new: 15736 => 15739
+__________________________________________ Day: 89 __________________________________________
+15 Nov 2023 19:22:26 ID: 1 Username: Test Contingent old to new: 4768 => 4771
+15 Nov 2023 19:22:26 ID: 2 Username: <br>(\/)<br>(0.0)<br>()() Contingent old to new: 44 => 47
+15 Nov 2023 19:22:26 ID: 3 Username: Test4 Contingent old to new: 44 => 47
+15 Nov 2023 19:22:26 ID: 4 Username: Test4 Contingent old to new: 44 => 47
+15 Nov 2023 19:22:26 ID: 5 Username: Jack the Slapper Contingent old to new: 15739 => 15742
+__________________________________________ Day: 90 __________________________________________
+15 Nov 2023 19:22:26 ID: 1 Username: Test Contingent old to new: 4771 => 4774
+15 Nov 2023 19:22:26 ID: 2 Username: <br>(\/)<br>(0.0)<br>()() Contingent old to new: 47 => 50
+15 Nov 2023 19:22:26 ID: 3 Username: Test4 Contingent old to new: 47 => 50
+15 Nov 2023 19:22:26 ID: 4 Username: Test4 Contingent old to new: 47 => 50
+15 Nov 2023 19:22:26 ID: 5 Username: Jack the Slapper Contingent old to new: 15742 => 15745
+__________________________________________ Day: 91 __________________________________________
+15 Nov 2023 19:22:26 ID: 1 Username: Test Contingent old to new: 4774 => 4777
+15 Nov 2023 19:22:26 ID: 2 Username: <br>(\/)<br>(0.0)<br>()() Contingent old to new: 50 => 53
+15 Nov 2023 19:22:26 ID: 3 Username: Test4 Contingent old to new: 50 => 53
+15 Nov 2023 19:22:26 ID: 4 Username: Test4 Contingent old to new: 50 => 53
+15 Nov 2023 19:22:26 ID: 5 Username: Jack the Slapper Contingent old to new: 15745 => 15748
