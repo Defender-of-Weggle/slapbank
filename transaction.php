@@ -11,9 +11,9 @@ if(!isset($_SESSION["login"]))
 }
 
 
-$userID = getSessionUserID();
+$userID = SessionManagement::getSessionUserID();
 
-$userName = getSessionUserName();
+$userName = SessionManagement::getSessionUserName();
 $contingent = getContingent($userID);
 $userRoles = getUserRole($userID);
 $userRole = intval($userRoles[0]);
@@ -60,7 +60,7 @@ $userIDTarget = @intval($_GET["userIDTarget"]) ?? "";
 <div class="row">
     <div class="column">
         <span>Slap Balance:
-            <?php echo EigenerKontostand(getSessionUserID());
+            <?php echo EigenerKontostand(SessionManagement::getSessionUserID());
             ?></span>
 
 
@@ -72,7 +72,7 @@ $userIDTarget = @intval($_GET["userIDTarget"]) ?? "";
 <form action="transaction_result.php" method="post">
     <tr>
         <td>
-                <?php echo "<input type='hidden' name='UserName' value='". getSessionUserName() ."'>";?>
+                <?php echo "<input type='hidden' name='UserName' value='". SessionManagement::getSessionUserName() ."'>";?>
                 <input type="hidden" name="DB">
                 <p><label for="userSlapTake">Share the pain with:</label></p>
         </td>

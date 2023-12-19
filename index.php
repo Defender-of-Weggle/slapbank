@@ -22,8 +22,8 @@ if (isset($_POST["login"]) && $_POST["userName"] && $_POST["password"]) {
 
     // Check if login was successful
     if ($loginSuccess) {
-        setSessionUserName($loginUserName);
-        setSessionUserID(getUserID($loginUserName));
+        SessionManagement::setSessionUserName($loginUserName);
+        SessionManagement::setSessionUserID(getUserID($loginUserName));
     } else {
         echo "Login failed.";
     }
@@ -42,7 +42,7 @@ if(!isset($_SESSION["login"]))
     exit();
 }
 
-$userID = getSessionUserID() ?? "";
+$userID = SessionManagement::getSessionUserID() ?? "";
 $lastJackpotWinnerID = getCurrentJackpot()["idLastWinner"] ?? 1;
 $lastJackpotWinner = getUserName($lastJackpotWinnerID) ?? "None";
 $lastWonJackpot = getCurrentJackpot()["lastWonJackpot"] ?? "None";
@@ -51,7 +51,7 @@ $dateLastJackpotWin = new DateTime($dateLastJackpotWin);
 $lastJackpotUpdate = getCurrentJackpot()["lastUpdated"];
 $lastJackpotUpdate = new DateTime($lastJackpotUpdate);
 
-$userName = getSessionUserName() ?? "";
+$userName = SessionManagement::getSessionUserName() ?? "";
 $contingent = getContingent($userID) ?? "n.a.";
 $balance = EigenerKontostand($userID) ?? "n.a.";
 $latestMemberID = getLatestMember();

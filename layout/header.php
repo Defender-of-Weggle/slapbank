@@ -10,7 +10,13 @@
 
 
     <?php
-    initSession();
+
+    spl_autoload_register(function ($className) {
+        include './classes/' . $className . '.php';
+    });
+
+
+    SessionManagement::initSession();
     ?>
     <style>
 
@@ -201,9 +207,9 @@
 
 <?php
 
-spl_autoload_register(function ($className) {
-    include './classes/' . $className . '.php';
-});
+//spl_autoload_register(function ($className) {
+//    include './classes/' . $className . '.php';
+//});
 
 
 

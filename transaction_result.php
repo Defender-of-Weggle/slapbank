@@ -10,7 +10,7 @@ if(!isset($_SESSION["login"]))
 }
 
 
-$userName = htmlentities(getSessionUserName());
+$userName = htmlentities(SessionManagement::getSessionUserName());
 
 
 
@@ -25,7 +25,7 @@ if (isset($_POST["DB"]))
     $operator = ($_POST["operator"]);
     $slaps = ($_POST["slaps"]);
     $comment = ($_POST["comment"]);
-    $userID = getSessionUserID();
+    $userID = SessionManagement::getSessionUserID();
     $userIDSlapTake = ($_POST["userIDSlapTake"]);
     $userSlapTake = userSlapTakeDefinition($userIDSlapTake);
     $operator = $_POST["operator"];

@@ -195,7 +195,7 @@ function initSession() {
 }
 
 function setSessionUserName(string $UserName) {
-    initSession();
+    SessionManagement::initSession();
     $_SESSION['userName'] = htmlentities($UserName);
 }
 

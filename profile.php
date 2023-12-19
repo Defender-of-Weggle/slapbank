@@ -16,8 +16,8 @@ if(!isset($_SESSION["login"]))
     echo "<br><br>Fuck off, log in!<br><br><form action='login.php'><input type='submit' value='Log in, Dipshit!'>";
     exit();
 }
-$profileID = $_GET["profileID"] ?? $userID = getSessionUserID();
-$userID = getSessionUserID();
+$profileID = $_GET["profileID"] ?? $userID = SessionManagement::getSessionUserID();
+$userID = SessionManagement::getSessionUserID();
 $userName = getUserName($profileID);
 $userRoles = getUserRole($profileID);
 $userRole = intval($userRoles[0]);

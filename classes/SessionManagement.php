@@ -15,7 +15,7 @@ class SessionManagement
     }
 
     public static function setSessionUserName(string $UserName) {
-        initSession();
+        SessionManagement::initSession();
         $_SESSION['userName'] = htmlentities($UserName);
     }
 
@@ -29,7 +29,7 @@ class SessionManagement
 
 
     public static function setSessionUserID(int $userID) {
-        initSession();
+        SessionManagement::initSession();
         $_SESSION['userID'] = $userID;
     }
 

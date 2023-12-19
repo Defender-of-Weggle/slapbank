@@ -48,6 +48,26 @@ class UserRepository
         }
     }
 
+    public function getUserID($userName): int
+    {
+        $db = Database::getConnection();
+        $ps = $db->prepare("SELECT userID FROM user WHERE userName = ?");
+        $ps->bind_param("s", $userName);
+        $ps->execute();
+        $result = $ps->get_result();
+
+        if (!$result){
+            echo "Query Failed", $db->error;
+        } else {
+            echo "Querry was a fucking Success. Row count: ", $result->num_rows;
+        }
+
+
+        $res = $con->query("SELECT userID FROM user WHERE userName = '$userName'");
+        $userID = $res->fetch_array();
+        return $userID[0];
+    }
+
 
 
 }

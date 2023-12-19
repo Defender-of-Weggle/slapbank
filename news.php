@@ -2,7 +2,7 @@
 include "functions.inc.php";
 html_header('News');
 
-initSession();
+//initSession();
 
 if(!isset($_SESSION["login"]))
 {
@@ -10,8 +10,8 @@ if(!isset($_SESSION["login"]))
     exit();
 }
 
-$userID = getSessionUserID();
-$userName = getSessionUserName();
+$userID = SessionManagement::getSessionUserID();
+$userName = SessionManagement::getSessionUserName();
 $userRoles = getUserRole($userID);
 $userRole = intval($userRoles[0]);
 $tempUserRole = intval($userRoles[1]);
